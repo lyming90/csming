@@ -55,9 +55,9 @@
     height: 25px;
 }
 
-#info {
-    position: static;
-    min-width: 720px;
-    margin-top: -50px;
-    margin-bottom: -50px;
+.info {
+    position: static !important;
+    min-width: 720px !important;
+    margin-top: -50px !important;
+    margin-bottom: -50px !important;
 }
