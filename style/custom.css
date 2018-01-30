@@ -1,17 +1,16 @@
 .main {
     margin: 0 auto;  /* set center */
     margin-bottom: 10px;
-    width: 720px;
+    width: 100%;
     min-width: 720px;
     font-family: Verdana, Helvetica, Arial, sans-serif;
     font-weight: 300;
     font-size: 16px;
-    background-position: center;
-    background-size: cover;
 }
 
 .intro {
-    margin-left: 450px;
+    position: absolute;
+    right: 200px;
     width: 200px;
     height: 265px;
     background-color: rgba(255, 255, 255, 0.75);
@@ -33,6 +32,9 @@
 .profile-container {
     min-width: 720px;
     height: 265px;
+    background-position: center;
+    background-size: cover;
+    margin-bottom: 20px;
 }
 
 .profile {
