@@ -1,10 +1,63 @@
 .main {
-    min-width: 1040px;
+    margin: 0 auto;  /* set center */
+    margin-bottom: 10px;
+    width: 720px;
+    min-width: 720px;
     font-family: Verdana, Helvetica, Arial, sans-serif;
     font-weight: 300;
     font-size: 16px;
+    background-position: center;
+    background-size: cover;
 }
 
-.card-title {
-    font-weight: bold;
+.intro {
+    margin-left: 450px;
+    width: 200px;
+    height: 265px;
+    background-color: rgba(255, 255, 255, 0.75);
+}
+
+.small-line {
+    font-size: 14px;
+    margin-top: 0px;
+}
+
+.nav {
+    position: absolute;
+}
+
+.nav-link {
+    color: white;
+}
+
+.profile-container {
+    min-width: 720px;
+    height: 265px;
+}
+
+.profile {
+    width: 160px;
+    height: 160px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.row {
+    margin: 0 auto;
+}
+
+.social-icons {
+    margin-top: -15px;
+}
+
+.icon {
+    width: 25px;
+    height: 25px;
+}
+
+#info {
+    position: static;
+    min-width: 720px;
+    margin-top: -50px;
+    margin-bottom: -50px;
 }
