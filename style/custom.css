@@ -10,7 +10,8 @@
 
 .intro {
     position: absolute;
-    right: 100px;
+    right: 0px;
+    margin-right: 20px;
     width: 400px;
     height: 401px;
     background-color: rgba(255, 255, 255, 0.75);
@@ -23,11 +24,16 @@
 
 .nav {
     position: absolute;
-    font-size: 20px;
+    font-size: 25px;
     font-variant: small-caps;
 }
 
 .nav-link {
+    color: white;
+}
+
+.nav-link:hover {
+    text-decoration: underline;
     color: white;
 }
 
