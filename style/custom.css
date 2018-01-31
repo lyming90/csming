@@ -2,7 +2,7 @@
     margin: 0 auto;  /* set center */
     margin-bottom: 10px;
     width: 100%;
-    min-width: 720px;
+    min-width: 960px;
     font-family: Verdana, Helvetica, Arial, sans-serif;
     font-weight: 300;
     font-size: 16px;
@@ -10,9 +10,9 @@
 
 .intro {
     position: absolute;
-    right: 200px;
-    width: 200px;
-    height: 265px;
+    right: 100px;
+    width: 400px;
+    height: 401px;
     background-color: rgba(255, 255, 255, 0.75);
 }
 
@@ -23,6 +23,8 @@
 
 .nav {
     position: absolute;
+    font-size: 20px;
+    font-variant: small-caps;
 }
 
 .nav-link {
@@ -31,17 +33,18 @@
 
 .profile-container {
     min-width: 720px;
-    height: 265px;
+    height: 401px;
     background-position: center;
     background-size: cover;
     margin-bottom: 20px;
+    font-variant: small-caps
 }
 
 .profile {
-    width: 160px;
-    height: 160px;
-    margin-top: 5px;
-    margin-bottom: 5px;
+    width: 250px;
+    height: 250px;
+    margin-top: 25px;
+    margin-bottom: 15px;
 }
 
 .row {
