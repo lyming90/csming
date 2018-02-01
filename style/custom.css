@@ -9,8 +9,9 @@
 }
 
 .intro {
-    position: absolute;
-    right: 0px;
+    /* position: absolute; */
+    /* right: 0px; */
+    float: right;
     margin-right: 20px;
     width: 400px;
     height: 401px;
@@ -24,6 +25,7 @@
 
 .nav {
     position: absolute;
+    min-width: 1024px;
     font-size: 25px;
     font-variant: small-caps;
 }
@@ -66,7 +68,7 @@
     height: 25px;
 }
 
-.info {
+#info {
     background-color: #e9ecef;
     width: 100%;
     min-width: 720px;

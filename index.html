@@ -15,9 +15,11 @@
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-
       gtag('config', 'UA-113348736-1');
     </script>
+
+    <!-- Load JavaScript -->
+    <script src="script/myScript.js"></script>
 
 </head>
 <body class="main">
@@ -48,23 +50,20 @@
     </div>
 
     <!-- Info block -->
-      <div class="info">
+      <div id="info">
         <h1 class="display-4">ABOUT</h1>
         <p class="lead" style="text-align: justify;">My name is Mingyu Liu. I am a second-year student at Nanyang Technological
             University with a major in Computer Science and a minor in Mathematics. I'm a self-driven and curious person who always
             look forward to new adventures and embrace latest technologies. I aim to design and create high-quality
             and robust software solutions. Besides my interest in Computer Science, I also enjoy <a href="#">travelling and hiking</a>.</p>
       </div>
-<!--       <div class="info">
-        <p class="lead" style="text-align: justify;"><font color="red">This site is still under MAJOR cunstruction.</font></p>
-      </div> -->
 
     <!-- Photos -->
-    <div id="carouselExampleIndicators" class="carousel slide img-fluid" data-ride="carousel">
+    <!-- <div id="carouselExampleIndicators" class="carousel slide img-fluid" data-ride="carousel">
       <ol class="carousel-indicators">
         <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-        <li data-target="#carouselExampleIndicators" data-slide-to="1""></li>
-        <!-- <li data-target="#carouselExampleIndicators" data-slide-to="2"></li> -->
+        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
       </ol>
       <div class="carousel-inner">
         <div class="carousel-item">
@@ -73,9 +72,9 @@
         <div class="carousel-item active">
           <img class="d-block w-100" src="img/lake.jpg" alt="Second slide">
         </div>
-<!--         <div class="carousel-item">
+        <div class="carousel-item">
           <img class="d-block w-100" src="img/lake.jpg" alt="Third slide">
-        </div> -->
+        </div>
       </div>
       <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -85,7 +84,7 @@
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
         <span class="sr-only">Next</span>
       </a>
-    </div>
+    </div> -->
 
 
     <p class="copyright text-center text-black">&copy; 2018 Mingyu Liu | All rights reserved.</p>
