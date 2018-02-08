@@ -3,7 +3,7 @@
 <body class="main">
     <nav class="nav mb-4"> <!--sticky-top doesn't seem good-->
       <a class="nav-link" href="#about">About</a>
-      <a class="nav-link" onclick="pullResume()" href="#">Resume</a>
+      <a class="nav-link" href="#resume" href="#">Resume</a>
       <a class="nav-link" href="#gallery">Gallery</a>
       <a class="nav-link" href="#blog">Blog</a>
       <a class="nav-link" href="#contact">Contact</a>
@@ -14,7 +14,7 @@
     <div class="profile-container" style="background-image: url('{{ url_for('static', filename='img/montreal.jpg') }}');">
         <div class="intro text-center">
             <div class="col-md-auto">
-                <img class="profile" src="img/hollywood.png">
+                <img class="profile" src="{{ url_for('static', filename='img/hollywood.png')}}">
             </div>
             <div class="col-md-auto">
                 <p class="small-line">
@@ -25,79 +25,154 @@
                   College Student
                 </p>
                 <p class="social-icons">
-                    <a href="https://github.com/lyming90" target="_blank"><img class="icon" src="img/icon/github.png"></a>
-                    <a href="https://facebook.com/mingyuliu1916/" target="_blank"><img class="icon" src="img/icon/facebook.png"></a>
-                    <a href="https://linkedin.com/in/mingyuliu16/" target="_blank"><img class="icon" src="img/icon/linkedin.png"></a>
+                    <a href="https://github.com/lyming90" target="_blank"><img class="icon" src="{{ url_for('static', filename='img/icon/github.png') }}"></a>
+                    <a href="https://facebook.com/mingyuliu1916/" target="_blank"><img class="icon" src="{{ url_for('static', filename='img/icon/facebook.png') }}"></a>
+                    <a href="https://linkedin.com/in/mingyuliu16/" target="_blank"><img class="icon" src="{{ url_for('static', filename='img/icon/linkedin.png') }}"></a>
                 </p>
             </div>
         </div>
     </div>
 
-    <!-- About block -->
-    <div id="about" class="info" style="display: block">
-      <h1 class="display-4">ABOUT</h1>
-      <p class="lead" style="text-align: justify;">My name is Mingyu Liu. I am a second-year student at Nanyang Technological
-          University with a major in Computer Science and a minor in Mathematics. I'm a self-driven and curious person who always
-          look forward to new adventures and embrace latest technologies. I aim to design and create high-quality
-          and robust software solutions. Besides my interest in Computer Science, I also enjoy <a href="#">travelling and hiking</a>.</p>
-    </div>
+    <!-- block_wrapper -->
+    <div class="block_wrapper">
+      <!-- About block -->
+      <div id="about" class="info" style="display: block">
+        <h1 class="display-4">ABOUT</h1>
+        <p class="lead" style="text-align: justify;">My name is Mingyu Liu. I am a second-year student at Nanyang Technological
+            University with a major in Computer Science and a minor in Mathematics. I'm a self-driven and curious person who always
+            look forward to new adventures and embrace latest technologies. I aim to design and create high-quality
+            and robust software solutions. Besides my interest in Computer Science, I also enjoy <a href="#">travelling and hiking</a>.</p>
+      </div>
 
-    <!-- Resume block -->
-    <div id="resume" class="info" style="display: block">
-      <h1 class="display-4">RESUME</h1>
-      <p class="lead" style="text-align: justify;">A PDF version of my resume can be downloaded <a href="resume/resume2017.pdf" target="_blank">here</a>.</p>
-      <p class="lead" style="text-align: justify;">You can also view an online version here. <a href="#">Expand resume</a></p>
-      <! -- TODO Online resume. Write a tool to do this. -->
-    </div>
-
-    <!-- Gallery block -->
-    <div id="gallery" class="info" style="display: block">
-      <h1 class="display-4">GALLERY</h1>
-      <p class="lead" style="text-align: justify;">To be added</p>
-      <! -- TODO Online resume. Write a tool to do this. -->
-    </div>
-
-    <!-- Blog block -->
-    <div id="blog" class="info" style="display: block">
-      <h1 class="display-4">BLOG</h1>
-      <p class="lead" style="text-align: justify;">To be added</p>
-      <! -- TODO Online resume. Write a tool to do this. -->
-    </div>
-
-     <!-- Contact block -->
-    <div id="contact" class="info" style="display: block; background-color:rgba(80, 83, 255, 0.411)">
-      <h1 class="display-4">CONTACT</h1>
-      <p class="lead" style="text-align: justify;">To be added</p>
-      <! -- TODO Online resume. Write a tool to do this. -->
-    </div>
-
-    <!-- Photos -->
-    <!-- <div id="carouselExampleIndicators" class="carousel slide img-fluid" data-ride="carousel">
-      <ol class="carousel-indicators">
-        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-      </ol>
-      <div class="carousel-inner">
-        <div class="carousel-item">
-          <img class="d-block w-100" src="img/hive.jpg" alt="First slide">
-        </div>
-        <div class="carousel-item active">
-          <img class="d-block w-100" src="img/lake.jpg" alt="Second slide">
-        </div>
-        <div class="carousel-item">
-          <img class="d-block w-100" src="img/lake.jpg" alt="Third slide">
+      <!-- Resume block -->
+      <div id="resume" class="info" style="display: block">
+        <h1 class="display-4">RESUME</h1>
+        <p class="lead" style="text-align: justify;">A PDF version of my resume can be downloaded <a href="resume/resume2017.pdf" target="_blank">here</a>.</p>
+        <p class="lead" style="text-align: justify;">You can also view an online version here.
+          <a href="#" data-toggle="collapse" data-target="#resume-content" style="margin-left: 5px;">Click here to expand</a>
+        </p>
+        <! -- TODO Online resume. Write a tool to do this. -->
+        <div id="resume-content" class="collapse">
+          <p>TODO: Edit your resume. Write a parser to do this. Be aware there's typo below.</p>
+          <!-- Edit this -->
+          <h2>Education</h2>
+          <p>
+            <b>Nanyang Technological University - Class of 2020 (Expected)</b>
+          </p>
+          <ul>
+            <li>NTU Science and Engineering Scholarship</li>
+            <li>NTU President Research Scholar</li>
+            <li>First Class Honours Expected</li>
+          </ul>
+          <hr>
+          <h2>Experience</h2>
+          <p>
+            <b>Peer Coach - School of Computer Science and Engineering, NTU</b>
+          </p>
+          <ul>
+            <li>Selected as Peer Coach based on outstanding academic performance.</li>
+            <li>Helping students under Academic Probation overcome academic challenges.</li>
+          </ul>
+          <p>
+            <b>Teaching Assistant - Saturday Kids, Singapore</b>
+          </p>
+          <ul>
+            <li>Assisted the instructor in managing classes of 15 children (age of 10 to 13).</li>
+            <li>Helped students understand Python concept and elementary computational theories.</li>
+            <li>Mentored students with coding exercise and assignments.</li>
+          </ul>
+          <p>
+            <b>Project Leader - Service Learning Project at Marymount Centre, Singapore</b>
+          </p>
+          <ul>
+            <li>Led a team of 6 students to propose and implement the Service Learning Project.</li>
+            <li>Established cooperation with Marymount Centre.</li>
+            <li>Arranged meetings with team members and Marymount Centre.</li>
+            <li>Successfully organized a 4-hour Chinese Culture event for 11 kids and received positive feedbacks.</li>
+          </ul>
+          <hr>
+          <h2>Projects</h3>
+          <p>
+            <b>Sports - Android, teamwork</b>
+          </p>
+          <ul>
+            An Android application. Features include instant messaging, forming sports team and posting game information. 
+              <br>Firebase is used to provide backend service such as databse and user authentation.
+          </ul>
+          <p>
+            <b>PuzzleSolver - Java, individual</b>
+          </p>
+          <ul>
+              A program to solve 8-puzzle problem using the A* search algorithm. With the GUI created using JavaFX, it has 
+              <br>become a mini- game which allows user to select a picture to customize the puzzle background, shuffle 
+              <br>puzzle blocks and solve the puzzle.
+          </ul>
+          <p>
+            <b>Travel Agent - Python, teamwork</b>
+          </p>
+          <ul>
+              A backend telegram bot program that provides information for travellers, such as airlines informationand airbnb. 
+              <br>Python libraries used: Request, Telepot, BeatifulSoup4 and Skyscanner API which is used to get information 
+              <br>from Skyscanner.
+          </ul>
+          <p class="lead" style="text-align: justify;">
+              <a href="#" data-toggle="collapse" data-target="#resume-content" style="margin-left: 5px;">Click here to close up</a>
+          </p>
         </div>
       </div>
-      <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-      </a>
-      <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-      </a>
-    </div> -->
+
+      <!-- Gallery block -->
+      <div id="gallery" class="info" style="display: block">
+        <h1 class="display-4">GALLERY</h1>
+        <p class="lead" style="text-align: justify;">To be added</p>
+      </div>
+
+      <!-- Blog block -->
+      <div id="blog" class="info" style="display: block">
+        <h1 class="display-4">BLOG</h1>
+        <p class="lead" style="text-align: justify;">To be added</p>
+      </div>
+
+      <!-- Contact block -->
+      <div id="contact" class="info" style="display: block">
+        <h1 class="display-4">CONTACT</h1>
+        <p class="lead" style="text-align: justify;">To be enriched.</p>
+        <p class="lead" style="text-align: justify;">
+            If you would like to contact me, you can send me an Email through <a href="mailto:lyming90@gmail.com">lyming90@gmail.com</a>.
+        </p>
+        <p class="lead" style="text-align: justify;">
+            Alternatively, you can find me via <a href="linkedin">LinkedIn</a> and <a href="https://facebook.com/mingyuliu1916/">Facebook</a>.
+        </p>
+      </div>
+
+      <!-- Photos -->
+      <!-- <div id="carouselExampleIndicators" class="carousel slide img-fluid" data-ride="carousel">
+        <ol class="carousel-indicators">
+          <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+          <div class="carousel-item">
+            <img class="d-block w-100" src="img/hive.jpg" alt="First slide">
+          </div>
+          <div class="carousel-item active">
+            <img class="d-block w-100" src="img/lake.jpg" alt="Second slide">
+          </div>
+          <div class="carousel-item">
+            <img class="d-block w-100" src="img/lake.jpg" alt="Third slide">
+          </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div> -->
+    </div>
 
 
     <p class="copyright text-center text-black">&copy; 2018 Mingyu Liu | All rights reserved.</p>
