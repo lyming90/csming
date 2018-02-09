@@ -1,4 +1,7 @@
 {% extends "layout.html" %}
+{% block css %}
+    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='style/home.css') }}">
+{% endblock %}
 {% block body %}
 <body class="main">
     <nav class="nav mb-4"> <!--sticky-top doesn't seem good-->
@@ -130,7 +133,9 @@
       <!-- Blog block -->
       <div id="blog" class="info" style="display: block">
         <h1 class="display-4">BLOG</h1>
-        <p class="lead" style="text-align: justify;">To be added</p>
+        <p class="lead" style="text-align: justify;">
+          <a href="article">Click to read the sample article.</a>
+        </p>
       </div>
 
       <!-- Contact block -->

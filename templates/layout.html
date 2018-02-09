@@ -9,7 +9,8 @@
 
     <!-- Google Fonts -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
-    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='style/custom.css') }}">
+
+    <!-- Custom CSS -->{% block css %}{% endblock %}
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-113348736-1"></script>
