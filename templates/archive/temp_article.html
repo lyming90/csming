@@ -1,0 +1,131 @@
+{% extends 'blog_layout.html' %}
+{% block css %}
+    <link rel=stylesheet type=text/css href="/static/style/bw.css') }}">
+
+    <style>
+    img {
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+
+    .photo-container {
+        display: none;
+        text-align: center;
+        margin-bottom: 1rem;
+    }
+    </style>
+
+{% endblock %}
+
+{% block body %}
+<body>
+    <h1>article.title</h1>
+    <small>Written by <strong>article.author</strong> on article.create_date</small>
+    <hr>
+
+
+    <div class="photo-container">
+            <img class="photo" src="/static/photo/ynp2018/holiday-inn.jpg">
+            <p>Holiday Inn, Bozeman</p>
+    </div>
+    <div class="photo-container">
+            <img class="photo" src="/static/photo/ynp2018/geyser-1.jpg">
+            <p>Geyser.</p>
+    </div>
+    <div class="photo-container">
+            <img class="photo" src="/static/photo/ynp2018/coach-1.jpg">
+            <p>Snow coach. From Mammoth Hot Spring to Old Faithful.</p>
+    </div>
+    <div class="photo-container">
+            <img class="photo" src="/static/photo/ynp2018/bison-1.jpg">
+            <p>Bison on the road.</p>
+    </div>
+    <div class="photo-container">
+            <img class="photo" src="/static/photo/ynp2018/road-2.jpg">
+            <p>Road to Mammoth Hot Spring.</p>
+    </div>
+    <div class="photo-container">
+            <img class="photo" src="/static/photo/ynp2018/road-1.jpg">
+            <p>Road to Mammoth Hot Spring.</p>
+    </div>
+    <div class="photo-container">
+            <img class="photo" src="/static/photo/ynp2018/geyser-2.jpg">
+            <p>Geyser.</p>
+    </div>
+    <div class="photo-container">
+            <img class="photo" src="/static/photo/ynp2018/ski-1.jpg">
+            <p>We went skiing.</p>
+    </div>
+    <div class="photo-container">
+            <img class="photo" src="/static/photo/ynp2018/old-faithful-1.jpg">
+            <p>People waiting for the Old Faithful Geyser.</p>            
+    </div>
+    <div class="photo-container">
+            <img class="photo" src="/static/photo/ynp2018/ski-2.jpg">
+            <p>We went skiing.</p>            
+    </div>
+    <div class="photo-container">
+            <img class="photo" src="/static/photo/ynp2018/hike-1.jpg">
+            <p>A small hike (walking around, actually).</p>
+    </div>
+    <div class="photo-container">
+            <img class="photo" src="/static/photo/ynp2018/road-3.jpg">
+            <p>On my way to Mammoth Hot Spring.</p>
+    </div>
+    <div class="photo-container">
+            <img class="photo" src="/static/photo/ynp2018/road-4.jpg">
+            <p>Road.</p>
+    </div>
+    <div class="photo-container">
+            <img class="photo" src="/static/photo/ynp2018/geyser-3.jpg">
+            <p>Geyser.</p>
+    </div>
+
+
+    <p style="text-align: center; font-weight: bold; margin:auto; width: 50%;">
+        <a href="#" id="loadMore">&gt&gt Load More &lt&lt</a>
+    </p>
+    <p class="totop" style="text-align: center; font-weight: bold; margin:auto; width: 50%;"> 
+            <a href="#top">Back to top</a> 
+        </p>
+
+    <p class="text-center text-black" style="margin-top: 50px;">&copy; 2018 Mingyu Liu | All rights reserved.</p>
+
+
+
+    <script> 
+        $(function () {
+            $("div").slice(0, 2).show();
+            $("#loadMore").on('click', function (e) {
+                e.preventDefault();
+                if ($("div:hidden").length == 0) {  // no more hidden
+                    // $("#load").fadeOut('slow');
+                    $("#loadMore").css('display', 'none');
+                }
+                else {
+                    $("div:hidden").slice(0, 2).slideDown();
+                    $('html,body').animate({
+                        scrollTop: $(this).offset().top
+                    }, 1500);
+                }
+            });
+        });
+        
+        $('a[href=#top]').click(function () {
+            $('body,html').animate({
+                scrollTop: 0
+            }, 600);
+            return false;
+        });
+        
+        $(window).scroll(function () {
+            if ($(this).scrollTop() > 50) {
+                $('.totop a').fadeIn();
+            } else {
+                $('.totop a').fadeOut();
+            }
+        });
+    </script>
+
+</body>
+{% endblock %}

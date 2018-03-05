@@ -1,37 +1,53 @@
 {% extends "layout.html" %}
+{% block title %}
+    <title>Ming &middot; 刘明宇 &middot; Liu Mingyu</title>
+{% endblock %}
 {% block css %}
     <link rel=stylesheet type=text/css href="{{ url_for('static', filename='style/home.css') }}">
+{% endblock %}
+{% block custom_js %}
+    <script src="{{ url_for('static', filename='script/myScript.js') }}"></script>
 {% endblock %}
 {% block body %}
 <body class="main">
     <nav class="nav mb-4"> <!--sticky-top doesn't seem good-->
-      <a class="nav-link" href="#about">About</a>
-      <a class="nav-link" href="#resume" href="#">Resume</a>
-      <a class="nav-link" href="#gallery">Gallery</a>
-      <a class="nav-link" href="#blog">Blog</a>
-      <a class="nav-link" href="#contact">Contact</a>
+      <a class="scroll nav-link active" href="#about">About</a>
+      <a class="scroll nav-link" href="#resume" href="#">Resume</a>
+      <!-- <a class="scroll nav-link" href="#gallery">Gallery</a> -->
+      <a class="scroll nav-link" href="#experiences">Experiences</a>
+      <!-- <a class="scroll nav-link" href="#download">Download</a> -->
+      <a class="scroll nav-link" href="#contact">Contact</a>
       <!-- <a class="nav-link disabled" href="#">Gallery</a> -->
+      <!-- Dropdown -->
+      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Resources
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="/netflix">Netflix Subscription</a>
+        </div>
     </nav>
 
     <!-- The top block-->
-    <div class="profile-container" style="background-image: url('{{ url_for('static', filename='img/montreal.jpg') }}');">
+    <div class="profile-container">
+        <div class="cover_text">
+          HI, THIS IS MING.
+        </div>
+        <!-- your big head and intro -->
         <div class="intro text-center">
-            <div class="col-md-auto">
-                <img class="profile" src="{{ url_for('static', filename='img/hollywood.png')}}">
-            </div>
-            <div class="col-md-auto">
-                <p class="small-line">
-                  Mingyu
-                  <br>
-                  A Big Idiotic
-                  <br>
-                  College Student
-                </p>
-                <p class="social-icons">
-                    <a href="https://github.com/lyming90" target="_blank"><img class="icon" src="{{ url_for('static', filename='img/icon/github.png') }}"></a>
-                    <a href="https://facebook.com/mingyuliu1916/" target="_blank"><img class="icon" src="{{ url_for('static', filename='img/icon/facebook.png') }}"></a>
-                    <a href="https://linkedin.com/in/mingyuliu16/" target="_blank"><img class="icon" src="{{ url_for('static', filename='img/icon/linkedin.png') }}"></a>
-                </p>
+          <div class="intro_content">
+              <div class="col-md-auto">
+                  <img class="profile" src="{{ url_for('static', filename='img/pf-default.png')}}">
+              </div>
+              <div class="col-md-auto">
+                  <p class="small-line">
+                  <strong>刘明宇 Ming</strong>
+                  <br>Undergraduate<br>Computer Science<br>Nanyang Technological University</p>
+                  <p class="social-icons">
+                      <a href="https://github.com/lyming90" target="_blank"><img class="icon" src="{{ url_for('static', filename='img/icon/github.png') }}"></a>
+                      <a href="https://facebook.com/mingyuliu1916/" target="_blank"><img class="icon" src="{{ url_for('static', filename='img/icon/facebook.png') }}"></a>
+                      <a href="https://linkedin.com/in/mingyuliu16/" target="_blank"><img class="icon" src="{{ url_for('static', filename='img/icon/linkedin.png') }}"></a>
+                  </p>
+              </div>
             </div>
         </div>
     </div>
@@ -41,19 +57,18 @@
       <!-- About block -->
       <div id="about" class="info" style="display: block">
         <h1 class="display-4">ABOUT</h1>
-        <p class="lead" style="text-align: justify;">My name is Mingyu Liu. I am a second-year student at Nanyang Technological
+        <p class="lead" style="text-align: justify;">My name is 刘明宇 (<strong>Liu Mingyu</strong> - in which Liu is the surname. Preferred to be called by <strong>Ming</strong>). I am a second-year student at Nanyang Technological
             University with a major in Computer Science and a minor in Mathematics. I'm a self-driven and curious person who always
             look forward to new adventures and embrace latest technologies. I aim to design and create high-quality
-            and robust software solutions. Besides my interest in Computer Science, I also enjoy <a href="#">travelling and hiking</a>.</p>
+            and robust software solutions. Besides my interest in Computer Science, I also enjoy <a href="#experiences">travelling and hiking</a>.</p>
       </div>
 
       <!-- Resume block -->
       <div id="resume" class="info" style="display: block">
         <h1 class="display-4">RESUME</h1>
-        <p class="lead" style="text-align: justify;">A PDF version of my resume can be downloaded <a href="resume/resume2017.pdf" target="_blank">here</a>.</p>
-        <p class="lead" style="text-align: justify;">You can also view an online version here.
-          <a href="#" data-toggle="collapse" data-target="#resume-content" style="margin-left: 5px;">Click here to expand</a>
-        </p>
+        <p class="lead" style="text-align: justify;">A PDF version of my resume can be downloaded <a href="{{ url_for('static', filename='resume/resume2017.pdf')}}" target="_blank">here</a>.</p>
+        <p class="lead" style="text-align: justify;">You can also view an online version here.</p>
+        <p><a href="#" data-toggle="collapse" data-target="#resume-content">Click here to expand</a></p>
         <! -- TODO Online resume. Write a tool to do this. -->
         <div id="resume-content" class="collapse">
           <p>TODO: Edit your resume. Write a parser to do this. Be aware there's typo below.</p>
@@ -119,23 +134,30 @@
               <br>from Skyscanner.
           </ul>
           <p class="lead" style="text-align: justify;">
-              <a href="#" data-toggle="collapse" data-target="#resume-content" style="margin-left: 5px;">Click here to close up</a>
+              <a href="#" data-toggle="collapse" data-target="#resume-content">Click here to close up</a>
           </p>
         </div>
       </div>
 
-      <!-- Gallery block -->
-      <div id="gallery" class="info" style="display: block">
-        <h1 class="display-4">GALLERY</h1>
-        <p class="lead" style="text-align: justify;">To be added</p>
+      <!-- Blog block -->
+      <div id="experiences" class="info" style="display: block">
+        <h1 class="display-4">EXPERIENCES</h1>
+        <p class="lead" style="text-align: justify;">
+          <ul style="list-style-type:none; font-size:21px;">
+          <li><a href="/archive/article/14">>> Trip to Yellowstone, USA (Winter)</a></li>
+          <li><a href="/archive/article/14">>> Exchange Semester in Waterloo, Canada</a></li>          
+          <li><a href="/archive/article/14">>> Trip to Yellowstone, USA (Summer)</a></li>
+          <li><a href="/archive/article/14">>> Trip to Bali, Indonesia</a></li>
+          </ul>
+          <a href="/archive">Read more.</a>
+        </p>
       </div>
 
-      <!-- Blog block -->
-      <div id="blog" class="info" style="display: block">
-        <h1 class="display-4">BLOG</h1>
-        <p class="lead" style="text-align: justify;">
-          <a href="article">Click to read the sample article.</a>
-        </p>
+      <!-- Bonus -->
+      <div id="bonus" class="info" style="display: block">
+        <h1 class="display-4">BONUS</h1>
+        <p>Thank you for scrolling down here...</p>
+        <p><a href="/archive/article/15" style="font-size:21px">>> Facts about this website...</a></p>
       </div>
 
       <!-- Contact block -->
@@ -146,7 +168,7 @@
             If you would like to contact me, you can send me an Email through <a href="mailto:lyming90@gmail.com">lyming90@gmail.com</a>.
         </p>
         <p class="lead" style="text-align: justify;">
-            Alternatively, you can find me via <a href="linkedin">LinkedIn</a> and <a href="https://facebook.com/mingyuliu1916/">Facebook</a>.
+            Alternatively, you can find me via <a href="https:/linkedin.com/in/mingyuliu16">LinkedIn</a> and <a href="https://facebook.com/mingyuliu1916/">Facebook</a>.
         </p>
       </div>
 
@@ -180,14 +202,15 @@
     </div>
 
 
-    <p class="copyright text-center text-black">&copy; 2018 Mingyu Liu | All rights reserved.</p>
+    <!-- Footer -->
+    {% include 'includes/_copyright.html' %}
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <!-- Load my JavaScript -->
-    <script src="script/myScript.js"></script>
+    <!-- <script src="{{ url_for('static', filename='script/myScript.js') }}"></script> -->
 </body>
 {% endblock %}

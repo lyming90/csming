@@ -1,0 +1,37 @@
+{% extends 'layout.html' %}
+{% block title %}
+    <title>Archive &middot; Ming &middot; 刘明宇 &middot; Liu Mingyu</title>
+{% endblock %}
+{% block css %}
+    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='style/bw.css') }}">
+{% endblock %}
+
+{% block body %}
+<body>
+    <nav class="nav mb-4">
+        <a class="nav-link navbar-brand icon-M" href="/"><img style="width: 50px; height: 50px;" src="{{ url_for('static', filename='img/icon/M.svg')}}"></a>
+        <a class="nav-link" href="#">Archive</a>
+        <a class="nav-link" href="#">Gallery</a>
+        <a class="nav-link" href="/archive/new_article">New Article</a>        
+        <a class="nav-link" id="go-profile" href="../">Go to Profile</a>
+    </nav>
+    <!-- <a href="/new_article">New article</a> -->
+
+    <!-- article list -->
+    <h1 style="margin-left: 1rem">Archive</h1>
+    <ul class="list-group">
+      {% for article in articles | reverse %}
+        <li class="list-group-item article-snapshot">{{article['create_date']}} >> <a href="archive/article/{{article['id']}}">{{article['title']}}</a></li>
+      {% endfor %}
+    </ul>
+
+
+
+
+
+
+
+    <!-- Footer -->
+    {% include 'includes/_copyright.html' %}
+</body>
+{% endblock %}

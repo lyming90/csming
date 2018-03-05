@@ -1,0 +1,52 @@
+body {
+    margin-top: 3rem;
+    margin-left: 10rem;
+    margin-right: 10rem;
+    margin-bottom: 3rem;
+    /* width: 100%;
+    min-width: 960px; */
+    /* font-family: "Lato", Verdana, Helvetica, Arial, sans-serif; */
+    font-family: Verdana, Helvetica, Arial, sans-serif;
+    font-weight: 300;
+    font-size: 16px;
+}
+
+strong {
+    font-weight: bold !important;
+}
+
+.ck-editor__editable {
+    min-height: 400px;
+}
+
+.nav {
+    /* position: absolute; */
+    min-width: 720px;
+    font-size: 25px;
+    font-variant: small-caps;
+}
+
+.nav-link {
+    color: black;
+}
+
+.nav-link:hover {
+    text-decoration: underline;
+    color: black;
+}
+
+.icon-M {
+    margin-right: 40px;
+    /* margin-bottom: 25px; */
+    width: 25px;
+    height: 25px;
+}
+
+#go-profile {
+    margin-left: auto;
+    border: 1px solid;
+}
+
+.article-snapshot {
+    border: none;
+}

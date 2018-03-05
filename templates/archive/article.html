@@ -1,0 +1,80 @@
+{% extends 'layout.html' %}
+{% block title %}
+    <title>{{article.title}} &middot; Ming &middot; 刘明宇 &middot; Liu Mingyu</title>
+{% endblock %}
+{% block css %}
+    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='style/bw.css') }}">
+    <style>
+        img {
+            width: 100%;
+            margin-bottom: 1rem;
+        }
+    
+        .photo-container {
+            display: none;
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+    </style>
+
+{% endblock %}
+
+{% block body %}
+<body>
+    <h1>{{article.title}}</h1>
+    <small>Posted by <strong>{{article.author}}</strong> on {{article.create_date}}
+        <br>
+        Last updated on {{article.last_update}}</small>
+    <hr>
+    {{article.body | safe}}
+
+
+    <p style="text-align: center; font-weight: bold; margin:auto; width: 50%;">
+            <a href="#" id="loadMore">&gt&gt Load More &lt&lt</a>
+    </p>
+    <p class="totop" style="text-align: center; font-weight: bold; margin:auto; width: 50%;"> 
+            <a href="#top">Back to top</a> 
+    </p>
+
+
+
+    <!-- Footer -->
+    {% include 'includes/_copyright.html' %}
+
+
+    <!-- JS for Load more -->
+    <script> 
+        $(function () {
+            $("div").slice(0, 2).show();
+            $("#loadMore").on('click', function (e) {
+                e.preventDefault();
+                if ($("div:hidden").length == 0) {  // no more hidden
+                    // $("#load").fadeOut('slow');
+                    $("#loadMore").css('display', 'none');
+                }
+                else {
+                    $("div:hidden").slice(0, 2).slideDown();
+                    $('html,body').animate({
+                        scrollTop: $(this).offset().top
+                    }, 1500);
+                }
+            });
+        });
+        
+        $('a[href=#top]').click(function () {
+            $('body,html').animate({
+                scrollTop: 0
+            }, 600);
+            return false;
+        });
+        
+        $(window).scroll(function () {
+            if ($(this).scrollTop() > 50) {
+                $('.totop a').fadeIn();
+            } else {
+                $('.totop a').fadeOut();
+            }
+        });
+    </script>
+</body>
+{% endblock %}

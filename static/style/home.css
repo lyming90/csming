@@ -1,33 +1,44 @@
 .main {
-    margin: 0 auto;  /* set center */
+    /* margin: 0 auto;  set center */
     margin-bottom: 10px;
     width: 100%;
     min-width: 960px;
-    font-family: "Lato", Verdana, Helvetica, Arial, sans-serif;
+    font-family: "Montserrat", "Lato", Verdana, Helvetica, Arial, sans-serif;
     font-weight: 300;
     font-size: 16px;
 
-    display: grid;
+    /* display: grid; */
 }
 
-.intro {
+.intro {  /* the transparent stuff that holds your head */
     /* position: absolute; */
-    /* right: 0px; */
-    float: right;
-    margin-right: 20px;
+    /* float: right; */
+    /* margin-right: 20px; */
+    /* margin: 0 auto; */
+    /* align-self: center; */
+    /* position: center; */
     width: 320px;
     height: 401px;
-    background-color: rgba(255, 255, 255, 0.75);
+    background-color: #ffffff9c;
+}
+
+.cover_text {
+    font-family: "Montserrat";
+    font-size: 42px;
+    font-weight: bold;
+    text-align: center;
+    color: white;    
+    margin: auto;
 }
 
 .small-line {
-    font-size: 14px;
-    margin-top: 0px;
+    /* font-size: 14px; */
+    /* margin-top: 0px; */
 }
 
 .nav {
     position: absolute;
-    min-width: 1024px;
+    min-width: 720px;
     font-size: 25px;
     font-variant: small-caps;
 }
@@ -42,20 +53,26 @@
 }
 
 .profile-container {
+    display: grid;
+    grid-template-columns: auto 320px;
     min-width: 720px;
     height: 401px;
+    background: 
+        linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.0)),
+        url('/static/img/LA_SD.jpg');
     background-position: center;
     background-size: cover;
-    margin-bottom: 20px;
+    /* margin-bottom: 20px; */
+    /* font-weight: bold; */
     font-variant: small-caps
 }
 
-.profile {
+.profile {  /* your big head */
     /* dimension of profile picture */
     width: 175px;
     height: 175px;
     margin-top: 25px;
-    margin-bottom: 15px;
+    margin-bottom: 30px;
 }
 
 .row {
@@ -63,7 +80,7 @@
 }
 
 .social-icons {
-    margin-top: -15px;
+    /* margin-top: -15px; */
 }
 
 .icon {
@@ -72,11 +89,11 @@
 }
 
 .info:nth-child(even) {
-    background-color: #e9ecef;
+    background-color: #e9ecefcf;
     width: 100%;
     min-width: 720px;
     margin-top: 0px;
-    margin-bottom: 20px;
+    /* margin-bottom: 20px; */
     padding-left: 75px;
     padding-right: 75px;
     padding-top: 15px;
@@ -84,28 +101,29 @@
 }
 
 .info:nth-child(odd) {
-    background-color: #0078be46;
-    color: #000000;
+    background-color: #212529;
+    color: #f8f9fa;
     width: 100%;
     min-width: 720px;
     margin-top: 0px;
-    margin-bottom: 20px;
+    /* margin-bottom: 20px; */
     padding-left: 75px;
     padding-right: 75px;
     padding-top: 15px;
     padding-bottom: 15px;
 }
 
-.carousel {
+/* .carousel {
     margin-left: 20px;
     margin-right: 20px;
-}
+} */
 
 .copyright {
     margin-top: 20px;
 }
 
-.h1 {
+.display-4 {
+    font-family: "Montserrat";
     font-weight: bold;
 }
 
@@ -113,10 +131,29 @@
     display: grid;
 }
 
-/* .block_wrapper:nth-child(even) {
-    background-color: #000000;
+.info:nth-child(even) a {
+    color: black;
+    border-bottom: 1px dotted black;
 }
 
-.block_wrapper:nth-child(odd) {
-    background-color: #d8144f;
-} */
+.info:nth-child(even) a:hover {
+    color: black;
+    border-bottom: 1px dotted black;
+    text-decoration: none;
+}
+
+.info:nth-child(odd) a {
+    color: white;
+    border-bottom: 1px dotted white;
+}
+
+.info:nth-child(odd) a:hover {
+    color: white;
+    border-bottom: 1px dotted white;
+    text-decoration: none;
+}
+
+strong {
+    font-weight: bold !important;
+    font-size: 21px !important;
+}
