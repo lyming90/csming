@@ -11,7 +11,6 @@ app = fl.Flask(__name__)
 # Load config from JSON (config.json)
 with open("config.json", "r") as f:
     config_data = json.load(f)
-    print(config_data)
 
 # MySQL config
 app.config['MYSQL_DATABASE_HOST']       = config_data['mysql']['MYSQL_DATABASE_HOST']  # database_host

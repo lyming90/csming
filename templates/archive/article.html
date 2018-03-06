@@ -31,10 +31,10 @@
 
 
     <p style="text-align: center; font-weight: bold; margin:auto; width: 50%;">
-            <a href="#" id="loadMore">&gt&gt Load More &lt&lt</a>
+            <a href="#" id="loadMore" style="display: none">&gt&gt Load More &lt&lt</a>
     </p>
-    <p class="totop" style="text-align: center; font-weight: bold; margin:auto; width: 50%;"> 
-            <a href="#top">Back to top</a> 
+    <p style="text-align: center; font-weight: bold; margin:auto; width: 50%;"> 
+            <a href="#top" id="totop">Back to top</a> 
     </p>
 
 
@@ -45,24 +45,33 @@
 
     <!-- JS for Load more -->
     <script> 
-        $(function () {
+        $(window).on('load', function() {
             $("div").slice(0, 2).show();
+           if ($("div:hidden").length > 0) {
+               $("#loadMore").css('display', 'inline')
+           }
+
+           console.log('Did something')
+        })
+
+        $(function () {
             $("#loadMore").on('click', function (e) {
                 e.preventDefault();
+
+                $("div:hidden").slice(0, 2).slideDown();
+                $('html,body').animate({
+                    scrollTop: $(this).offset().top
+                }, 1500);
+
                 if ($("div:hidden").length == 0) {  // no more hidden
                     // $("#load").fadeOut('slow');
                     $("#loadMore").css('display', 'none');
                 }
-                else {
-                    $("div:hidden").slice(0, 2).slideDown();
-                    $('html,body').animate({
-                        scrollTop: $(this).offset().top
-                    }, 1500);
-                }
+
             });
         });
         
-        $('a[href=#top]').click(function () {
+        $('#totop').click(function () {
             $('body,html').animate({
                 scrollTop: 0
             }, 600);
@@ -71,9 +80,9 @@
         
         $(window).scroll(function () {
             if ($(this).scrollTop() > 50) {
-                $('.totop a').fadeIn();
+                $('#totop').fadeIn();
             } else {
-                $('.totop a').fadeOut();
+                $('#totop').fadeOut();
             }
         });
     </script>
