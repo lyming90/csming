@@ -1,4 +1,4 @@
-# CSMING - Open Source Personal Website
+# CSMING - Open Source Personal Website Project
 
 The initial version was built during the first month of my exchange term to University of Waterloo. This project heavily relies on Python Flask framework.
 
