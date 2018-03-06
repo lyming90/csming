@@ -1,6 +1,6 @@
 {% extends 'layout.html' %}
 {% block title %}
-    <title>New Article &middot; Ming &middot; 刘明宇 &middot; Liu Mingyu</title>
+    <title>Edit Article &middot; Ming &middot; 刘明宇 &middot; Liu Mingyu</title>
 {% endblock %}
 {% block css %}
     <link rel=stylesheet type=text/css href="{{ url_for('static', filename='style/bw.css') }}">
@@ -8,7 +8,7 @@
 
 {% block body %}
 <body>
-    <h1>New article</h1>
+    <h1>Edit article</h1>
     {% from "includes/_formhelpers.html" import render_field %}
     <form method="POST" action="">
         <div class="form-group">

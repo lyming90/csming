@@ -1,7 +1,6 @@
 {% extends 'layout.html' %}
-{% block title %}
-    <title>Archive &middot; Ming &middot; 刘明宇 &middot; Liu Mingyu</title>
-{% endblock %}
+
+
 {% block css %}
     <link rel=stylesheet type=text/css href="{{ url_for('static', filename='style/bw.css') }}">
 {% endblock %}
@@ -9,10 +8,10 @@
 {% block body %}
 <body>
     <nav class="nav mb-4">
-        <a class="nav-link navbar-brand icon-M" href="/"><img style="width: 50px; height: 50px;" src="{{ url_for('static', filename='img/icon/M.svg')}}"></a>
+        <a class="nav-link navbar-brand icon-M" href="/archive"><img style="width: 50px; height: 50px;" src="{{ url_for('static', filename='img/icon/M.svg')}}"></a>
         <a class="nav-link" href="#">Archive</a>
-        <a class="nav-link" href="#">Gallery</a>
-        <a class="nav-link" href="/archive/new_article">New Article</a>        
+        <!-- <a class="nav-link" href="#">Gallery</a> -->
+        <a class="nav-link" href="/archive/panel">Panel</a>        
         <a class="nav-link" id="go-profile" href="../">Go to Profile</a>
     </nav>
     <!-- <a href="/new_article">New article</a> -->

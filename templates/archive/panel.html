@@ -1,4 +1,42 @@
-{% extends 'blog_layout.html' %}
+{% extends 'layout.html' %}
+{% block title %}
+    <title>Panel &middot; Ming &middot; 刘明宇 &middot; Liu Mingyu</title>
+{% endblock %}
 {% block css %}
     <link rel=stylesheet type=text/css href="{{ url_for('static', filename='style/bw.css') }}">
+{% endblock %}
+
+{% block body %}
+    <nav class="nav mb-4">
+        <a class="nav-link navbar-brand icon-M" href="/archive"><img style="width: 50px; height: 50px;" src="{{ url_for('static', filename='img/icon/M.svg')}}"></a>
+        <a class="nav-link" href="/archive">Archive</a>
+        <!-- <a class="nav-link" href="#">Gallery</a> -->
+        <a class="nav-link" href="/archive/panel/new_article">New Article</a>   
+        <a class="nav-link" href="/archive/logout">Log out</a>                     
+        <a class="nav-link" id="go-profile" href="../">Go to Profile</a>
+    </nav>
+
+    <h1>Panel</h1>
+
+    <h2 style="margin-top: 5px">Static</h1>
+    <hr>
+    <ul class="list-group">
+            {% for static_item in static | reverse %}
+                <li class="list-group-item article-snapshot">{{static_item['last_update']}} >> <a href="panel/{{static_item['static_type']}}">{{static_item['static_type']}}</a></li>
+            {% endfor %}
+        </ul>
+
+    <h2>Article</h2>
+    <hr>
+    <ul class="list-group">
+        {% for article in articles | reverse %}
+            <li class="list-group-item article-snapshot">{{article['create_date']}} >> <a href="panel/article/{{article['id']}}">{{article['title']}}</a></li>
+        {% endfor %}
+    </ul>
+
+
+
+
+    <!-- Footer -->
+    {% include 'includes/_copyright.html' %}
 {% endblock %}
