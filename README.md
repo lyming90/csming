@@ -46,6 +46,7 @@ Passlib.hash
 ## Deployment
 
 I recommend using Nginx + Gunicorn for deployment.
+
 The demo site is hosted at DigitalOcean. [Sign up here](https://m.do.co/c/467683057277) to get $10 credits.
 
 ## Update Notes
@@ -55,6 +56,8 @@ Refer to [Update Notes](https://www.csming.com/archive/update-notes)
 ##  Contributing
 
 You are welcome to make contribution. 
+
+Refer to **TODOs** at [Facts about this website...](https://www.csming.com/archive/facts-about-this-website)
 
 
 ##  Authors
