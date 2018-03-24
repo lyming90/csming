@@ -9,7 +9,6 @@
     <script src="{{ url_for('static', filename='script/myScript.js') }}"></script>
 {% endblock %}
 {% block body %}
-<body class="main">
     <nav class="nav mb-4"> <!--sticky-top doesn't seem good-->
       <a class="scroll nav-link active" href="#about">About</a>
       <a class="scroll nav-link" href="#resume" href="#">Resume</a>
@@ -23,7 +22,7 @@
           Resources
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" href="/netflix">Netflix Subscription</a>
+          <a class="dropdown-item" href="https://github.com/lyming90/csming">Source Code</a>
         </div>
     </nav>
 
@@ -36,15 +35,21 @@
         <div class="intro text-center">
           <div class="intro_content">
               <div class="col-md-auto">
-                  <img class="profile" src="{{ url_for('static', filename='img/pf-default.png')}}">
+                  <img class="profile" src="{{ url_for('static', filename='img/pf.png')}}">
               </div>
               <div class="col-md-auto">
-                  <p class="small-line">
+                  <p>
                   <strong>刘明宇 Ming</strong>
-                  <br>Undergraduate<br>Computer Science<br>Nanyang Technological University</p>
-                  <p class="social-icons">
-                      <a href="https://github.com/lyming90" target="_blank"><img class="icon" src="{{ url_for('static', filename='img/icon/github.png') }}"></a>
-                      <a href="https://facebook.com/mingyuliu1916/" target="_blank"><img class="icon" src="{{ url_for('static', filename='img/icon/facebook.png') }}"></a>
+                  <br>
+                  <span style="font-size: 90%">College Sophomore</span>
+                  <br>
+                  <span style="font-size: 90%">Computer Science</span>
+                  <br>
+                  <span style="font-size: 90%">Nanyang Technological University</span>
+                </p>
+                  <p>
+                      <a href="https://github.com/lyming90" target="_blank" style="margin-right: 1rem"><img class="icon" src="{{ url_for('static', filename='img/icon/github.png') }}"></a>
+                      <a href="https://facebook.com/mingyuliu1916/" target="_blank" style="margin-right: 1rem"><img class="icon" src="{{ url_for('static', filename='img/icon/facebook.png') }}"></a>
                       <a href="https://linkedin.com/in/mingyuliu16/" target="_blank"><img class="icon" src="{{ url_for('static', filename='img/icon/linkedin.png') }}"></a>
                   </p>
               </div>
@@ -65,28 +70,17 @@
       <!-- Resume block -->
       <div id="resume" class="info" style="display: block">
         <h1 class="display-4">RESUME</h1>
-        <p class="lead" style="text-align: justify;">A PDF version of my resume can be downloaded <a href="{{ url_for('static', filename='resume/resume2017.pdf')}}" target="_blank">here</a>.</p>
-        <p class="lead" style="text-align: justify;">You can also view an online version here.</p>
-        <p><a href="#" data-toggle="collapse" data-target="#resume-content">Click here to expand</a></p>
-        <div id="resume-content" class="collapse">
 
           {{static_dic['Resume'] | safe}}
 
-          <p class="lead" style="text-align: justify;">
-              <a href="#" data-toggle="collapse" data-target="#resume-content">Click here to close up</a>
-          </p>
-        </div>
       </div>
 
       <!-- Blog block -->
       <div id="experiences" class="info" style="display: block">
         <h1 class="display-4">EXPERIENCES</h1>
-        <p class="lead" style="text-align: justify;">
 
           {{static_dic['Experiences'] | safe}}
 
-          <a href="/archive">Read more.</a>
-        </p>
       </div>
 
       <!-- Bonus -->
@@ -107,14 +101,7 @@
 
     </div>
 
-
-    <!-- Footer -->
-    {% include 'includes/_copyright.html' %}
-
     <!-- Bootstrap JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    <!-- Load my JavaScript -->
-    <!-- <script src="{{ url_for('static', filename='script/myScript.js') }}"></script> -->
-</body>
 {% endblock %}

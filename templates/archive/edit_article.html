@@ -7,8 +7,7 @@
 {% endblock %}
 
 {% block body %}
-<body>
-    <h1>Edit article</h1>
+    <h1>{{ heading }}</h1>
     {% from "includes/_formhelpers.html" import render_field %}
     <form method="POST" action="">
         <div class="form-group">
@@ -18,19 +17,47 @@
             {{ render_field(form.title, class_="form-control") }}
         </div>
         <div class="form-group">
+                {{ render_field(form.alias, class_="form-control") }}
+            </div>
+        <div class="form-group">
             {{ render_field(form.body, class_="form-control", id="editor") }}
         </div>
 
-    <p><input class="btn btn-primary" type="submit" value="Submit">
+    <input class="btn btn-primary" type="submit" value="Submit" style="display: inline;">
+    <a href="#" class="btn btn-secondary" onclick="openMarkdownEditor()">Markdown</a>
+    <div style="display: inline">{{ form.hidden() }} <strong>Hidden from the public</strong></div>
     </form>
 
     <!-- JavaScript for Editor -->
-
     <script src="//cdn.ckeditor.com/4.6.2/standard/ckeditor.js"></script>
+
+    <!-- stackedit.js -->
+    <script src="https://unpkg.com/stackedit-js@1.0.2/docs/lib/stackedit.min.js"></script>
+
     <script type="text/javascript">
-      CKEDITOR.replace('editor', {
-        allowedContent:true,  // preserve class, etc
-      })
+        // Un-comment this to enable CKEditor. But I find it annoying!
+        // window.addEventListener('load', function() {
+        //     CKEDITOR.replace('editor', {
+        //         allowedContent:true,  // preserve class, etc
+        //     })
+        // })
+        $('#editor').css('height', '50rem');
+        
+        function openMarkdownEditor() {
+            const el = $('#editor');
+            const stackedit = new Stackedit();
+            // Open the iframe
+            stackedit.openFile({
+                name: document.querySelector('#title').value, // with a filename
+                content: {
+                text: el.val() // and the Markdown content.
+                },
+            });
+
+            // In silent mode, the `fileChange` event is emitted only once.
+            stackedit.on('fileChange', (file) => {
+                el.val(file.content.html);
+            });
+        }
     </script>
-</body>
 {% endblock %}

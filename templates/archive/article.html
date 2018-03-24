@@ -3,16 +3,11 @@
     <title>{{article.title}} &middot; Ming &middot; 刘明宇 &middot; Liu Mingyu</title>
 {% endblock %}
 {% block css %}
-    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='style/bw.css') }}">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/2.10.0/github-markdown.css">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style/bw.css') }}">
     <style>
         img {
             width: 100%;
-            margin-bottom: 1rem;
-        }
-    
-        div {
-            display: none;
-            text-align: center;
             margin-bottom: 1rem;
         }
     </style>
@@ -20,61 +15,84 @@
 {% endblock %}
 
 {% block body %}
-<body>
-    <h1 style="margin-bottom: -0.5rem"><a href="/archive" style="font-size: 1.25rem"><img style="width: 50px; height: 50px;" src="{{ url_for('static', filename='img/icon/M.svg')}}"></a>
-        {{article.title}}</h1>
+    <a href="/archive" style="float: right; border-bottom: none;"><img style="width: 50px; height: 50px;" src="{{ url_for('static', filename='img/icon/M.svg')}}"></a>
+    <h1>{{article.title}}</h1>
     <small>Posted by <strong>{{article.author}}</strong> on {{article.create_date}}
         <br>
         Last updated on {{article.last_update}}</small>
     <hr>
-    {{article.body | safe}}
+
+    <div id="article_body" style="text-align: left; ";>
+        <article class="markdown-body">{{article.body | safe}}</article>
+    </div>
 
 
-    <p style="text-align: center; font-weight: bold; margin:auto; width: 50%;">
-            <a href="#" id="loadMore" style="display: none">&gt&gt Load More &lt&lt</a>
+    <p style="text-align: center;font-weight: bold;margin: auto;margin-bottom: 30px;width: 50%;">
+        <a href="#" id="loadMore" style="display: none; border: 2px solid;padding: 10px 150px 10px 150px;">Load More</a>
     </p>
     <p style="text-align: center; font-weight: bold; margin:auto; width: 50%;"> 
-            <a href="#top" id="totop">Back to top</a> 
+        <a href="#top" id="totop" style="display: none; border: 2px solid; padding: 10px 146px 10px 146px;">Back to top</a> 
     </p>
 
 
-
-    <!-- Footer -->
-    {% include 'includes/_copyright.html' %}
-
+    <!-- Lazy load -->
+    <script src="{{ url_for('static', filename='script/blazy.js') }}"></script>
 
     <!-- JS for Load more -->
     <script> 
-        $(window).on('load', function() {
-            $("div").slice(0, 2).show();
-           if ($("div:hidden").length > 0) {
-               $("#loadMore").css('display', 'inline')
-           }
+        $(document).ready(function() {
+            // load more
+            $("load-more").slice(0, 2).show();
+            if ($("load-more:hidden").length > 0) {
+                $("#loadMore").css('display', 'inline')
+            }
 
-           console.log('Did something')
+            // Back to top
+            if ($(this).scrollTop() > 50) {
+                    $('#totop').fadeIn();
+            } else {
+                    $('#totop').fadeOut();
+            }
+
+            // change attribute for images
+            $('img').each(function() {
+                var source = $(this).attr('src');
+                console.log(source);
+                $(this).attr('data-src', source)                
+                $(this).attr('src', 'data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==')
+            });
+            
+            // initialize lazy load
+                var bLazy = new Blazy({
+                selector: 'img' // all images
+            });
         })
 
         $(function () {
             $("#loadMore").on('click', function (e) {
                 e.preventDefault();
 
-                $("div:hidden").slice(0, 2).slideDown();
+                $("load-more:hidden").slice(0, 2).slideDown();
                 $('html,body').animate({
                     scrollTop: $(this).offset().top
-                }, 1500);
+                }, 3000);
 
-                if ($("div:hidden").length == 0) {  // no more hidden
+                if ($("load-more:hidden").length == 0) {  // no more hidden
                     // $("#load").fadeOut('slow');
                     $("#loadMore").css('display', 'none');
                 }
-
+                
+                // initialize lazy load
+                var bLazy = new Blazy({
+                selector: 'img' // all images
+                });
             });
         });
         
         $('#totop').click(function () {
             $('body,html').animate({
                 scrollTop: 0
-            }, 600);
+            }, 1500);
             return false;
         });
         
@@ -86,5 +104,4 @@
             }
         });
     </script>
-</body>
 {% endblock %}

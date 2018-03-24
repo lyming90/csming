@@ -1,29 +1,26 @@
-.main {
-    /* margin: 0 auto;  set center */
+body {
     margin-bottom: 10px;
     width: 100%;
-    min-width: 960px;
-    font-family: "Montserrat", "Lato", Verdana, Helvetica, Arial, sans-serif;
+    font-family: "Montserrat", sans-serif, Verdana, Helvetica, Arial;
     font-weight: 300;
     font-size: 16px;
-
-    /* display: grid; */
+    background-color: #f8f9fa;
+    color: #212529;
 }
 
 .intro {  /* the transparent stuff that holds your head */
-    /* position: absolute; */
-    /* float: right; */
-    /* margin-right: 20px; */
-    /* margin: 0 auto; */
-    /* align-self: center; */
-    /* position: center; */
-    width: 320px;
-    height: 401px;
-    background-color: #ffffff9c;
+    border-style: dashed none dashed dashed;
+    border-width: 0.1rem;
+    border-color: #212529;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    /* width: 300px; */
+    /* height: 401px; */
+    background-color: #f8f9faa1;
+    font-variant: none;
 }
 
 .cover_text {
-    font-family: "Montserrat";
     font-size: 42px;
     font-weight: bold;
     text-align: center;
@@ -31,14 +28,8 @@
     margin: auto;
 }
 
-.small-line {
-    /* font-size: 14px; */
-    /* margin-top: 0px; */
-}
-
 .nav {
     position: absolute;
-    min-width: 720px;
     font-size: 25px;
     font-variant: small-caps;
 }
@@ -54,33 +45,26 @@
 
 .profile-container {
     display: grid;
-    grid-template-columns: auto 320px;
-    min-width: 720px;
-    height: 401px;
+    grid-template-columns: auto 18rem;
+    /* height: 401px; */
     background: 
         linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.0)),
         url('/static/img/LA_SD.jpg');
     background-position: center;
     background-size: cover;
-    /* margin-bottom: 20px; */
-    /* font-weight: bold; */
     font-variant: small-caps
 }
 
 .profile {  /* your big head */
     /* dimension of profile picture */
-    width: 175px;
-    height: 175px;
-    margin-top: 25px;
-    margin-bottom: 30px;
+    width: 8rem;
+    height: 8rem;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
 }
 
 .row {
     margin: 0 auto;
-}
-
-.social-icons {
-    /* margin-top: -15px; */
 }
 
 .icon {
@@ -89,34 +73,28 @@
 }
 
 .info:nth-child(even) {
-    background-color: #e9ecefcf;
+    background-color: #f8f9fa;
+    color: #212529;
     width: 100%;
-    min-width: 720px;
+    /* min-width: 720px; */
     margin-top: 0px;
-    /* margin-bottom: 20px; */
-    padding-left: 75px;
-    padding-right: 75px;
-    padding-top: 15px;
-    padding-bottom: 15px;
+    padding-left: 6rem;
+    padding-right: 6rem;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
 }
 
 .info:nth-child(odd) {
     background-color: #212529;
     color: #f8f9fa;
     width: 100%;
-    min-width: 720px;
+    /* min-width: 720px; */
     margin-top: 0px;
-    /* margin-bottom: 20px; */
-    padding-left: 75px;
-    padding-right: 75px;
-    padding-top: 15px;
-    padding-bottom: 15px;
+    padding-left: 6rem;
+    padding-right: 6rem;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
 }
-
-/* .carousel {
-    margin-left: 20px;
-    margin-right: 20px;
-} */
 
 .copyright {
     margin-top: 20px;
@@ -132,24 +110,24 @@
 }
 
 .info:nth-child(even) a {
-    color: black;
-    border-bottom: 1px dotted black;
+    color: #212529;
+    border-bottom: 1px dotted #212529;
 }
 
 .info:nth-child(even) a:hover {
-    color: black;
-    border-bottom: 1px dotted black;
+    color: #212529;
+    border-bottom: 1px dotted #212529;
     text-decoration: none;
 }
 
 .info:nth-child(odd) a {
-    color: white;
-    border-bottom: 1px dotted white;
+    color: #f8f9fa;
+    border-bottom: 1px dotted #f8f9fa;
 }
 
 .info:nth-child(odd) a:hover {
-    color: white;
-    border-bottom: 1px dotted white;
+    color: #f8f9fa;
+    border-bottom: 1px dotted #f8f9fa;
     text-decoration: none;
 }
 

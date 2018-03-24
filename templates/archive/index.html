@@ -1,14 +1,15 @@
 {% extends 'layout.html' %}
-
+{% block title %}
+<title>Archive &middot; Ming &middot; 刘明宇 &middot; Liu Mingyu</title>
+{% endblock %}
 
 {% block css %}
     <link rel=stylesheet type=text/css href="{{ url_for('static', filename='style/bw.css') }}">
 {% endblock %}
 
 {% block body %}
-<body>
     <nav class="nav mb-4">
-        <a class="nav-link navbar-brand icon-M" href="/archive"><img style="width: 50px; height: 50px;" src="{{ url_for('static', filename='img/icon/M.svg')}}"></a>
+        <a class="nav-link navbar-brand icon-M" href="/archive"><img style="width: 3rem; height: 3rem;" src="{{ url_for('static', filename='img/icon/M.svg')}}"></a>
         <a class="nav-link" href="#">Archive</a>
         <!-- <a class="nav-link" href="#">Gallery</a> -->
         <a class="nav-link" href="/archive/panel">Panel</a>        
@@ -20,7 +21,19 @@
     <h1 style="margin-left: 1rem">Archive</h1>
     <ul class="list-group">
       {% for article in articles | reverse %}
-        <li class="list-group-item article-snapshot">{{article['create_date']}} >> <a href="archive/article/{{article['id']}}">{{article['title']}}</a></li>
+        <li class="list-group-item article-snapshot" style="padding: 0.75rem 0rem 0.75rem 1rem;">
+            <div class="card" style="border: none">
+                <div class="card-header" style="background-color: rgb(24,28,98); color:white">
+                    {{article['create_date']}}
+                </div>
+                <div class="card-body" style="background-color: #f8f9fa">
+                    <a href="archive/{{article['alias']}}" style="color: black;"><h5 class="card-title"><strong>{{article['title']}}</strong></h5></a>
+                    <!-- <p class="card-text">{{article['body'][0:250] | striptags}}</p> -->
+                    <p class="card-text">{{article['preview'] | safe}}</p>         
+                    <a href="archive/{{article['alias']}}" class="btn btn-primary" style="background-color: rgb(215,20,64); border-color: rgb(215,20,64)">Read</a>
+                </div>
+            </div>
+        </li>
       {% endfor %}
     </ul>
 
@@ -30,7 +43,4 @@
 
 
 
-    <!-- Footer -->
-    {% include 'includes/_copyright.html' %}
-</body>
 {% endblock %}

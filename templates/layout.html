@@ -6,7 +6,7 @@
     <!-- title -->{% block title %}{% endblock %}
 
     <!-- icon -->
-    <link rel="icon" href="{{ url_for('static', filename='img/icon/M.png') }}">
+    <link rel="icon" href="{{ url_for('static', filename='img/icon/M_icon.png') }}">
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -25,13 +25,18 @@
         gtag('js', new Date());
         gtag('config', 'UA-113348736-1');
     </script>
-    
+
     <!-- jQuery -->
     <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
 
     <!-- Custom JavaScript -->{% block custom_js %}{% endblock %}
-    
+
 </head>
+<body>
 {% block body %}
 {% endblock %}
+
+<!-- Footer -->
+{% include 'includes/_copyright.html' %}
+</body>
 </html>

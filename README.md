@@ -1,96 +1,71 @@
-# CSMING - Open Source Personal Website Project
+#  CSMING
 
-The initial version was built during the first month of my exchange term to University of Waterloo. This project heavily relies on Python Flask framework.
+The initial version was designed during the first month of my exchange term to University of Waterloo. This project heavily relies on Python Flask framework.
 
-## Getting Started
+## Demo
+
+[Ming · 刘明宇 · Liu Mingyu](https://www.csming.com)
+
+##  Getting Started
 
 To run the project, you will need
 
 - Python 3 (refer to prerequisites for modules)
-- MySQL
 
+- MySQL (database schema is available in sql folder)
+  
 You will also need to add MySQL credentials into config.json file.
 
 After configuration, run
-
-```
-$ python3 app.py
 ```
 
-### Prerequisites
+$ python csming.py
+
+```
+
+  
+
+###  Prerequisites
 
 You need the following modules installed for Python 3
 
 ```
+
 Flask
+
 Flask-MySQL
+
+Flask-Mail
+
 WTForms
-Passlib
-```
 
-### Installing
-
-It is strongly recommended that you run the project in a [virtual environment](https://docs.python.org/3/library/venv.html).
+Passlib.hash
 
 ```
-Give the example
-```
 
-And repeat
-
-```
-until finished
-```
-
-End with an example of getting some data out of the system or using it for a little demo
-
-
-### Break down into end to end tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-### And coding style tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-<!-- 
 ## Deployment
 
-Add additional notes about how to deploy this on a live system -->
+I recommend using Nginx + Gunicorn for deployment.
+The demo site is hosted at DigitalOcean. [Sign up here](https://m.do.co/c/467683057277) to get $10 credits.
 
-<!-- ## Built With
+## Update Notes
 
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds -->
+Refer to [Update Notes](https://www.csming.com/archive/update-notes)
 
-## Contributing
-<!-- 
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us. -->
+##  Contributing
 
-<!-- ## Versioning
+You are welcome to make contribution. 
 
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags).  -->
 
-## Authors
+##  Authors
 
-* **刘明宇 Liu Mingyu** - *Initial work* - [lyming90](https://github.com/lyming90)
+*  **刘明宇 Liu Mingyu** \- *Initial work* \- \[lyming90\](https://github.com/lyming90)
 
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
+##  License
 
-## License
+This project is licensed under the MIT License - see the \[LICENSE.md\](LICENSE.md) file for details
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
 
-## Acknowledgments
+##  Acknowledgments
 
-* Hat tip to anyone who's code was used
-* Inspiration
-* etc
+Refer to **Credits and Inspirations** at [Facts about this website...](https://www.csming.com/archive/facts-about-this-website)

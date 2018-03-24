@@ -1,12 +1,9 @@
 body {
-    background-color: #e9ecefcf;    
+    background-color: #f8f9fa;    
     margin-top: 3rem;
-    margin-left: 10rem;
-    margin-right: 10rem;
+    margin-left: 5rem;
+    margin-right: 5rem;
     margin-bottom: 3rem;
-    /* width: 100%;
-    min-width: 960px; */
-    /* font-family: "Lato", Verdana, Helvetica, Arial, sans-serif; */
     font-family: Verdana, Helvetica, Arial, sans-serif;
     font-weight: 300;
     font-size: 16px;
@@ -22,8 +19,8 @@ strong {
 
 .nav {
     /* position: absolute; */
-    min-width: 720px;
-    font-size: 25px;
+    /* min-width: 720px; */
+    font-size: 1.5rem;
     font-variant: small-caps;
 }
 
@@ -37,42 +34,58 @@ strong {
 }
 
 .icon-M {
-    margin-right: 40px;
-    /* margin-bottom: 25px; */
-    width: 25px;
-    height: 25px;
+    margin-right: 2.5rem;
+    width: 1.5rem;
+    height: 1.5rem;
 }
 
 .list-group-item {
-    background-color: #fff0
+    background-color: #f8f9fa
 }
 
 #go-profile {
     margin-left: auto;
-    border: 1px solid;
+    border: 0.1rem solid;
 }
 
 .article-snapshot {
     border: none;
+    padding-right: 0px;
+    /* min-width: 720px; */
+}
+
+p > a {
+    border-bottom: dotted 0.05rem;
+    color: rgb(215,20,64);
+}
+
+p > a:hover {
+    /* border-bottom: dotted 1px; */
+    color: rgb(24,28,98);
+    text-decoration: none;
 }
 
 /* Editor specific */
 blockquote {
-    background: #f9f9f9;
-    border-left: 10px solid #ccc;
-    margin: 1.5em 10px;
-    padding: 0.5em 10px;
-    /* quotes: "\201C""\201D""\2018""\2019"; */
+    border-left: 0.5rem solid #ccc;
+    margin: 1.5em 0.8rem;
+    padding-left: 1.5rem;
 }
-blockquote:before {
+
+/* blockquote:before {
     color: #ccc;
     content: open-quote;
     font-size: 4em;
     line-height: 0.1em;
     margin-right: 0.25em;
     vertical-align: -0.4em;
-}
+} */
+
 blockquote p {
     display: inline;
 }
 /* End of editor specific */
+
+load-more {
+    display: none;
+}
