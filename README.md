@@ -62,11 +62,11 @@ Refer to **TODOs** at [Facts about this website...](https://www.csming.com/archi
 
 ##  Authors
 
-*  **刘明宇 Liu Mingyu** \- *Initial work* \- \[lyming90\](https://github.com/lyming90)
+*  **刘明宇 Liu Mingyu** \- *Initial work* \- [lyming90](https://github.com/lyming90)
 
 ##  License
 
-This project is licensed under the MIT License - see the \[LICENSE.md\](LICENSE.md) file for details
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
 
 
 ##  Acknowledgments
