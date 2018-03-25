@@ -41,6 +41,8 @@ WTForms
 
 Passlib.hash
 
+beautifulsoup4
+
 ```
 
 ## Deployment
