@@ -14,7 +14,7 @@ To run the project, you will need
 
 - MySQL (database schema is available in sql folder)
   
-You will also need to add MySQL credentials into config.json file.
+You will also need to add MySQL credentials and secret-key into config.json file.
 
 After configuration, run
 ```
