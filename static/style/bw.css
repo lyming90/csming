@@ -5,7 +5,7 @@ body {
     margin-right: 5rem;
     margin-bottom: 3rem;
     font-family: Verdana, Helvetica, Arial, sans-serif;
-    font-weight: 300;
+    font-weight: normal;
     font-size: 16px;
 }
 
@@ -54,15 +54,23 @@ strong {
     /* min-width: 720px; */
 }
 
-p > a {
+#article_body p > a {
     border-bottom: dotted 0.05rem;
     color: rgb(215,20,64);
 }
 
-p > a:hover {
+#article_body p > a:hover {
     /* border-bottom: dotted 1px; */
     color: rgb(24,28,98);
     text-decoration: none;
+}
+
+#article_body article p {
+    font-family: 'lato', Verdana, Helvetica, Arial, sans-serif;
+}
+
+#article_body pre {
+    background-color: #eaedef;
 }
 
 /* Editor specific */

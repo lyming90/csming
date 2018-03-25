@@ -1,8 +1,8 @@
 body {
     margin-bottom: 10px;
     width: 100%;
-    font-family: "Montserrat", sans-serif, Verdana, Helvetica, Arial;
-    font-weight: 300;
+    font-family: "Montserrat", Verdana, sans-serif, Helvetica, Arial;
+    font-weight: normal;
     font-size: 16px;
     background-color: #f8f9fa;
     color: #212529;
