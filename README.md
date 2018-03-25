@@ -57,7 +57,7 @@ Refer to [Update Notes](https://www.csming.com/archive/update-notes)
 
 ##  Contributing
 
-You are welcome to make contribution. 
+Please feel free to make contribution. 
 
 Refer to **TODOs** at [Facts about this website...](https://www.csming.com/archive/facts-about-this-website)
 
