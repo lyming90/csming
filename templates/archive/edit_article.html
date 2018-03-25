@@ -3,8 +3,7 @@
     <title>Edit Article &middot; Ming &middot; 刘明宇 &middot; Liu Mingyu</title>
 {% endblock %}
 {% block css %}
-    <link rel="stylesheet" href="{{ url_for('static', filename='style/bw.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='style/prism.css') }}">    
+    <link rel="stylesheet" href="{{ url_for('static', filename='style/bw.css') }}">  
 {% endblock %}
 
 {% block body %}
@@ -25,40 +24,44 @@
         </div>
 
     <input class="btn btn-primary" type="submit" value="Submit" style="display: inline;">
-    <a href="#" class="btn btn-secondary" onclick="openMarkdownEditor()">Markdown</a>
+    <a href="#" class="btn btn-secondary" onclick="openMarkdownEditor()">Edit as Markdown</a>
     <div style="display: inline">{{ form.hidden() }} <strong>Hidden from the public</strong></div>
     </form>
 
-    <!-- JavaScript for CodeFlask -->
-    <!-- <srcipt src="{{ url_for('static', filename='script/prism.js') }}"></srcipt>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/CodeFlask.js/0.1.1/codeflask.min.js"></script> -->
+    <!-- JavaScript for Ace -->
+    <!-- <script src="{{ url_for('static', filename='ace/src/ace.js') }}" type="text/javascript" charset="utf-8"></script> -->
 
     <!-- stackedit.js -->
     <script src="https://unpkg.com/stackedit-js@1.0.2/docs/lib/stackedit.min.js"></script>
 
+    <!-- turndown -->
+    <script src="https://unpkg.com/turndown/dist/turndown.js"></script>
+
     <script type="text/javascript">
-        $('#editor').css('height', '50rem');
-        
-        // var flask = new CodeFlask;
-        // var Prism = require('prismjs');
-        // flask.run('#editor', {
-        //     language: 'javascript'
-        // });
+        // Ace editor
+        // var editor = ace.edit("editor");
+        // editor.setTheme("ace/theme/twilight");
+        // editor.session.setMode("ace/mode/markdown");
+        // $('.ace_editor').css('height', '40rem');
+
+        $('#editor').css('height', '40rem');
+
+        // turndown
+        var turndownService = new TurndownService()
         
         function openMarkdownEditor() {
-            const el = $('#editor');
             const stackedit = new Stackedit();
             // Open the iframe
             stackedit.openFile({
                 name: document.querySelector('#title').value, // with a filename
                 content: {
-                text: el.val() // and the Markdown content.
+                text: turndownService.turndown($('#editor').val()) // and the Markdown content.
                 },
             });
 
             // In silent mode, the `fileChange` event is emitted only once.
             stackedit.on('fileChange', (file) => {
-                el.val(file.content.html);
+                $('#editor').val(file.content.html);
             });
         }
     </script>

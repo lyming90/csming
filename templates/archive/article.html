@@ -3,8 +3,9 @@
     <title>{{article.title}} &middot; Ming &middot; 刘明宇 &middot; Liu Mingyu</title>
 {% endblock %}
 {% block css %}
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/2.10.0/github-markdown.css">
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style/bw.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/2.10.0/github-markdown.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style/bw.css') }}">
     <style>
         img {
             width: 100%;
@@ -36,12 +37,17 @@
         <a href="#top" id="totop" style="display: none; border: 2px solid; padding: 10px 146px 10px 146px; color: rgb(215,20,64);">Back to top</a> 
     </p>
 
+    <!-- Code highlight -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
 
     <!-- Lazy load -->
     <script src="{{ url_for('static', filename='script/blazy.js') }}"></script>
 
     <!-- JS for Load more -->
     <script> 
+        // code highlight
+        hljs.initHighlightingOnLoad();
+        
         $(document).ready(function() {
             // load more
             $("load-more").slice(0, 2).show();
@@ -59,7 +65,6 @@
             // change attribute for images
             $('img').each(function() {
                 var source = $(this).attr('src');
-                console.log(source);
                 $(this).attr('data-src', source)                
                 $(this).attr('src', 'data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==')
             });

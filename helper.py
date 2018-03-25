@@ -1,6 +1,7 @@
 import os
 import datetime
 import csming
+from bs4 import BeautifulSoup as bs
 
 def render_article(article):
     result = {
@@ -64,6 +65,12 @@ def title2alias(title):
     return '-'.join(result)
 
 '''
+pretty-print html
+'''
+def pprint_html(h):
+    return bs(h, 'html.parser').prettify()
+
+'''
 Advanced useage
 '''
 def prepareSQL(username, password):
@@ -80,4 +87,6 @@ def prepareSQL(username, password):
 
 if __name__ == '__main__':
     print("If you see this outside testing, then you're doing it wrong!")
+    ugly = input("Enter some ugly html")
+    print(pprint_html(ugly))
     exit()

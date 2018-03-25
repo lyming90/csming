@@ -73,21 +73,32 @@ strong {
     background-color: #eaedef;
 }
 
+#article_body h1 {
+    border-bottom: none;
+}
+
+#article_body h2 {
+    border-bottom: none;
+}
+
+#article_body h3 {
+    border-bottom: none;
+}
+
+#article_body h4 {
+    border-bottom: none;
+}
+
+#article_body h5 {
+    border-bottom: none;
+}
+
 /* Editor specific */
 blockquote {
     border-left: 0.5rem solid #ccc;
     margin: 1.5em 0.8rem;
     padding-left: 1.5rem;
 }
-
-/* blockquote:before {
-    color: #ccc;
-    content: open-quote;
-    font-size: 4em;
-    line-height: 0.1em;
-    margin-right: 0.25em;
-    vertical-align: -0.4em;
-} */
 
 blockquote p {
     display: inline;

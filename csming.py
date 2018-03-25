@@ -319,7 +319,7 @@ def edit_article(id):
         # Fill form with existing content
         form.author.data = render_article['author']
         form.title.data = render_article['title']
-        form.body.data = render_article['body']
+        form.body.data = helper.pprint_html(render_article['body'])
         form.alias.data = render_article['alias']
         form.hidden.data = render_article['hidden']
 
