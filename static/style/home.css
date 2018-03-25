@@ -63,6 +63,11 @@ body {
     margin-bottom: 1.5rem;
 }
 
+.svg-inline--fa {
+    width: 1.6rem !important;
+    height: 1.6rem !important;
+  }
+
 .row {
     margin: 0 auto;
 }
