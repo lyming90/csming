@@ -1,6 +1,13 @@
 {% extends 'layout.html' %}
 {% block title %}
     <title>{{article.title}} &middot; Ming &middot; 刘明宇 &middot; Liu Mingyu</title>
+
+    <!-- meta for Facebook share -->
+    <meta property="og:url"           content="/" />
+    <meta property="og:type"          content="website" />
+    <meta property="og:title"         content="{{article.title}}" />
+    <meta property="og:description"   content="Your description" />
+    <meta property="og:image"         content="{{ url_for('static', filename='img/icon/M_icon.png') }}" />
 {% endblock %}
 {% block css %}
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/2.10.0/github-markdown.css">
@@ -12,7 +19,6 @@
             margin-bottom: 1rem;
         }
     </style>
-
 {% endblock %}
 
 {% block body %}
@@ -20,7 +26,15 @@
     <h1>{{article.title}}</h1>
     <small>Posted by <strong>{{article.author}}</strong> on {{article.create_date}}
         <br>
-        Last updated on {{article.last_update}}</small>
+        Last updated on {{article.last_update}}
+        <div class="fb-share-button" 
+        data-href="/" 
+        data-layout="button_count" 
+        data-size="small" 
+        data-mobile-iframe="true"
+        style="float: right">
+        <a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a></div>
+    </small>
     <hr>
 
     <div id="article_body" style="text-align: left; ";>
@@ -37,11 +51,21 @@
         <a href="#top" id="totop" style="display: none; border: 2px solid; padding: 10px 146px 10px 146px; color: rgb(215,20,64);">Back to top</a> 
     </p>
 
+    <!-- Facebook -->
+    <script>(function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.12';
+        fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));</script>
+    
     <!-- Code highlight -->
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
 
     <!-- Lazy load -->
     <script src="{{ url_for('static', filename='script/blazy.js') }}"></script>
+
 
     <!-- JS for Load more -->
     <script> 

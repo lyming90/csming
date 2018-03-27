@@ -1,5 +1,5 @@
 body {
-    margin-bottom: 10px;
+    margin-bottom: 0;
     width: 100%;
     font-family: "Montserrat", Verdana, sans-serif, Helvetica, Arial;
     font-weight: normal;
@@ -8,24 +8,34 @@ body {
     color: #212529;
 }
 
-.intro {  /* the transparent stuff that holds your head */
+.profile-container {
+    display: grid;
+    grid-template-columns: 70% 30%;
+    /* height: 401px; */
+    background: 
+        linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.0)),
+        url('/static/img/LA_SD.jpg');
+    background-position: center;
+    background-size: cover;
+    font-variant: small-caps
+}
+
+.profile-block {
     border-style: dashed none dashed dashed;
     border-width: 0.1rem;
     border-color: #212529;
     margin-top: 3rem;
     margin-bottom: 3rem;
-    /* width: 300px; */
-    /* height: 401px; */
     background-color: #f8f9faa1;
     font-variant: none;
 }
 
 .cover_text {
-    font-size: 42px;
+    font-size: 2.7rem;
     font-weight: bold;
     text-align: center;
     color: white;    
-    margin: auto;
+    /* margin: auto; */
 }
 
 .nav {
@@ -43,17 +53,6 @@ body {
     color: white;
 }
 
-.profile-container {
-    display: grid;
-    grid-template-columns: auto 18rem;
-    /* height: 401px; */
-    background: 
-        linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.0)),
-        url('/static/img/LA_SD.jpg');
-    background-position: center;
-    background-size: cover;
-    font-variant: small-caps
-}
 
 .profile {  /* your big head */
     /* dimension of profile picture */
@@ -68,8 +67,11 @@ body {
     height: 1.6rem !important;
   }
 
-.row {
-    margin: 0 auto;
+.inline-row {
+    margin-top: 3rem;
+    margin-bottom: 3rem;    
+    display: grid;
+    grid-template-columns: 40% 60%;
 }
 
 .icon {
@@ -77,11 +79,8 @@ body {
     height: 25px;
 }
 
-.info:nth-child(even) {
-    background-color: #f8f9fa;
-    color: #212529;
+.info {
     width: 100%;
-    /* min-width: 720px; */
     margin-top: 0px;
     padding-left: 6rem;
     padding-right: 6rem;
@@ -89,16 +88,26 @@ body {
     padding-bottom: 3rem;
 }
 
-.info:nth-child(odd) {
+#resume {
+    padding-top: 0;
+    padding-bottom: 0;
+    border-right: 0.5rem solid #212529;
+}
+
+#experiences {
+    padding-top: 0;
+    padding-bottom: 0;
+    border-left: 0.5rem solid #212529;
+}
+
+.bw {
     background-color: #212529;
     color: #f8f9fa;
-    width: 100%;
-    /* min-width: 720px; */
-    margin-top: 0px;
-    padding-left: 6rem;
-    padding-right: 6rem;
-    padding-top: 3rem;
-    padding-bottom: 3rem;
+}
+
+.wb {
+    background-color: #f8f9fa;
+    color: #212529;
 }
 
 .copyright {
@@ -110,27 +119,24 @@ body {
     font-weight: bold;
 }
 
-.block_wrapper {
-    display: grid;
-}
 
-.info:nth-child(even) a {
+.wb a {
     color: #212529;
     border-bottom: 1px dotted #212529;
 }
 
-.info:nth-child(even) a:hover {
+.wb a:hover {
     color: #212529;
     border-bottom: 1px dotted #212529;
     text-decoration: none;
 }
 
-.info:nth-child(odd) a {
+.bw a {
     color: #f8f9fa;
     border-bottom: 1px dotted #f8f9fa;
 }
 
-.info:nth-child(odd) a:hover {
+.bw a:hover {
     color: #f8f9fa;
     border-bottom: 1px dotted #f8f9fa;
     text-decoration: none;
@@ -139,4 +145,64 @@ body {
 strong {
     font-weight: bold !important;
     font-size: 21px !important;
+}
+
+h1 {
+    font-size: 3.5rem;
+    font-weight: bold;
+}
+
+#copyright {
+    background-color: #212529;
+    color: #f8f9fa;
+}
+
+#bonus {
+    padding-bottom: 0;
+}
+
+#copyright hr {
+    padding-top: 2rem;
+    margin-bottom: 1rem;
+    border-bottom: 0.1rem solid #f8f9fa;
+}
+
+#copyright p {
+    margin-bottom: 0;
+    padding-bottom: 2rem;
+}
+
+/* if width < 1080px */
+@media screen and (max-width: 1080px) {
+    .profile-block {
+        display: none;
+    }
+
+    .profile-container {
+        grid-template-columns: 100% 0%;
+        height: 100vh;  /* 100% of viewpoint */
+    }
+
+    .inline-row {
+        display: block;
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+    #resume {
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+        border: none;
+    }
+
+    #experiences {
+        display: none;
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+        border: none;
+    }
+
+    #ex {
+        display: none;
+    }
 }
