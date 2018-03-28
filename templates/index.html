@@ -74,7 +74,7 @@
 
     </div>
 
-    <div class="inline-row">
+    <div class="inline-row" style="position: relative">
         <!-- Resume block -->
         <div id="resume" class="info wb">
             <h1>RESUME</h1>
@@ -83,7 +83,12 @@
 
             <p class="lead" style="text-align: justify;">You can also view an online version here.</p>
 
-            <p><a data-target="#resume-content" data-toggle="collapse" href="#" onclick="expand(this)">Click here to expand</a></p>
+            <p style="
+                position: absolute;
+                margin-bottom: 0;
+                bottom: 3rem;
+                left: 6rem;
+            "><button class="btn" data-target="#resume-content" data-toggle="collapse" href="#" onclick="expand(this)">Click here to expand</button></p>
             
         </div>
 

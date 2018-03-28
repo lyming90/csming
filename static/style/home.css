@@ -6,12 +6,12 @@ body {
     font-size: 16px;
     background-color: #f8f9fa;
     color: #212529;
+    min-width: 1080px;
 }
 
 .profile-container {
     display: grid;
     grid-template-columns: 70% 30%;
-    /* height: 401px; */
     background: 
         linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.0)),
         url('/static/img/LA_SD.jpg');
@@ -40,7 +40,7 @@ body {
 
 .nav {
     position: absolute;
-    font-size: 25px;
+    font-size: 1.6rem;
     font-variant: small-caps;
 }
 
@@ -68,15 +68,20 @@ body {
   }
 
 .inline-row {
-    margin-top: 3rem;
-    margin-bottom: 3rem;    
     display: grid;
-    grid-template-columns: 40% 60%;
+    border-top: double 0.5rem;
+    padding-top: 3rem;
+    padding-bottom: 3rem;    
+    grid-template-columns: auto auto;
 }
 
-.icon {
-    width: 25px;
-    height: 25px;
+.inline-row .btn {
+    color: #f8f9fa;
+    background-color: #212529;
+}
+
+.inline-row a[class="btn"]:hover {
+    color: #f8f9fa;
 }
 
 .info {
@@ -88,16 +93,32 @@ body {
     padding-bottom: 3rem;
 }
 
+#about {
+    /* border-top: solid 0.1rem; */
+}
+
 #resume {
     padding-top: 0;
     padding-bottom: 0;
+    padding-right: 3rem;
     border-right: 0.5rem solid #212529;
 }
 
+
 #experiences {
+    text-align: right;
     padding-top: 0;
     padding-bottom: 0;
+    padding-left: 3rem;
     border-left: 0.5rem solid #212529;
+}
+
+#contact {
+    border-top: double 0.5rem;
+}
+
+#bonus {
+    border-top: double 0.5rem;
 }
 
 .bw {
@@ -164,7 +185,7 @@ h1 {
 #copyright hr {
     padding-top: 2rem;
     margin-bottom: 1rem;
-    border-bottom: 0.1rem solid #f8f9fa;
+    /* border-bottom: 0.1rem solid #f8f9fa; */
 }
 
 #copyright p {
@@ -172,7 +193,7 @@ h1 {
     padding-bottom: 2rem;
 }
 
-/* if width < 1080px */
+/* 
 @media screen and (max-width: 1080px) {
     .profile-block {
         display: none;
@@ -180,7 +201,16 @@ h1 {
 
     .profile-container {
         grid-template-columns: 100% 0%;
-        height: 100vh;  /* 100% of viewpoint */
+        height: 100vh;
+    }
+
+    .info {
+        width: 100%;
+        margin-top: 0;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
     }
 
     .inline-row {
@@ -205,4 +235,4 @@ h1 {
     #ex {
         display: none;
     }
-}
+} */

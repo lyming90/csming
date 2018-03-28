@@ -3,11 +3,9 @@
     <title>{{article.title}} &middot; Ming &middot; 刘明宇 &middot; Liu Mingyu</title>
 
     <!-- meta for Facebook share -->
-    <meta property="og:url"           content="/" />
+    <meta property="og:url"           content="#" />
     <meta property="og:type"          content="website" />
     <meta property="og:title"         content="{{article.title}}" />
-    <meta property="og:description"   content="Your description" />
-    <meta property="og:image"         content="{{ url_for('static', filename='img/icon/M_icon.png') }}" />
 {% endblock %}
 {% block css %}
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/2.10.0/github-markdown.css">
@@ -28,7 +26,7 @@
         <br>
         Last updated on {{article.last_update}}
         <div class="fb-share-button" 
-        data-href="/" 
+        data-href="#" 
         data-layout="button_count" 
         data-size="small" 
         data-mobile-iframe="true"
