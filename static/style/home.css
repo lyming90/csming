@@ -99,7 +99,7 @@ body {
 
 #resume {
     padding-top: 0;
-    padding-bottom: 0;
+    padding-bottom: 2rem;
     padding-right: 3rem;
     border-right: 0.5rem solid #212529;
 }
@@ -108,7 +108,7 @@ body {
 #experiences {
     text-align: right;
     padding-top: 0;
-    padding-bottom: 0;
+    padding-bottom: 2rem;
     padding-left: 3rem;
     border-left: 0.5rem solid #212529;
 }

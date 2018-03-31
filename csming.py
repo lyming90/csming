@@ -114,23 +114,27 @@ def getPreview(id):
 '''
 Main page, my profile page!
 '''
+# @app.route('/')
+# def home():
+#     # Get static_dic
+#     cursor = mysql.get_db().cursor()
+#     result = cursor.execute("SELECT * FROM static")  # result gives # of query results
+#     static = cursor.fetchall()  # articles gives a tuple of all results (explicit informaiton)
+
+#     static_list = list()
+#     for static_item in static:
+#         render_static = helper.render_static_item(static_item)
+#         static_list.append(render_static)
+#         # print(static_item)  # DEBUG
+#     cursor.close()
+
+#     static_dic = helper.classify_static(static_list)
+
+#     return fl.render_template('index.html', static_dic = static_dic)
+
 @app.route('/')
-def home():
-    # Get static_dic
-    cursor = mysql.get_db().cursor()
-    result = cursor.execute("SELECT * FROM static")  # result gives # of query results
-    static = cursor.fetchall()  # articles gives a tuple of all results (explicit informaiton)
-
-    static_list = list()
-    for static_item in static:
-        render_static = helper.render_static_item(static_item)
-        static_list.append(render_static)
-        # print(static_item)  # DEBUG
-    cursor.close()
-
-    static_dic = helper.classify_static(static_list)
-
-    return fl.render_template('index.html', static_dic = static_dic)
+def home_v2():
+    return fl.render_template('v2.html')
 
 '''
 This method routes to the archive page, in which getArticle() is invoked!
