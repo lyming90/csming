@@ -1,170 +1,111 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Ming &middot; 刘明宇 &middot; Liu Mingyu</title>
+{% extends 'layout.html' %}
+{% block title %}
+<title>Ming &middot; 刘明宇 &middot; Liu Mingyu</title>
+{% endblock %}
+{% block css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='style/v2.css') }}">
+{% endblock %}
+{% block body %}
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
-    <!-- Google Fonts -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat"> 
-
-
-    <!-- Font Awesome -->
-    <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js" integrity="sha384-SlE991lGASHoBfWbelyBPLsUlwY1GwNDJo3jSJO04KZ33K2bwfV9YBauFfnzvynJ" crossorigin="anonymous"></script>    
-
-    <!-- jQuery -->
-    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
-
-    <style>
-        /* :root {
-            font-size: 16px;
-            font-family: "Montserrat", Verdana, sans-serif, Helvetica, Arial;
-            font-weight: normal;
-        } */
-        body {
-            min-width: 720px;
-            font-size: 16px;
-            font-family: "Montserrat", Verdana, sans-serif, Helvetica, Arial;
-            font-weight: normal;
-            margin: 0 10%;
-            background-color: #f8f9fa;
-            color: #212529;
-        }
-
-        .wrap {
-            width: 100%;
-            display: grid;
-            grid-template-columns: auto 1rem auto;
-            margin-top: 3rem;
-        }
-
-        .border {
-            background-color: #212529;
-        }
-
-        .info-block {
-            padding: 0 1rem;
-        }
-
-        #cover_text {
-            margin: auto;
-            padding: 0 1rem;
-            font-size: 2.7rem;
-            font-weight: bold;
-            text-align: center;
-            color: black;
-        }
-
-        .content {
-            display: none;
-            background-color: #cccccc47;
-            margin: 2rem 0;
-            padding: 1rem 2rem;
-            position: relative;
-        }
-
-        .info {
-            display: none;
-        }
-
-    </style>
-</head>
-<body>
-    <div class="wrap" style="text-align: center">
-        <section class="info-block">
-            <p style="margin-bottom: 0; margin-top: 1rem;">
-                <img class="profile" style="height: 8rem; width: 8rem;" src="{{ url_for('static', filename='img/hollywood-tinified.png')}}">
-            </p>
-            <p style="margin-top: 1rem;">
-            <strong>刘明宇 Ming</strong>
-            <br>
-            <span style="font-size: 90%">College Sophomore</span>
-            <br>
-            <span style="font-size: 90%">CompSci @ NTU Singapore</span>
-            </p>
-            <ul style="padding-left: 0rem">
-                <li style="display: inline;"><a href="https://github.com/lyming90" target="_blank" style="color: #000000;"><i class="fab fa-github fa-2x"></i></a></li>
-                <li style="display: inline;"><a href="https://facebook.com/mingyuliu1916/" target="_blank" style="margin: 0 1rem; color: #3b5998;"><i class="fab fa-facebook fa-2x"></i></a></li>
-                <li style="display: inline;"><a href="https://linkedin.com/in/mingyuliu16/" target="_blank" style="color: #0077B5;"><i class="fab fa-linkedin fa-2x"></i></a></li>
-            </ul>
-        </section>
-        <div class="border">
-
-        </div>
-        <div id="cover_text">
-            HI, THIS IS MING.
-            <br>
-            <span style="
-                font-size: 50%;
-                border-width: 0.1rem;
-                border-style: solid;
-                padding: 2% 10%;
-            "><a href="/archive" style="color: black; text-decoration: none;">Go to Archive</a></span>
-        </div>
-    </div>
-
-    <section class="content">
-        <nav style="position: absolute; top: 1.25rem; right: 2rem;">
-            <a class="btn btn-dark" onclick="showInfo('#about')" href="#">About</a>
-            <a class="btn btn-dark" onclick="showInfo('#resume')" href="#">Resume</a>
-            <a class="btn btn-dark" onclick="showInfo('#experiences')" href="#">Experiences</a>
-            <a class="btn btn-dark" onclick="showInfo('#contact')" href="#">Contact</a>
-        </nav>
-
-        <section class="info show" id="about">
-            <h1>About</h1>
-            <p>Hi! My name is 刘明宇 (Liu Mingyu - in which Liu is the surname. Preferred to be called by Ming in English context). I am a second-year student at Nanyang Technological University with a major in Computer Science and a possible minor in Mathematics.</p>
-            <p>I'm a self-driven and curious person who always look forward to new adventures and embrace latest technologies. I aim to design and create software solutions that are high-quality, robust and beautifully-presented. Besides my interest in Computer Science, I also enjoy traveling and hiking.</p>
-        </section>
-        
-        <section class="info" id="resume">
-            <h1>Resume</h1>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iure velit veritatis eligendi eveniet, provident nam, sint ut unde accusantium alias, id atque quia architecto voluptas deleniti ipsum inventore. Nulla, numquam.</p>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam ipsum eius fuga. Est blanditiis, vero voluptate at nam aperiam sunt fugiat tempore reprehenderit possimus culpa vel velit, cupiditate recusandae eveniet?</p>
-        </section>
-
-        <section class="info" id="experiences">
-            <h1>Experiences</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam numquam voluptatibus sequi soluta sed? Eos minus delectus totam laudantium quia dolores illum repudiandae vitae iste inventore similique fugiat, voluptatum fugit!</p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam numquam voluptatibus sequi soluta sed? Eos minus delectus totam laudantium quia dolores illum repudiandae vitae iste inventore similique fugiat, voluptatum fugit!</p>
-        </section>
-
-        <section class="info" id="contact">
-            <h1>Contact</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam quos dicta deserunt explicabo inventore. Praesentium, velit. Cumque necessitatibus quia non nesciunt impedit mollitia ea rem sapiente, iure magni vero et.</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam quos dicta deserunt explicabo inventore. Praesentium, velit. Cumque necessitatibus quia non nesciunt impedit mollitia ea rem sapiente, iure magni vero et.</p>
-        </section>
+<div class="wrap">
+    <section class="info-block">
+            <img class="profile" src="{{ url_for('static', filename='img/hollywood-tinified.png')}}">
+        <p style="margin-top: 1rem;">
+        <strong>刘明宇 Ming</strong>
+        <br>
+        <span style="font-size: 90%">College Sophomore</span>
+        <br>
+        <span style="font-size: 90%">CompSci @ NTU Singapore</span>
+        </p>
+        <ul style="padding-left: 0rem">
+            <li style="display: inline;"><a href="https://github.com/lyming90" target="_blank" style="color: #000000; margin-right: 1rem"><i class="fab fa-github fa-2x"></i></a></li>
+            <li style="display: inline;"><a href="https://facebook.com/mingyuliu1916/" target="_blank" style="color: #3b5998; margin-right: 1rem"><i class="fab fa-facebook fa-2x"></i></a></li>
+            <li style="display: inline;"><a href="https://linkedin.com/in/mingyuliu16/" target="_blank" style="color: #0077B5; margin-right: 1rem"><i class="fab fa-linkedin fa-2x"></i></a></li>
+            <li style="display: inline;"><a href="mailto:lyming90@gmail.com" target="_blank" style="color: #ea4335;"><i class="fas fa-envelope-square fa-2x"></i></a></li>                
+        </ul>
     </section>
 
-     <!-- Footer -->
-    <footer>
-        {% include 'includes/_copyright.html' %}
-    </footer>
+    <div class="middle-border"></div>
 
-    <script>
-        var cur_info_id = '#about';
+    <div class="cover_text">
+        HI, THIS IS MING.
+        <br>
+        <span style="
+            font-size: 50%;
+            border-width: 0.1rem;
+            border-style: solid;
+            padding: 2% 10%;
+        "><a href="/archive" style="color: var(--dark); text-decoration: none;">Go to Archive</a></span>
+    </div>
+</div>
 
-        window.onload = function() {
-            $('.content').fadeIn(600);
-            showInfo(cur_info_id);
-        }
+<section class="content">
+    <nav class="nav-desktop">
+        <a class="btn" onclick="showInfo('#about')" href="#">About</a>
+        <a class="btn" onclick="showInfo('#resume')" href="#">Resume</a>
+        <a class="btn" onclick="showInfo('#experiences')" href="#">Experiences</a>
+        <a class="btn" onclick="showInfo('#contact')" href="#">Contact</a>
+    </nav>
 
-        function showInfo(info_id) {
-            event.preventDefault();
-            var cur_section = $(cur_info_id);
-            var info_section = $(info_id);
+    <ul style="list-style: none">
+    <li class="nav-item dropdown">
+    <a class="nav-mobile nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><i class="fas fa-bars"></i></a>
+    <div class="dropdown-menu" style="position: absolute">
+            <a class="dropdown-item" onclick="showInfo('#about')" href="#">About</a>
+            <a class="dropdown-item" onclick="showInfo('#resume')" href="#">Resume</a>
+            <a class="dropdown-item" onclick="showInfo('#experiences')" href="#">Experiences</a>
+            <a class="dropdown-item" onclick="showInfo('#contact')" href="#">Contact</a>
+    </div>
+    </li>
+    </ul>
 
-            cur_section.fadeOut(0);
-            info_section.fadeIn(600);
+    <section class="info show" id="about">
+        <h1>About</h1>
+        {{ static_dic['About'] | safe }}
+        </section>
+    
+    <section class="info" id="resume">
+        <h1>Resume</h1>
+        <p class="lead">A PDF version of my resume can be obtained upon request.</p>
+        <p class="lead">Here is an online version.</p>
+        <p><a data-target="#resume-content" data-toggle="collapse" href="#" onclick="expand(this)">Click here to expand</a></p>
+        {{ static_dic['Resume'] | safe}}
+    </section>
 
-            cur_info_id = info_id;
-            
-        }
-    </script>
-</body>
-</html>
+    <section class="info" id="experiences">
+        <h1>Experiences</h1>
+        {{ static_dic['Experiences'] | safe}}
+    </section>
+
+    <section class="info" id="contact">
+        <h1>Contact</h1>
+        {{ static_dic['Contact'] | safe}}    
+    </section>
+</section>
+
+<!-- Bootstrap JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+<script>
+    var cur_info_id = '#about';
+
+    window.onload = function() {
+        $('.content').fadeIn(600);
+        showInfo(cur_info_id);
+    }
+
+    function showInfo(info_id) {
+        event.preventDefault();
+        var cur_section = $(cur_info_id);
+        var info_section = $(info_id);
+
+        cur_section.fadeOut(0);
+        info_section.fadeIn(600);
+
+        cur_info_id = info_id;
+        
+    }
+</script>
+
+{% endblock %}

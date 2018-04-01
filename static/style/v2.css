@@ -1,0 +1,137 @@
+/* CSS  Variables */
+:root {
+    --dark: #212529;
+    --light: #f8f9fa;
+}
+
+body {
+    font-size: 16px;
+    font-family: "Montserrat", Verdana, sans-serif, Helvetica, Arial;
+    font-weight: normal;
+    margin: 5% 10%;
+    background-color: var(--light);
+    color: var(--dark);
+}
+
+.wrap {
+    width: 100%;
+    display: grid;
+    grid-template-columns: auto 0.5rem auto;
+    margin-bottom: 2rem;
+    text-align: center
+}
+
+.middle-border {
+    border: none;
+    background-color: var(--dark);
+}
+
+.profile {
+    height: 8rem;
+    width: 8rem;
+    margin-top: 2rem;
+}
+
+.cover_text {
+    margin: auto;
+    padding: 0 1rem;
+    font-size: 2.7rem;
+    font-weight: bold;
+    text-align: center;
+    color: black;
+}
+
+.content {
+    display: none;
+    background-color: #cccccc47;
+    margin: 2rem 0;
+    padding: 1rem 2rem;
+    position: relative;
+}
+
+.btn {
+    background-color: var(--dark);
+    color: var(--light);
+}
+
+nav > a:hover {
+    color: lightgreen;
+}
+
+.nav-desktop {
+    position: absolute; 
+    top: 2.25rem; 
+    right: 2rem;
+}
+
+.nav-mobile {
+    display: none;
+    position: absolute; 
+    top: 1.25rem; 
+    right:0; 
+    color: #212529;
+}
+
+.info {
+    display: none;
+}
+
+.info-block {
+    padding: 0 1rem;
+}
+
+.info p {
+    text-align: justify;
+}
+
+.info a {
+    border-bottom: 0.1rem dotted;
+}
+
+.info a:hover {
+    border-bottom: 0.1rem dotted;
+    text-decoration: none;
+}
+
+.lead {
+    text-align: justify;
+}
+
+.dropdown-toggle::after {
+    display: none;
+}
+
+#copyright {
+    margin-top: 2rem;
+}
+
+/* for tablet */
+@media screen and (max-width: 960px) {
+    .nav-desktop {
+        display: none;
+    }
+
+    .nav-mobile {
+        display: inline;
+    }
+}
+
+/* for mobile */
+@media screen and (max-width: 720px) {
+    .wrap {
+        margin: auto;
+        display: block;
+    }
+
+    .cover_text {
+        font-size: 2rem;
+    }
+
+    #copyright {
+        font-size: small;
+    }
+
+    body {
+        margin: 0;
+    }
+}

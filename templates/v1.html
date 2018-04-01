@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Ming &middot; 刘明宇 &middot; Liu Mingyu</title>
+    <!-- icon -->
+    <link rel="icon" href="{{ url_for('static', filename='img/icon/M_icon.png') }}">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!-- Google Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">    
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style/v1.css') }}">
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-113348736-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-113348736-1');
+    </script>
+
+    <!-- jQuery -->
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
+
+    <!-- Font Awesome -->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js" integrity="sha384-SlE991lGASHoBfWbelyBPLsUlwY1GwNDJo3jSJO04KZ33K2bwfV9YBauFfnzvynJ" crossorigin="anonymous"></script>   
+
+    <script src="{{ url_for('static', filename='script/myScript.js') }}"></script>
+
+<body>
+    <!-- The top block-->
+    <div class="profile-container">
+        <div id="left" style="display: grid; grid-template-rows: auto">
+            <div>
+                <nav class="nav mb-4"> <!--sticky-top doesn't seem good-->
+                    <a class="scroll nav-link active" href="#about">About</a>
+                    <a class="scroll nav-link" href="#resume" href="#">Resume</a>
+                    <!-- <a class="scroll nav-link" href="#gallery">Gallery</a> -->
+                    <a id="ex" class="scroll nav-link" href="#experiences">Experiences</a>
+                    <!-- <a class="scroll nav-link" href="#download">Download</a> -->
+                    <a class="scroll nav-link" href="#contact">Contact</a>
+                    <!-- <a class="nav-link disabled" href="#">Gallery</a> -->
+                    <!-- Dropdown -->
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Resources
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="https://github.com/lyming90/csming">Source Code</a>
+                        </div>
+                </nav>
+            </div>
+            <div>
+                <p class="cover_text">
+                HI, THIS IS MING.
+                <br>
+                <span style="
+                    font-size: 50%;
+                    border-width: 0.1rem;
+                    border-style: solid;
+                    padding: 0.5rem 1rem;
+                "><a href="/archive" style="color:white">Go to Archive</a></span>
+                </p>
+            </div>
+        </div>
+        <!-- your big head and intro -->
+        <div class="profile-block text-center">
+            <p style="margin-bottom: 0">
+                <img class="profile" src="{{ url_for('static', filename='img/hollywood-tinified.png')}}">
+            </p>
+            <p>
+            <strong>刘明宇 Ming</strong>
+            <br>
+            <span style="font-size: 90%">College Sophomore</span>
+            <br>
+            <span style="font-size: 90%">Computer Science</span>
+            <br>
+            <span style="font-size: 90%">Nanyang Technological University</span>
+            </p>
+            <ul style="padding-left: 0rem">
+                <li style="display: inline;"><a href="https://github.com/lyming90" target="_blank" style="margin-right: 1rem; color: #000000;"><i class="fab fa-github"></i></a></li>
+                <li style="display: inline;"><a href="https://facebook.com/mingyuliu1916/" target="_blank" style="margin-right: 1rem; color: #3b5998;"><i class="fab fa-facebook"></i></a></li>
+                <li style="display: inline;"><a href="https://linkedin.com/in/mingyuliu16/" target="_blank" style="color: #0077B5;"><i class="fab fa-linkedin"></i></a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- About block -->
+    <div id="about" class="info bw" style="display: block">
+        <h1 class="display-4">ABOUT</h1>
+        
+        <p class="lead" style="text-align: justify;">Hi! My name is 刘明宇 (<strong>Liu Mingyu</strong> - in which Liu is the surname. Preferred to be called by <strong>Ming</strong>&nbsp;in English context). I am a second-year student at Nanyang Technological University with a major in Computer Science and a possible minor in Mathematics.</p>
+
+        <p class="lead" style="text-align: justify;">I&#39;m a self-driven and curious person who always look forward to new adventures and embrace latest technologies. I aim to design and create software solutions that are high-quality, robust and beautifully-presented. Besides my interest in Computer Science, I also enjoy <a href="#experiences">traveling and hiking</a>.</p>
+
+
+    </div>
+
+    <div class="inline-row" style="position: relative">
+        <!-- Resume block -->
+        <div id="resume" class="info wb">
+            <h1>RESUME</h1>
+
+            <p class="lead" style="text-align: justify;">A PDF version of my resume can be obtained upon request.</p>
+
+            <p class="lead" style="text-align: justify;">Here is an online version.</p>
+
+            <p style="
+                position: absolute;
+                margin-bottom: 0;
+                bottom: 3rem;
+                left: 6rem;
+            "><button class="btn" data-target="#resume-content" data-toggle="collapse" href="#" onclick="expand(this)">Click here to expand</button></p>
+            
+        </div>
+
+        <!-- Blog block -->
+        <div id="experiences" class="info wb">
+            <h1>EXPERIENCES</h1>
+
+            <ul style="list-style-type: none; padding-left: 0; font-size: 1.25rem;">
+                    <li><a href="/archive/trip-to-yellowstone-usa-winter">Trip to Yellowstone, USA (Winter)</a></li>
+                    <li><a href="/archive/trip-to-yellowstone-usa-winter">Exchange Semester in Waterloo, Canada</a></li>
+                    <li><a href="/archive/trip-to-yellowstone-usa-winter">Work and Travel in Yellowstone, USA (Summer)</a></li>
+                    <li><a href="/archive/trip-to-bali-indonesia">Trip to Bali, Indonesia</a></li>
+                </ul>
+                
+                <p style="margin-bottom: 0"><a class="btn" href="/archive">Read more</a></p>
+                
+            
+        </div>
+    </div>
+
+    <!-- resume content -->
+    <div class="wb">
+            <div class="collapse" id="resume-content" style="border-style: dashed;border-width: 0.5rem;border-color: #d5d8d9;padding: 1.2rem;text-align: justify; margin: 3rem; margin-top: 0;">
+                    <h1>Education</h1>
+                    
+                    <p><strong>Nanyang Technological University - Class of 2020</strong><br />
+                    Aug 2016 - Present</p>
+                    
+                    <p>Candidate for Bachelor of Computer Science</p>
+                    
+                    <ul>
+                        <li>NTU Science and Engineering Scholarship</li>
+                        <li>NTU President Research Scholar (2017 - 2018)</li>
+                        <li>First Class Honours Expected | Honours with Highest Distinction</li>
+                    </ul>
+                    
+                    <hr />
+                    <h1>Experience</h1>
+                    
+                    <p><strong>Peer Coach - School of Computer Science and Engineering, NTU</strong><br />
+                    Sep - Nov 2017</p>
+                    
+                    <ul>
+                        <li>Selected as Peer Coach based on outstanding academic performance.</li>
+                        <li>Helping students under Academic Probation overcome academic challenges.</li>
+                    </ul>
+                    
+                    <p><strong>Teaching Assistant - Saturday Kids, Singapore</strong><br />
+                    Feb - Apr 2017</p>
+                    
+                    <ul>
+                        <li>Assisted the instructor in managing classes of 15 children (age of 10 to 13).</li>
+                        <li>Helped students understand Python concept and elementary computational theories.</li>
+                        <li>Mentored students with coding exercise and assignments.</li>
+                    </ul>
+                    
+                    <p><strong>Project Leader (Service Learning), Marymount Centre, Singapore</strong><br />
+                    Feb - May 2016</p>
+                    
+                    <ul>
+                        <li>Led a team of 6 students to propose and implement the Service Learning Project.</li>
+                        <li>Established cooperation with Marymount Centre.</li>
+                        <li>Arranged meetings with team members and Marymount Centre.</li>
+                        <li>Successfully organized a 4-hour Chinese Culture event for 11 kids and received positive feedbacks.</li>
+                    </ul>
+                    
+                    <hr />
+                    <h1>Projects</h1>
+                    
+                    <p><strong>Sports - Android, teamwork</strong></p>
+                    
+                    <ul>
+                        <li>An Android application. Features include instant messaging, forming sports team and posting game information. Firebase is used to provide backend services, such as database and user authentication.</li>
+                    </ul>
+                    
+                    <p><strong>PuzzleSolver - Java, individual</strong></p>
+                    
+                    <ul>
+                        <li>A program to solve the 8-puzzle problem using the A* search algorithm. With the GUI created using JavaFX, it has become a mini-game which allows users to select a picture to customize the puzzle background, shuffle puzzle blocks and solve the puzzle.</li>
+                    </ul>
+                    
+                    <p><strong>Travel Agent - Python, teamwork</strong></p>
+                    
+                    <ul>
+                        <li>A backend telegram bot program that provides information for travelers, such as airlines information and Airbnb. Python libraries used: Request, Telepot, BeatifulSoup4 and Skyscanner API which is used to get information from Skyscanner.</li>
+                    </ul>
+                    
+                    <hr />
+                    <h1>Technical Skills</h1>
+                    
+                    <p><strong>Languages</strong></p>
+                    
+                    <ul>
+                        <li>Java, Python, C, SQL, HTML, CSS, JavaScript</li>
+                    </ul>
+                    
+                    <p><strong>Frameworks and Libraries</strong></p>
+                    
+                    <ul>
+                        <li>JavaFX, Flask, OpenCV, Nginx, Gunicorn</li>
+                    </ul>
+                    
+                    <p><strong>Tools</strong></p>
+                    
+                    <ul>
+                        <li>Git, LaTeX, Markdown, Firebase, MySQL</li>
+                    </ul>
+                    
+                    <p class="lead" style="text-align: justify;"><a data-target="#resume-content" data-toggle="collapse" href="#">Click here to close up</a></p>
+                    </div>                    
+    </div>
+    
+    <!-- Contact block -->
+    <div id="contact" class="info bw" style="display: block">
+        <h1>CONTACT</h1>
+
+        <p class="lead" style="text-align: justify;">You are very welcome to drop me a message!</p>
+
+        <p class="lead" style="text-align: justify;">If you would like to contact me, you can send me an Email. My Email address is&nbsp;<a href="mailto:lyming90@gmail.com">lyming90@gmail.com</a>.</p>
+
+        <p class="lead" style="text-align: justify;">Alternatively, you can find me on&nbsp;<a href="https://www.linkedin.com/in/mingyuliu16">LinkedIn</a> and <a href="https://www.facebook.com/mingyuliu1916/">Facebook</a>.</p>
+        
+    </div>
+
+    <!-- Bonus -->
+    <div id="bonus" class="info wb" style="display: block">
+        <h1>BONUS</h1>
+        
+        <p class="lead" style="text-align: justify;">Thank you for scrolling down here...</p>
+
+        <p><a href="/archive/facts-about-this-website" style="font-size:21px">&gt;&gt; Facts about this website...</a><br />
+        <a href="https://www.csming.com/archive/update-notes" style="font-size:21px">&gt;&gt; Update Notes</a></p>
+
+
+    </div>
+
+    <div id="copyright" style="margin-top: 2rem">
+            <!-- <hr style="
+            margin-top: 3rem;
+            width: 27rem;
+            "> -->
+        <p class="text-center text-black" style="padding-top: 2rem">
+            © 2018 刘明宇, Liu Mingyu | This website is open source.
+        </p>
+    </div>
+
+
+    <!-- Bootstrap JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    <script>
+        var win_height      = $(window).height();
+        var win_width       = $(window).width();
+        var expand_toggle   = false;
+
+        window.onload = function() {
+            // TODO
+        }
+
+        function expand(element) {
+            if (expand_toggle) {
+                element.innerHTML = "Click here to show";
+            }
+            else {
+                element.innerHTML = "Click here to close up";
+            }
+            expand_toggle = !expand_toggle;
+        }
+    </script>
+</body>
