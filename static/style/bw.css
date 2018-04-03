@@ -1,12 +1,15 @@
+:root {
+    --dark: #212529;
+    --light: #f8f9fa;
+}
+
 body {
-    background-color: #f8f9fa;    
-    margin-top: 3rem;
-    margin-left: 5%;
-    margin-right: 5%;
-    margin-bottom: 3rem;
+    margin: 3rem 10%;
     font-family: Verdana, Helvetica, Arial, sans-serif;
     font-weight: normal;
     font-size: 16px;
+    background-color: var(--light);
+    color: var(--dark);
 }
 
 strong {
@@ -18,10 +21,11 @@ strong {
 }
 
 .nav {
-    /* position: absolute; */
-    /* min-width: 720px; */
     font-size: 1.5rem;
-    font-variant: small-caps;
+}
+
+.nav a:hover {
+    text-decoration: none;
 }
 
 .nav-link {
@@ -107,4 +111,70 @@ blockquote p {
 
 load-more {
     display: none;
+}
+
+#copyright {
+    margin-top: 2rem;
+}
+
+/* for mobile */
+@media screen and (max-width: 720px) {
+    body {
+        margin: 5% 5%;
+    }
+
+    h1 {
+        font-size: 1.6rem;
+    }
+
+    h2 {
+        font-size: 1.6rem;
+    }
+
+    h3 {
+        font-size: 1.6rem;
+    }
+
+    h4 {
+        font-size: 1.6rem;
+    }
+
+    h5 {
+        font-size: 1.6rem;
+    }
+
+    .nav {
+        font-size: 1.2rem;
+    }
+
+    .card-title {
+        font-size: 1.2rem;
+    }
+
+    .card-header {
+        padding-top: 0.45rem;
+        padding-bottom: 0.45rem;
+    }
+
+    .card-body {
+        padding: 0.75rem;
+    }
+
+    #go-profile {
+        display: none;
+    }
+
+    #post-date {
+        font-size: 70% !important;
+    }
+
+    #M-icon {
+        /* display: none; */
+        width: 2rem !important;
+        height: 2rem !important;
+    }
+
+    #copyright {
+        font-size: small;
+    }
 }

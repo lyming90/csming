@@ -8,7 +8,7 @@
 
 {% block body %}
     <nav class="nav mb-4">
-        <a class="nav-link navbar-brand icon-M" href="/archive"><img style="width: 3rem; height: 3rem;" src="{{ url_for('static', filename='img/icon/M.svg')}}"></a>
+        <a class="nav-link navbar-brand icon-M" href="/archive"><img id="M-icon" style="width: 3rem; height: 3rem;" src="{{ url_for('static', filename='img/icon/M.svg')}}"></a>
         <a class="nav-link" href="#">Archive</a>
         <!-- <a class="nav-link" href="#">Gallery</a> -->
         <a class="nav-link" href="/archive/panel">Panel</a>        
@@ -29,16 +29,12 @@
                     <h5 class="card-title"><a href="archive/{{article['alias']}}" style="color: black;"><strong>{{article['title']}}</strong></a></h5>
                     <!-- <p class="card-text">{{article['body'][0:250] | striptags}}</p> -->
                     <p class="card-text">{{article['preview'] | safe}}</p>         
-                    <a href="archive/{{article['alias']}}" class="btn btn-primary" style="background-color: rgb(215,20,64); border-color: rgb(215,20,64)">Read</a>
+                    <a href="archive/{{article['alias']}}" class="btn btn-primary read-btn" style="background-color: rgb(215,20,64); border-color: rgb(215,20,64)">Read</a>
                 </div>
             </div>
         </li>
       {% endfor %}
     </ul>
-
-
-
-
 
 
 
