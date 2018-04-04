@@ -39,62 +39,31 @@ strong {
 
 .icon-M {
     margin-right: 2.5rem;
-    width: 1.5rem;
-    height: 1.5rem;
+    width: 3rem;
+    height: 3rem;
 }
 
-.list-group-item {
-    background-color: #f8f9fa
-}
 
 #go-profile {
     margin-left: auto;
     border: 0.1rem solid;
 }
 
-.article-snapshot {
-    border: none;
-    padding-right: 0px;
-    /* min-width: 720px; */
+#article-list {
+    margin-top: 1.5rem;
 }
 
-#article_body p > a {
-    border-bottom: dotted 0.05rem;
+#article-list h5 > a {
+    color: var(--dark);
+}
+
+#article-list div > a {
     color: rgb(215,20,64);
 }
 
-#article_body p > a:hover {
-    /* border-bottom: dotted 1px; */
+#article-list div > a:hover {
     color: rgb(24,28,98);
     text-decoration: none;
-}
-
-#article_body article p {
-    font-family: 'lato', Verdana, Helvetica, Arial, sans-serif;
-}
-
-#article_body pre {
-    background-color: #eaedef;
-}
-
-#article_body h1 {
-    border-bottom: none;
-}
-
-#article_body h2 {
-    border-bottom: none;
-}
-
-#article_body h3 {
-    border-bottom: none;
-}
-
-#article_body h4 {
-    border-bottom: none;
-}
-
-#article_body h5 {
-    border-bottom: none;
 }
 
 /* Editor specific */
@@ -109,10 +78,6 @@ blockquote p {
 }
 /* End of editor specific */
 
-load-more {
-    display: none;
-}
-
 #copyright {
     margin-top: 2rem;
 }
@@ -123,28 +88,17 @@ load-more {
         margin: 5% 5%;
     }
 
-    h1 {
-        font-size: 1.6rem;
-    }
-
-    h2 {
-        font-size: 1.6rem;
-    }
-
-    h3 {
-        font-size: 1.6rem;
-    }
-
-    h4 {
-        font-size: 1.6rem;
-    }
-
-    h5 {
-        font-size: 1.6rem;
-    }
-
     .nav {
         font-size: 1.2rem;
+        margin-bottom: 0.5rem !important;
+    }
+
+    #nav-archive {
+        display: none;
+    }
+
+    #nav-panel {
+        display: none;
     }
 
     .card-title {
@@ -160,18 +114,14 @@ load-more {
         padding: 0.75rem;
     }
 
-    #go-profile {
-        display: none;
-    }
-
     #post-date {
         font-size: 70% !important;
     }
 
-    #M-icon {
+    .icon-M {
         /* display: none; */
-        width: 2rem !important;
-        height: 2rem !important;
+        width: 2.5rem !important;
+        height: 2.5rem !important;
     }
 
     #copyright {

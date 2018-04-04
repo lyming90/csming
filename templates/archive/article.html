@@ -10,7 +10,7 @@
 {% block css %}
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/2.10.0/github-markdown.css">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
-    <link rel="stylesheet" href="{{ url_for('static', filename='style/bw.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style/article.css') }}">
     <style>
         img {
             width: 100%;
@@ -20,8 +20,8 @@
 {% endblock %}
 
 {% block body %}
-    <a href="/archive" style="float: right; border-bottom: none;"><img id="M-icon" style="width: 3rem; height: 3rem; margin-bottom: 0; margin-left: 1rem;" src="{{ url_for('static', filename='img/icon/M.svg')}}"></a>
-    <h1>{{article.title}}</h1>
+    <a href="/archive" style="float: right; border-bottom: none;"><img class="icon-M" src="{{ url_for('static', filename='img/icon/M.svg')}}"></a>
+    <span id="title">{{article.title}}</span>
     <span id="post-date" style="font-size: 80%">Posted by <strong>{{article.author}}</strong> on {{article.create_date}}
         <br>
         Last updated on {{article.last_update}}

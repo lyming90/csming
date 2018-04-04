@@ -439,6 +439,7 @@ def new_article():
         else:
             cursor.execute("insert into archive values(NULL, %s, NULL, NULL, %s, %s, %s, 0)", (author, title, alias, body))   
         mysql.get_db().commit()
+        
         cursor.close()
 
         return fl.redirect(fl.url_for('panel'))
