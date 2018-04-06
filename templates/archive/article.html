@@ -2,7 +2,6 @@
 {% block title %}
     <title>{{article.title}} &middot; Ming &middot; 刘明宇 &middot; Liu Mingyu</title>
 
-    <!-- meta for Facebook share -->
     <meta property="og:url"           content="#" />
     <meta property="og:type"          content="website" />
     <meta property="og:title"         content="{{article.title}}" />
@@ -48,6 +47,8 @@
     <!-- <p style="text-align: center; font-weight: bold; margin:auto; width: 50%;"> 
         <a class="btn" href="#top" id="totop" style="display: none; border: 0.1rem solid; padding: 2% 14% 2% 14%; color: rgb(215,20,64);">Back to top</a> 
     </p> -->
+
+    <a id="totop" href="#top" style="position: fixed; bottom: 1rem; right: 10%;"><i class="fas fa-chevron-circle-up fa-2x"></i></a>    
 
     <!-- Facebook -->
     <script>(function(d, s, id) {
@@ -121,7 +122,7 @@
         $('#totop').click(function () {
             $('body,html').animate({
                 scrollTop: 0
-            }, 1500);
+            }, 600);
             return false;
         });
         

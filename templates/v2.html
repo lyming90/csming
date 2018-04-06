@@ -4,6 +4,10 @@
 {% endblock %}
 {% block css %}
 <link rel="stylesheet" href="{{ url_for('static', filename='style/v2.css') }}">
+<meta property="og:url"           content="#" />
+<meta property="og:type"          content="website" />
+<meta property="og:image"         content="{{ url_for('static', filename='img/snapshot.png')}}">
+<meta property="og:title"         content="Ming &middot; 刘明宇 &middot; Liu Mingyu" />
 {% endblock %}
 {% block body %}
 

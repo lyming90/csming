@@ -1,10 +1,10 @@
 :root {
     --dark: #212529;
-    --light: #f8f9fa;
+    --light: #ffffff;
 }
 
 body {
-    margin: 3rem 10%;
+    margin: 0 3rem 10% 10%;
     font-family: Verdana, Helvetica, Arial, sans-serif;
     font-weight: normal;
     font-size: 16px;
@@ -21,6 +21,7 @@ strong {
 }
 
 .nav {
+    margin-top: 1.5rem;
     font-size: 1.5rem;
 }
 
@@ -35,6 +36,15 @@ strong {
 .nav-link:hover {
     text-decoration: underline;
     color: black;
+}
+
+#nav-sticky {
+    display: none;
+    position: sticky; 
+    top: 0; 
+    background-color: var(--light); 
+    padding: 1.5rem 0; 
+    border-bottom: 1px dashed rgba(0,0,0,.1);
 }
 
 .icon-M {

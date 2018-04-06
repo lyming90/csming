@@ -7,14 +7,19 @@
 {% endblock %}
 
 {% block body %}
-    <nav class="nav mb-4">
+    <nav id="nav-normal" class="nav mb-4">
         <a class="nav-link navbar-brand icon-M" href="/archive"><img class="icon-M" src="{{ url_for('static', filename='img/icon/M.svg')}}"></a>
         <a id="nav-archive" class="nav-link" href="#">Archive</a>
-        <!-- <a class="nav-link" href="#">Gallery</a> -->
         <a id="nav-panel" class="nav-link" href="/archive/panel">Panel</a>        
         <a class="nav-link" id="go-profile" href="../">Go to Profile</a>
     </nav>
-    <!-- <a href="/new_article">New article</a> -->
+
+    <nav id="nav-sticky" class="nav mb-4">
+        <a class="nav-link navbar-brand icon-M" href="/archive"><img class="icon-M" src="{{ url_for('static', filename='img/icon/M.svg')}}"></a>
+        <a id="nav-archive" class="nav-link" href="#">Archive</a>
+        <a id="nav-panel" class="nav-link" href="/archive/panel">Panel</a>        
+        <a class="nav-link" id="go-profile" href="../">Go to Profile</a>        
+    </nav>
 
     <!-- article list -->
     <h2>Archive</h2>
@@ -26,7 +31,7 @@
         </div>
         <div>
             <!-- <p class="card-text">{{article['body'][0:250] | striptags}}</p> -->
-            <p>{{article['create_date']}}</p>
+            <p style="color: hsl(0, 0%, 46%);">{{article['create_date']}}</p>
             <div>{{article['preview'] | safe}}</div>
             <a href="archive/{{article['alias']}}"><i class="fas fa-book"></i> Read</a>
         </div>
@@ -34,6 +39,38 @@
     {% endfor %}
     </section>
 
+    <a id="totop" href="#top" style="position: fixed; bottom: 1rem; right: 10%;"><i class="fas fa-chevron-circle-up fa-2x"></i></a>
 
+    <script>
+        window.onload = function() {
+            var navpos = $('#nav-normal').offset();
+            $(window).bind('scroll', function() {
+                if ($(window).scrollTop() > navpos.top) {
+                    $('#nav-sticky').css('display', 'flex');
+                    $('#nav-normal').css('display', 'none');                    
+                }
+                else {
+                    $('#nav-normal').css('display', 'flex');     
+                    $('#nav-sticky').css('display', 'none');
+                }
+            });
+        }
+
+        $('#totop').click(function () {
+            $('body,html').animate({
+                scrollTop: 0
+            }, 600);
+            return false;
+        });
+        
+        $(window).scroll(function () {
+            if ($(this).scrollTop() > 50) {
+                $('#totop').fadeIn();
+            } else {
+                $('#totop').fadeOut();
+            }
+        });
+
+    </script>
 
 {% endblock %}

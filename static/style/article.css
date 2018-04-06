@@ -1,6 +1,6 @@
 :root {
     --dark: #212529;
-    --light: #f8f9fa;
+    --light: #ffffff;
 }
 
 body {
@@ -32,6 +32,9 @@ strong {
     font-size: 2rem;
 }
 
+#post-date {
+    color: hsl(0, 0%, 35%);
+}
 
 #article_body p > a {
     border-bottom: dotted 0.05rem;
@@ -71,8 +74,6 @@ strong {
 #article_body h5 {
     border-bottom: none;
 }
-
-/*  */
 
 load-more {
     display: none;
