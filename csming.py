@@ -117,22 +117,6 @@ Main page, my profile page!
 '''
 @app.route('/v1')
 def home_v1():
-    # Get static_dic
-    # cursor = mysql.get_db().cursor()
-    # result = cursor.execute("SELECT * FROM static")  # result gives # of query results
-    # static = cursor.fetchall()  # articles gives a tuple of all results (explicit informaiton)
-
-    # static_list = list()
-    # for static_item in static:
-    #     render_static = helper.render_static_item(static_item)
-    #     static_list.append(render_static)
-    #     # print(static_item)  # DEBUG
-    # cursor.close()
-
-    # static_dic = helper.classify_static(static_list)
-
-    # return fl.render_template('index.html', static_dic = static_dic)
-    
     return fl.render_template('v1.html')
 
 '''
@@ -390,11 +374,12 @@ def edit_preview(id):
 
     if fl.request.method == 'POST' and form.validate():  # method is POST
         preview = form.body.data
+        trimmed = helper.trimPreview(preview)
         cursor = mysql.get_db().cursor()
         if cursor.execute("select * from preview where id = %s", id) != 0:
-            cursor.execute("update preview set preview=%s where id=%s" , (preview, id))
+            cursor.execute("update preview set preview=%s where id=%s" , (trimmed, id))
         else:
-            cursor.execute("insert into preview values (%s, %s)" , (id, preview))            
+            cursor.execute("insert into preview values (%s, %s)" , (id, trimmed))            
         mysql.get_db().commit()
         cursor.close()
 
@@ -437,9 +422,9 @@ def new_article():
         if hidden:
             cursor.execute("insert into archive values(NULL, %s, NULL, NULL, %s, %s, %s, 1)", (author, title, alias, body))
         else:
-            cursor.execute("insert into archive values(NULL, %s, NULL, NULL, %s, %s, %s, 0)", (author, title, alias, body))   
-        mysql.get_db().commit()
+            cursor.execute("insert into archive values(NULL, %s, NULL, NULL, %s, %s, %s, 0)", (author, title, alias, body)) 
         
+        mysql.get_db().commit()
         cursor.close()
 
         return fl.redirect(fl.url_for('panel'))
@@ -560,7 +545,7 @@ def page_not_found(e):
 
 @app.errorhandler(500)
 def fake_page_not_found(e):
-    return "Page not found. Seek your fortune elsewhere.", 404
+    return "Something went wrong :(", 500
 
 if __name__ == '__main__':
     print(">>>>>>>>>> For debug only. If you see this in production, you're doing it wrong. <<<<<<<<<<")

@@ -8,7 +8,10 @@ body {
     font-size: 16px;
     font-family: "Montserrat", Verdana, sans-serif, Helvetica, Arial;
     font-weight: normal;
-    margin: 5% 10%;
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: 10%;
+    margin-right: 10%;
     background-color: var(--light);
     color: var(--dark);
 }
@@ -17,6 +20,7 @@ body {
     width: 100%;
     display: grid;
     grid-template-columns: auto 0.5rem auto;
+    margin-top: 2rem;
     margin-bottom: 2rem;
     text-align: center
 }
@@ -54,13 +58,17 @@ body {
     color: var(--light);
 }
 
+nav > a{
+    color: rgb(215,20,64);
+}
+
 nav > a:hover {
-    color: lightgreen;
+    color: rgb(24,28,98);
 }
 
 .nav-desktop {
     position: absolute; 
-    top: 2.25rem; 
+    top: 2.75rem; 
     right: 2rem;
 }
 

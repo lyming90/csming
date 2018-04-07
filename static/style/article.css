@@ -4,7 +4,10 @@
 }
 
 body {
-    margin: 3rem 10%;
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: 10%;
+    margin-right: 10%;
     font-family: Verdana, Helvetica, Arial, sans-serif;
     font-weight: normal;
     font-size: 16px;
@@ -28,6 +31,7 @@ strong {
 }
 
 #title {
+    margin-top: 1.5rem;
     display: block;
     font-size: 2rem;
 }
@@ -86,7 +90,8 @@ load-more {
 /* for mobile */
 @media screen and (max-width: 720px) {
     body {
-        margin: 5% 5%;
+        margin-left: 5%;
+        margin-right: 5%;
     }
 
     #title {

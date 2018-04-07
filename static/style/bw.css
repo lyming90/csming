@@ -4,7 +4,10 @@
 }
 
 body {
-    margin: 0 3rem 10% 10%;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 0;
+    margin-bottom: 0;
     font-family: Verdana, Helvetica, Arial, sans-serif;
     font-weight: normal;
     font-size: 16px;
@@ -21,8 +24,11 @@ strong {
 }
 
 .nav {
-    margin-top: 1.5rem;
     font-size: 1.5rem;
+    background-color: var(--light); 
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    margin-bottom: 0 !important;
 }
 
 .nav a:hover {
@@ -36,15 +42,6 @@ strong {
 .nav-link:hover {
     text-decoration: underline;
     color: black;
-}
-
-#nav-sticky {
-    display: none;
-    position: sticky; 
-    top: 0; 
-    background-color: var(--light); 
-    padding: 1.5rem 0; 
-    border-bottom: 1px dashed rgba(0,0,0,.1);
 }
 
 .icon-M {
@@ -95,7 +92,8 @@ blockquote p {
 /* for mobile */
 @media screen and (max-width: 720px) {
     body {
-        margin: 5% 5%;
+        margin-left: 5%;
+        margin-right: 5%;
     }
 
     .nav {

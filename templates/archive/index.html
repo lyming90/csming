@@ -14,13 +14,6 @@
         <a class="nav-link" id="go-profile" href="../">Go to Profile</a>
     </nav>
 
-    <nav id="nav-sticky" class="nav mb-4">
-        <a class="nav-link navbar-brand icon-M" href="/archive"><img class="icon-M" src="{{ url_for('static', filename='img/icon/M.svg')}}"></a>
-        <a id="nav-archive" class="nav-link" href="#">Archive</a>
-        <a id="nav-panel" class="nav-link" href="/archive/panel">Panel</a>        
-        <a class="nav-link" id="go-profile" href="../">Go to Profile</a>        
-    </nav>
-
     <!-- article list -->
     <h2>Archive</h2>
 
@@ -44,14 +37,24 @@
     <script>
         window.onload = function() {
             var navpos = $('#nav-normal').offset();
+            var navwidth = $('#nav-normal').width();
             $(window).bind('scroll', function() {
-                if ($(window).scrollTop() > navpos.top) {
-                    $('#nav-sticky').css('display', 'flex');
-                    $('#nav-normal').css('display', 'none');                    
+                // if ($(window).scrollTop() > navpos.top) {
+                //     $('#nav-sticky').css('display', 'flex');
+                //     $('#nav-normal').css('display', 'none');                    
+                // }
+                // else {
+                //     $('#nav-normal').css('display', 'flex');     
+                //     $('#nav-sticky').css('display', 'none');
+                // }
+                if ($(window).scrollTop() > ($('#nav-normal').height() + 48) / 2) {
+                    $('.nav').css('position', 'fixed');
+                    $('.nav').css('width', navwidth);  
+                    $('.nav').css('border-bottom', '1px dashed rgba(0,0,0,.1)'); 
                 }
                 else {
-                    $('#nav-normal').css('display', 'flex');     
-                    $('#nav-sticky').css('display', 'none');
+                    $('.nav').css('position', 'relative');    
+                    $('.nav').css('border-bottom', 'none');                                                    
                 }
             });
         }

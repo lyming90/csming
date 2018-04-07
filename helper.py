@@ -21,7 +21,7 @@ def render_article(article):
     else:
         result['hidden'] = False
 
-    result['preview'] = csming.getPreview(result['id'])
+    result['preview'] = "<p>" + bs(csming.getPreview(result['id'])).get_text() + " [...]" + "</p>"
     
     return result
 
@@ -64,6 +64,15 @@ def title2alias(title):
         result.append(component)
     return '-'.join(result)
 
+
+'''
+trim preview, limit it to 255 chars
+'''
+def trimPreview(preview):
+    soup = bs(preview)
+    text = soup.get_text()
+    return text[0:200]
+    
 '''
 pretty-print html
 '''
