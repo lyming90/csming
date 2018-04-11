@@ -24,6 +24,8 @@ strong {
 }
 
 .nav {
+    position: absolute;
+    top: 0;
     font-size: 1.5rem;
     background-color: var(--light); 
     padding-top: 1.5rem;
@@ -52,6 +54,7 @@ strong {
 
 
 #go-profile {
+    display: none;
     margin-left: auto;
     border: 0.1rem solid;
 }

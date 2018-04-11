@@ -343,7 +343,8 @@ def article(alias):
     render_article = helper.render_article(article)
 
     if render_article['hidden']:
-        fl.abort(404)
+        # fl.abort(404)
+        return fl.render_template('archive/article.html', article=render_article)
     else:
         return fl.render_template('archive/article.html', article=render_article)
 
@@ -459,6 +460,23 @@ def edit_static(static_type):
         form.body.data = render_static_item['body']
 
         return fl.render_template('archive/edit_static.html', form=form)
+
+'''
+Delete article
+'''
+@app.route('/archive/panel/delete/<string:id>', methods=['GET'])
+@is_logged_in
+def delArticle(id):
+    try:
+        cursor = mysql.get_db().cursor()
+        cursor.execute("delete from archive where id=%s" , (id))
+        mysql.get_db().commit()
+        cursor.close()
+
+        return fl.redirect(fl.url_for("panel"))
+    except:
+        fl.abort(404)
+
 
 '''
 Backup SQL (Advanced feature, only open to person with highest ownership)

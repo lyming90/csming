@@ -15,7 +15,7 @@
     </nav>
 
     <!-- article list -->
-    <h2>Archive</h2>
+    <h2 style="margin-top: 6.5rem;">Archive</h2>
 
     <section id="article-list">
     {% for article in articles | reverse %}
@@ -37,7 +37,9 @@
     <script>
         window.onload = function() {
             var navpos = $('#nav-normal').offset();
-            var navwidth = $('#nav-normal').width();
+            var navwidth = $('body').width();
+            $('.nav').css('width', navwidth);
+            $('#go-profile').fadeIn();
             $(window).bind('scroll', function() {
                 // if ($(window).scrollTop() > navpos.top) {
                 //     $('#nav-sticky').css('display', 'flex');
@@ -53,7 +55,7 @@
                     $('.nav').css('border-bottom', '1px dashed rgba(0,0,0,.1)'); 
                 }
                 else {
-                    $('.nav').css('position', 'relative');    
+                    $('.nav').css('position', 'absolute');    
                     $('.nav').css('border-bottom', 'none');                                                    
                 }
             });
