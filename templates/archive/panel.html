@@ -11,30 +11,49 @@
         <a class="nav-link navbar-brand icon-M" href="/archive"><img style="width: 3rem; height: 3rem;" src="{{ url_for('static', filename='img/icon/M.svg')}}"></a>
         <a class="nav-link" href="/archive">Archive</a>
         <!-- <a class="nav-link" href="#">Gallery</a> -->
-        <a class="nav-link" href="/archive/panel/new_article">New Article</a>  
-        <a class="nav-link" href="/archive/lab">Lab</a>            
+        <a class="nav-link" href="/archive/panel/new_article">New Article</a>     
         <a class="nav-link" href="/archive/logout">Log out</a>                     
         <a class="nav-link" id="go-profile" href="../">Go to Profile</a>
     </nav>
 
-    <h1>Panel</h1>
+    <h1 style="margin-top: 6.5rem;">Panel
+        <span style="text-align: right; float: right;">
+                <form action="/archive/panel/getSQL" method="post" style="display: inline">
+                    <button class="btn btn-primary" onclick="downloadDatabase()">Database</button>
+                </form>
+                <form action="/archive/panel/images" method="get" style="display: inline">                
+                    <button style="display: inline" class="btn btn-secondary" target="__blank">Images</button>
+                </form>
+        </span>
+    </h1>
 
-    <h2 style="margin-top: 5px">Static</h1>
-    <hr>
-    <ul class="list-group">
-            {% for static_item in static | reverse %}
-                <li class="list-group-item article-snapshot">
-                    {{static_item['last_update']}} >> 
-                    <a href="panel/{{static_item['static_type']}}">{{static_item['static_type']}}</a>
-                </li>
-            {% endfor %}
-        </ul>
+    <div style="border: 0.5rem solid; padding: 1rem; margin-bottom: 1rem;">
+    <h2>Static</h1>
+        <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                <th scope="col">#</th>
+                <th scope="col">Type</th>
+                <th scope="col">Last Update</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for static_item in static | reverse %}
+                <tr>
+                    <th scope="row">#</th>
+                    <td><a href="panel/static/{{static_item['static_type']}}">{{static_item['static_type']}}</a></td>
+                    <td>{{static_item['last_update']}}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
 
+    <div style="border: 0.5rem solid; padding: 1rem; margin-bottom: 1rem;">
     <h2>Article</h2>
-    <hr>
     <ul class="list-group">
         {% for article in articles | reverse %}
-            <li class="list-group-item article-snapshot">
+            <li class="list-group-item article-snapshot" style="border: 0.2rem dashed var(--dark);">
                 {{article['create_date']}} >> 
                 <a href="panel/article/{{article['id']}}">{{article['title']}}</a>
                 {% if article['hidden'] %}
@@ -52,12 +71,7 @@
             </li>
         {% endfor %}
     </ul>
-
-    <h1>Advanced, be cautious</h1>
-    <hr>
-    <form action="/archive/panel/getSQL" method="post">
-        <button class="btn btn-primary" onclick="downloadDatabase()">Download Database</button>
-    </form>
+    </div>
 
 
     <!-- JavaScript for Editor -->

@@ -435,7 +435,7 @@ def new_article():
 '''
 Edit static contents! (resume, etc...)
 '''
-@app.route('/archive/panel/<string:static_type>', methods=['GET', 'POST'])
+@app.route('/archive/panel/static/<string:static_type>', methods=['GET', 'POST'])
 @is_logged_in
 def edit_static(static_type):
     static_item = getStaticItem(static_type)
@@ -476,6 +476,14 @@ def delArticle(id):
         return fl.redirect(fl.url_for("panel"))
     except:
         fl.abort(404)
+
+
+'''
+For fun
+'''
+@app.route('/ece406/')
+def fun():
+    return fl.render_template('resources/old-school.html')
 
 
 '''
