@@ -27,7 +27,9 @@ $ python test.py
 
 ###  Prerequisites
 
-You need the following modules installed for Python 3
+You need the following modules installed for Python 3.
+
+It is recommended that you run setup.py to install all dependencies.
 
 ```
 
@@ -42,6 +44,8 @@ WTForms
 Passlib.hash
 
 beautifulsoup4
+
+Flask-Uploads
 
 ```
 
