@@ -7,9 +7,10 @@ setup(
     install_requires=[
         'flask',
         'flask-mysql',
-        'passlib.hash',
-        'beautifulsoup4',
         'flask-mail',
+        'flask-uploads',
+        'passlib',
+        'beautifulsoup4',
         'wtforms'
     ],
 )

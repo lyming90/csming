@@ -5,7 +5,7 @@ import passlib.hash as hs
 from threading import Thread
 from csming import forms
 from csming import helper
-from csming import app
+from csming import app, photos
 from csming import mysql, mail
 
 '''
@@ -372,6 +372,48 @@ def mcs(id):
     mcs = helper.render_mcs_entry(mcs)
     return fl.render_template('resources/old-school.html', mcs=mcs)
 
+'''
+'''
+@app.route('/archive/panel/images', methods=['GET', 'POST'])
+@is_logged_in
+def images():
+    if fl.request.method == 'POST' and 'photo' in fl.request.files:
+        filename = photos.save(fl.request.files['photo'])
+        link     = "www.csming.com/static/upload/" + filename
+        httplink = "http://" + link
+        return fl.render_template('archive/explorer.html', header="""
+        Successful!
+        <br>
+        Please copy the link
+        <br>
+        <a target="_blank" style="font-size: 50%" href=
+        """
+        + httplink + ">" + link + "</a>")
+
+    print("GET")
+    return fl.render_template('archive/explorer.html', header="So, upload an image here.")
+
+@app.errorhandler(404)
+def page_not_found(e):
+    return """
+    <p style="text-align: center; margin-top: 40vh">
+        Page not found. Perhaps you typed in a wrong address?
+        <br><br>
+        Maybe?
+    </p>
+    """, 404
+
+@app.errorhandler(500)
+def fake_page_not_found(e):
+    return """
+    <div>
+    <p style="text-align: center; margin-top: 40vh">
+        Something went wrong :(
+        <br><br>
+        I am so sorry :(
+    </p>
+    </div>
+    """, 500
 
 '''
 Backup SQL (Advanced feature, only open to person with highest ownership)

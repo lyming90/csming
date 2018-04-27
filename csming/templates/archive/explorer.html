@@ -1,0 +1,34 @@
+{% extends 'layout.html' %}
+{% block title %}
+    <title>Image Explorer &middot; Ming &middot; 刘明宇 &middot; Liu Mingyu</title>
+{% endblock %}
+{% block css %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='style/bw.css') }}">
+{% endblock %}
+
+{% block body %}
+<div id="upload" style="text-align: center; margin-top: 3rem; margin-left: 10%; margin-right: 10%;">
+    <h2>{{ header | safe }}</h2>
+    <hr>
+    <form method="POST" action="{{ url_for('images') }}" enctype="multipart/form-data">
+        <input type="file" id="file" name="photo" accept="image/*">
+        <button type="button" onclick="display()">Display</button>
+        <input type="submit">
+    </form>
+    <img id="preview" style="display: none; width: 100%; margin-top: 2rem;">
+</div>
+
+<script>
+    function display() {
+        var file = document.getElementById('file').files[0];
+        var reader  = new FileReader();
+        reader.onload = function(e)  {
+            var image           = document.getElementById("preview");
+            var div             = document.getElementById("upload");
+            image.src           = e.target.result;
+            image.style.display = "inline";
+        }
+        reader.readAsDataURL(file);
+        }
+</script>
+{% endblock %}
