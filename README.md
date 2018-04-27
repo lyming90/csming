@@ -14,12 +14,12 @@ To run the project, you will need
 
 - MySQL (database schema is available in sql folder)
   
-You will also need to add MySQL credentials and secret-key into config.json file.
+You will also need to add MySQL credentials and secret-key into config.py file. The file is not presented in [this repo](#), you have to create one by yourself.
 
 After configuration, run
 ```
 
-$ python csming.py
+$ python test.py
 
 ```
 
