@@ -1,0 +1,129 @@
+{% extends 'layout.html' %}
+{% block title %}
+<title>Ming &middot; 刘明宇 &middot; Liu Mingyu</title>
+{% endblock %}
+{% block css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='style/v2.css') }}">
+<meta property="og:url"           content="#" />
+<meta property="og:type"          content="website" />
+<meta property="og:image"         content="{{ url_for('static', filename='img/snapshot.png')}}">
+<meta property="og:title"         content="Ming &middot; 刘明宇 &middot; Liu Mingyu" />
+{% endblock %}
+{% block body %}
+
+<div class="wrap">
+    <section class="info-block">
+            <img class="profile" src="{{ url_for('static', filename='img/hollywood-tinified.png')}}">
+        <p style="margin-top: 1rem;">
+        <strong>刘明宇 Ming</strong>
+        <br>
+        <span style="font-size: 90%">College Sophomore</span>
+        <br>
+        <span style="font-size: 90%">CompSci @ NTU Singapore</span>
+        </p>
+        <ul style="padding-left: 0rem">
+            <li style="display: inline;"><a href="https://github.com/lyming90" target="_blank" style="color: #000000; margin-right: 1rem"><i class="fab fa-github fa-2x"></i></a></li>
+            <li style="display: inline;"><a href="https://facebook.com/mingyuliu1916/" target="_blank" style="color: #3b5998; margin-right: 1rem"><i class="fab fa-facebook fa-2x"></i></a></li>
+            <li style="display: inline;"><a href="https://linkedin.com/in/mingyuliu16/" target="_blank" style="color: #0077B5; margin-right: 1rem"><i class="fab fa-linkedin fa-2x"></i></a></li>
+            <li style="display: inline;"><a href="https://www.instagram.com/mingyuliu_16/" target="_blank" style="color: #fb3958;"><i class="fab fa-instagram fa-2x"></i></a></li>                
+        </ul>
+    </section>
+
+    <div class="middle-border"></div>
+
+    <div class="cover_text">
+        HI, THIS IS MING.
+        <br>
+        <span style="
+            font-size: 50%;
+            border-width: 0.1rem;
+            border-style: solid;
+            padding: 2% 10%;
+        "><a href="/archive" style="color: var(--dark); text-decoration: none;">Go to Archive</a></span>
+    </div>
+</div>
+
+<section class="content">
+    <nav class="nav-desktop">
+        <a onclick="showInfo('#about')" href="#" style="margin-right: 3rem;"><i class="fas fa-info fa-lg"></i></a>
+        <a onclick="showInfo('#resume')" href="#" style="margin-right: 3rem;"><i class="fas fa-trophy fa-lg"></i></i></a>
+        <a onclick="showInfo('#experiences')" href="#" style="margin-right: 3rem;"><i class="fas fa-gamepad fa-lg"></i></a>
+        <a onclick="showInfo('#contact')" href="#"><i class="fas fa-address-card fa-lg"></i></a>
+    </nav>
+
+    <ul style="list-style: none">
+    <li class="nav-item dropdown">
+    <a class="nav-mobile nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><i class="fas fa-bars"></i></a>
+    <div class="dropdown-menu" style="position: absolute">
+            <a class="dropdown-item" onclick="showInfo('#about')" href="#">About</a>
+            <a class="dropdown-item" onclick="showInfo('#resume')" href="#">Resume</a>
+            <a class="dropdown-item" onclick="showInfo('#experiences')" href="#">Experiences</a>
+            <a class="dropdown-item" onclick="showInfo('#contact')" href="#">Contact</a>
+    </div>
+    </li>
+    </ul>
+
+    <section class="info show" id="about">
+        <h1>About</h1>
+        {{ static_dic['About'] | safe }}
+        </section>
+    
+    <section class="info" id="resume">
+        <h1>Resume</h1>
+        <p class="lead">A PDF version of my resume can be obtained upon request.</p>
+        <p class="lead">Here is an online version.</p>
+        <p><a data-target="#resume-content" data-toggle="collapse" href="#" onclick="expand(this)">Click here to expand</a></p>
+        {{ static_dic['Resume'] | safe}}
+    </section>
+
+    <section class="info" id="experiences">
+        <h1>Experiences</h1>
+        {{ static_dic['Experiences'] | safe}}
+    </section>
+
+    <section class="info" id="contact">
+        <h1>Contact</h1>
+        {{ static_dic['Contact'] | safe}}    
+    </section>
+</section>
+
+<!-- Bootstrap JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+<script>
+    var cur_info_id = '#about';
+    var expanded = false;
+
+    window.onload = function() {
+        $('.content').fadeIn(600);
+        showInfo(cur_info_id);
+    }
+
+    function showInfo(info_id) {
+        event.preventDefault();
+        var cur_section = $(cur_info_id);
+        var info_section = $(info_id);
+
+        cur_section.fadeOut(0);
+        info_section.fadeIn(600);
+
+        cur_info_id = info_id;
+    }
+
+    function expand(e) {
+        if (expanded) {
+            e.innerHTML = "Click here to expand";
+        }
+        else {
+            e.innerHTML = "Click here to close up";
+        }
+        expanded = !expanded;
+    }
+</script>
+
+<noscript>
+    <p style="text-align: center"><strong>Please enable JavaScript for this site :D</strong></p>
+</noscript>
+
+{% endblock %}

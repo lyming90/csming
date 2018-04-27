@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>ECE 406 Algorithm Design and Analysis</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        body {
+            font-family: Verdana, Geneva, Arial, sans-serif;
+        }
+
+        h1, h2, h3, h4, h5, h6, strong {
+            color: rgb(220, 20, 60);
+        }
+
+        hr {
+            border-style: solid;
+            border-width: 0.05rem;
+        }
+
+        .index {
+            padding: 0;
+            width: 100%;
+            text-align: right;
+            font-size: 85%;
+        }
+
+        .index li {
+            margin-bottom: 0.5rem;
+        }
+
+        .index a {
+            color: blue;
+        }
+
+        .edit_content {
+            width: 100%;
+            height: 40rem;
+            font-size: 100%;
+            font-family: Courier;
+        }
+    </style>
+</head>
+<body>
+   <h2 class="header">Mathematics for Computer Science (MCS)
+       <span style="float: right"><a href=".." style="border: none; text-decoration: none; padding: 0.5rem; color: black;">Go to Profile</a></span>
+   </h2>
+   <hr>
+
+   <section style="display: grid; grid-template-columns: 18% 2% 75%;">
+       <div>
+           <h4 style="text-align: right">Table of Contents</h4>
+           <ul class="index">
+            <li><a href="1">Vectors in Euclidean Space</a></li>
+            <li><a href="2">Systems of Linear Equations</a></li>
+            <li><a href="3">Matrices and Linear Mappings</a></li>
+            <li><a href="4">Vector Spaces</a></li>
+            <li><a href="5">Inverses and Determinants</a></li>
+            <li><a href="6">Eigenvectors and Diagonalization</a></li>
+           </ul>
+       </div>
+       <div></div>
+       <div>
+        <h3>{{mcs['index_name']}}
+            <span style="float: right"><a href="#" onclick="edit()">Edit</a></span>
+        </h3>
+
+        <section class="content">
+            {{mcs['content'] | safe}}
+
+           <p>
+               <strong>Course Motivation:</strong> Algorithms provide methods for solving problems, and are at the foundation
+of computing. It is important that practitioners in electrical and computer engineering understand
+how algorithms are designed, and how to analyze them for correctness and efficiency. It is important
+also to be able to distinguish intractable problems from ones that are tractable so one does not
+naively seek efficient solutions when none may exist. For cases that are intractable, it is important
+to know how to design approximate solutions that satisfy bounds on correctness and efficiency.
+Industry has long recognized the critical importance of algorithms that are correct and efficient.
+            </p>
+            <p>
+                <strong>Instructor:</strong> Prof. Stephen L. Smith (stephen.smith@uwaterloo.ca; Office: E5 5112).<br>
+                    • Office Hours: Tuesday 1:30-2:30pm (E5 5112), or as arranged otherwise.<br>
+                    • Please put “ECE406” at the front of your subject line for all course related email.
+            </p>
+            <p>
+                <strong>Course Outline:</strong> Design and analysis of efficient, correct algorithms. Advanced data structures,
+                divide and conquer algorithms, recurrences, greedy algorithms, dynamic programming, graph
+                algorithms, search and backtrack, inherently hard and unsolvable problems, approximation and
+                randomized algorithms, and amortized analysis.<br>
+                The following is a more detail on the material covered in the class. Note that not all sections of
+                each chapter will be covered.
+            </p>
+            <table style="width:100%; text-align: left;">
+            <tr>
+                <th>Topic</th>
+                <th>Chapter in Text</th>
+                <th>Duration</th>
+            </tr>
+            <tr>
+                <td>Introduction to algorithms</td>
+                <td>Chapter 0</td>
+                <td>0.5 hours</td>
+            </tr>
+            <tr>
+                <td>Factoring, primality, cryptography</td>
+                <td>Chapter 1</td>
+                <td>4.5 hours</td>
+            </tr>
+            </table>
+        </section>
+       </div>
+    </section>
+   <br>
+   <hr>
+   Last update: {{mcs['last_update']}}
+
+    <!-- Footer -->
+    {% include 'includes/_copyright.html' %}
+
+
+    <script>
+        function edit() {
+            var content = document.getElementsByClassName("content")[0];
+            var text_area = document.createElement('textarea');
+
+            text_area.className = 'edit_content';
+
+            text_area.innerHTML = content.innerHTML;
+            
+            console.log(content);
+            console.log(content.parentNode);
+            console.log(text_area);
+        
+
+            content.setAttribute("style", "display: none");
+            
+            content.parentNode.appendChild(text_area);
+
+
+            return false;
+        }
+
+    </script>
+</body>
+</html>

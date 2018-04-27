@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- metadata -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- title -->{% block title %}{% endblock %}
+
+    <!-- icon -->
+    <link rel="icon" href="{{ url_for('static', filename='img/icon/M_icon.png') }}">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!-- Google Fonts Lato -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+    <!-- Google Fonts Montserrat -->    
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">   
+    <!-- Font Source Sans Pro -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro">
+    <!-- Font Roboto Slab -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab"> 
+
+    <!-- Custom CSS -->{% block css %}{% endblock %}
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-113348736-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-113348736-1');
+    </script>
+
+    <!-- jQuery -->
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
+
+    <!-- Font Awesome -->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js" integrity="sha384-SlE991lGASHoBfWbelyBPLsUlwY1GwNDJo3jSJO04KZ33K2bwfV9YBauFfnzvynJ" crossorigin="anonymous"></script>    
+
+    <!-- Custom JavaScript -->{% block custom_js %}{% endblock %}
+
+</head>
+<body>
+{% block body %}
+{% endblock %}
+
+<!-- Footer -->
+{% include 'includes/_copyright.html' %}
+</body>
+</html>

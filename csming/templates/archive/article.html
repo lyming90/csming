@@ -1,0 +1,153 @@
+{% extends 'layout.html' %}
+{% block title %}
+    <title>{{article.title}} &middot; Ming &middot; 刘明宇 &middot; Liu Mingyu</title>
+
+    <meta property="og:url"           content="#" />
+    <meta property="og:type"          content="website" />
+    <meta property="og:title"         content="{{article.title}}" />
+{% endblock %}
+{% block css %}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/2.10.0/github-markdown.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style/article.css') }}">
+
+    <!-- KaTeX -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.9.0/dist/katex.min.css" integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei" crossorigin="anonymous">
+    <style>
+        img {
+            width: 100%;
+            margin-bottom: 1rem;
+        }
+    </style>
+{% endblock %}
+
+{% block body %}
+    <a href="/archive" style="float: right; border-bottom: none;"><img class="icon-M" src="{{ url_for('static', filename='img/icon/M.svg')}}"></a>
+    <span id="title">{{article.title}}</span>
+    <span id="post-date" style="font-size: 80%">Posted by {{article.author}} on {{article.create_date}}
+        <br>
+        <div class="fb-share-button" 
+        data-href="#" 
+        data-layout="button" 
+        data-size="small" 
+        data-mobile-iframe="true"
+        style="float: right; margin-left: 0.5rem;">
+        <a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a></div>
+        Last updated on {{article.last_update}}
+        <div class="fb-like" 
+        data-href="#" 
+        data-layout="button" 
+        data-action="like" 
+        data-size="small" 
+        data-show-faces="false" 
+        data-share="false"
+        style="float: right"></div>
+    </span>
+    <hr>
+
+    <div id="article_body" style="text-align: left; ";>
+        <article class="markdown-body">
+            {{article.body | safe}}
+        </article>
+    </div>
+
+
+    <p style="text-align: center; font-weight: bold; margin: auto; margin-bottom: 2rem; width: 50%;">
+        <a class="btn" href="#" id="loadMore" style="display: none; border: 0.1rem solid;padding: 2% 15% 2% 15%; color: rgb(215,20,64);">Load More</a>
+    </p>
+    <!-- <p style="text-align: center; font-weight: bold; margin:auto; width: 50%;"> 
+        <a class="btn" href="#top" id="totop" style="display: none; border: 0.1rem solid; padding: 2% 14% 2% 14%; color: rgb(215,20,64);">Back to top</a> 
+    </p> -->
+
+    <a id="totop" href="#top" style="position: fixed; bottom: 1rem; right: 10%;"><i class="fas fa-chevron-circle-up fa-2x"></i></a>    
+
+    <!-- Facebook share button -->
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.12';
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+    
+    <!-- Code highlight -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+
+    <!-- Lazy load -->
+    <script src="{{ url_for('static', filename='script/blazy.js') }}"></script>
+
+    <!-- KaTeX -->
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.9.0/dist/katex.min.js" integrity="sha384-jmxIlussZWB7qCuB+PgKG1uLjjxbVVIayPJwi6cG6Zb4YKq0JIw+OMnkkEC7kYCq" crossorigin="anonymous"></script>  
+    
+
+    <!-- JS for Load more -->
+    <script> 
+        // code highlight
+        hljs.initHighlightingOnLoad();
+        
+        $(document).ready(function() {
+            // load more
+            $("load-more").slice(0, 2).show();
+            if ($("load-more:hidden").length > 0) {
+                $("#loadMore").css('display', 'inline')
+            }
+
+            // Back to top
+            if ($(this).scrollTop() > 50) {
+                    $('#totop').fadeIn();
+            } else {
+                    $('#totop').fadeOut();
+            }
+
+            // change attribute for images
+            $('img').each(function() {
+                var source = $(this).attr('src');
+                $(this).attr('data-src', source)                
+                $(this).attr('src', 'data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==')
+            });
+            
+            // initialize lazy load
+                var bLazy = new Blazy({
+                selector: 'img' // all images
+            });
+
+        })
+
+        $(function () {
+            $("#loadMore").on('click', function (e) {
+                e.preventDefault();
+
+                $("load-more:hidden").slice(0, 2).slideDown();
+                $('html,body').animate({
+                    scrollTop: $(this).offset().top
+                }, 3000);
+
+                if ($("load-more:hidden").length == 0) {  // no more hidden
+                    // $("#load").fadeOut('slow');
+                    $("#loadMore").css('display', 'none');
+                }
+                
+                // initialize lazy load
+                var bLazy = new Blazy({
+                selector: 'img' // all images
+                });
+            });
+        });
+        
+        $('#totop').click(function () {
+            $('body,html').animate({
+                scrollTop: 0
+            }, 600);
+            return false;
+        });
+        
+        $(window).scroll(function () {
+            if ($(this).scrollTop() > 50) {
+                $('#totop').fadeIn();
+            } else {
+                $('#totop').fadeOut();
+            }
+        });
+    </script>
+{% endblock %}
