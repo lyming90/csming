@@ -4,10 +4,31 @@
 {% endblock %}
 {% block css %}
     <link rel="stylesheet" href="{{ url_for('static', filename='style/bw.css') }}">
+    <style>
+      body {
+        font-family: 'Source Sans Pro', sans-serif;
+        margin-left: 36%;
+        margin-right: 36%;
+      }
+
+      #copyright {
+        font-size: 90%;
+      }
+
+      /* for mobile */
+      @media screen and (max-width: 720px) {
+        body {
+          margin-left: 5%;
+          margin-right: 5%;
+        }
+      }
+    </style>
 {% endblock %}
 
 {% block body %}
-  <h1>Login</h1>
+  <div style="text-align: center; margin-top: 1rem;">
+    <img src="{{ url_for('static', filename='img/knight-min.png') }}" style="width: 65%; height: auto;">
+  </div> 
   <form action="" method="POST">
     <div class="form-group">
       <label>Username</label>
@@ -17,6 +38,9 @@
       <label>Password</label>
       <input type="password" name="password" class="form-control" value={{request.form.password}}>
     </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <button type="submit" class="btn btn-dark" style="width: 100%; margin-top: 0.5rem;">Submit</button>
   </form>
+  <div style="text-align: center; margin-top: 1rem;">
+      You are directed to this page because the requested site requires authentication. Ensure that you <a href="/archive/logout">logout</a> and exit your browser when finished.
+  </div>
 {% endblock %}

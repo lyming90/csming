@@ -380,7 +380,7 @@ def images():
     if fl.request.method == 'POST' and 'photo' in fl.request.files:
         filename = photos.save(fl.request.files['photo'])
         link     = "www.csming.com/static/upload/" + filename
-        httplink = "http://" + link
+        httplink = "https://" + link
         return fl.render_template('archive/explorer.html', header="""
         Successful!
         <br>
@@ -391,7 +391,7 @@ def images():
         + httplink + ">" + link + "</a>")
 
     print("GET")
-    return fl.render_template('archive/explorer.html', header="So, upload an image here.")
+    return fl.render_template('archive/explorer.html', header="So, upload an image here (max 1MB).")
 
 @app.errorhandler(404)
 def page_not_found(e):

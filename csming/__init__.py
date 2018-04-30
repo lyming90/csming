@@ -6,6 +6,7 @@ from csming import config as cfg
 
 # init app
 app = fl.Flask(__name__)
+app.secret_key = cfg.BasicConfig.secret_key
 
 # init flask-uploads
 photos = UploadSet('photos', IMAGES)

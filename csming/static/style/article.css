@@ -34,7 +34,7 @@ strong {
     margin-top: 1.5rem;
     display: block;
     font-family: 'Roboto Slab', serif;
-    font-size: 2.5rem;
+    font-size: 2rem;
 }
 
 h1 {
@@ -45,8 +45,8 @@ h1 {
     color: hsl(0, 0%, 35%);
 }
 
-article {
-    font-family: 'Source Sans Pro', sans-serif !important;
+#article_body article p {
+    font-family: 'Source Sans Pro', sans-serif;
     font-size: 1.2rem !important;
 }
 
@@ -59,10 +59,6 @@ article {
     /* border-bottom: dotted 1px; */
     color: rgb(24,28,98);
     text-decoration: none;
-}
-
-#article_body article p {
-    font-family: 'lato', Verdana, Helvetica, Arial, sans-serif;
 }
 
 #article_body pre {
@@ -105,7 +101,7 @@ load-more {
     }
 
     #title {
-        font-size: 1.8rem;
+        font-size: 1.6rem;
     }
 
     #post-date {
