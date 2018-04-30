@@ -23,6 +23,10 @@
 {% endblock %}
 
 {% block body %}
+    <!-- <nav class="nav mb-4" style="position: fixed; left: 0; width: 100%; background-color: white;">
+        <a id="nav-panel" class="nav-link" href="/archive/panel" style="float: right;"><img class="icon-M" src="{{ url_for('static', filename='img/icon/M.svg')}}"></a>     
+    </nav> -->
+
     <a href="/archive" style="float: right; border-bottom: none;"><img class="icon-M" src="{{ url_for('static', filename='img/icon/M.svg')}}"></a>
     <span id="title">{{article.title}}</span>
     <span id="post-date" style="font-size: 80%">Posted by {{article.author}} on {{article.create_date}}
