@@ -37,8 +37,10 @@ strong {
     font-size: 2rem;
 }
 
-h1 {
-    
+#beneath_title {
+    height: 0.25em;
+    border: none;
+    background-color: #e1e4e8;
 }
 
 #post-date {
