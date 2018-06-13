@@ -16,10 +16,22 @@
 
   <style>
     :root {
-      --primary: #B9090B;
+      --primary: #336B87;
+      --urgent: #B9090B;
       --disabled: #ccc;
       font-family: 'Open Sans', sans-serif;
       font-size: 20px;
+    }
+
+    .notice {
+      background-color: var(--urgent);
+      margin-bottom: 0;
+      color: white;
+      padding-top: 0.5rem;
+      padding-bottom: 0.5rem;
+      padding-left: 0.5rem;
+      margin-bottom: 1.5rem;
+      border-radius: 5px;
     }
 
     .container {
@@ -50,21 +62,6 @@
       display: flex;
       flex-direction: column;
       align-content: flex-start;
-    }
-
-    form * {
-      display: block;
-    }
-    
-    .email, .code {
-      font-family: 'Open Sans Light', sans-serif;
-      color: gray;
-      margin-bottom: 1rem;
-      font-size: 0.8rem;
-      border: 1px rgb(200, 200, 200) solid;
-      border-radius: 10px;
-      max-width: 80%;
-      padding: 0.5rem;
     }
 
     .header {
@@ -112,7 +109,7 @@
 
     p {
       margin-top: 0;
-      margin-bottom: 1rem;
+      margin-bottom: 1.5rem;
     }
 
     @media screen and (max-width: 768px) {
@@ -152,8 +149,9 @@
       <div><a class="icon-text no-selection" onclick="showInfo('#contact')" href="#"><i class="fas fa-address-card fa-sm"></i> Contact</a></div>
     </div>
     <div class="right-container">
+      <div class="notice no-selection"><i class="fas fa-flag fa-sm" style="margin-right: 0.5rem;"></i>Hey, I am updating this site! Come back later!</div>
       <p class="header no-selection">Home</p>
-      <p><first-word>Hi!</first-word> My name is 刘明宇 (Liu Mingyu - in which Liu is the surname). I am a rising junior at Nanyang Technological University with a major in Computer Science and a possible minor in Mathematics.
+      <p><first-word>Hi!</first-word> My name is 刘明宇 (Liu Mingyu - in which Liu is my surname). I am a rising junior at Nanyang Technological University with a major in Computer Science and a possible minor in Mathematics.
       </p>
       <p><first-word>I</first-word> am a self-driven and curious person who always look forward to new adventures and embrace latest technologies. I aim to design and create software solutions that are high-quality, robust and beautifully-presented. Besides my interest in Computer Science, I also enjoy traveling and hiking.
       </p>
