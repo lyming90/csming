@@ -9,9 +9,9 @@ from csming import app, photos
 from csming import mysql, mail
 
 '''
-Primary
+Version 2
 '''
-@app.route('/')
+@app.route('/v2')
 def home_v2():
     static_dic = helper.getAllStatic()
     return fl.render_template('v2.html', static_dic = static_dic)
@@ -22,6 +22,22 @@ Version 1
 @app.route('/v1')
 def home_v1():
     return fl.render_template('v1.html')
+
+'''
+Version 3
+'''
+@app.route('/v3')
+def home_v3():
+    static_dic = helper.getAllStatic()
+    return fl.render_template('v3.html', static_dic = static_dic)
+
+'''
+Version 4
+'''
+@app.route('/')
+def home_v4():
+    static_dic = helper.getAllStatic()
+    return fl.render_template('v4.html', static_dic = static_dic)
 
 '''
 This method routes to the archive page, in which getArticle() is invoked!
