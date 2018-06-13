@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>刘明宇 | Liu Mingyu</title>
+  <!-- icon -->
+  <link rel="icon" href="{{ url_for('static', filename='img/icon/M_icon.png') }}">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Open Sans -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+  <!-- Raleway -->
+  <link href="https://fonts.googleapis.com/css?family=Raleway:600" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+
+  <style>
+    :root {
+      --primary: #B9090B;
+      --disabled: #ccc;
+      font-family: 'Open Sans', sans-serif;
+      font-size: 20px;
+    }
+
+    .container {
+      max-width: 768px;
+      padding-left: 2rem;
+      padding-right: 2rem;
+      padding-top: 2rem;
+      padding-bottom: 2rem;
+      display: flex;
+      flex-direction: row;
+      margin: auto;
+      justify-content: space-evenly;
+    }
+
+    .container div {
+      flex-grow: 1;
+    }
+
+    .left-container {
+      display: flex;
+      flex-direction: column;
+      align-content: flex-start;
+      margin-right: 2rem;
+      text-align: left;
+    }
+
+    .right-container {
+      display: flex;
+      flex-direction: column;
+      align-content: flex-start;
+    }
+
+    form * {
+      display: block;
+    }
+    
+    .email, .code {
+      font-family: 'Open Sans Light', sans-serif;
+      color: gray;
+      margin-bottom: 1rem;
+      font-size: 0.8rem;
+      border: 1px rgb(200, 200, 200) solid;
+      border-radius: 10px;
+      max-width: 80%;
+      padding: 0.5rem;
+    }
+
+    .header {
+      font-family: 'Raleway', sans-serif;
+      font-size: 1.8rem;
+      font-weight: 600;
+      padding-left: 1rem;
+      padding-top: 0;
+      padding-bottom: 0;
+      border-left: 0.5rem solid var(--primary);
+    }
+
+    .selected {
+      color: var(--primary);
+    }
+
+    .icon-text {
+      text-decoration: none;
+    }
+
+    .no-selection {
+      -webkit-touch-callout: none;
+      -webkit-user-select: none;
+      -khtml-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+
+    first-word {
+      font-family: Open Sans Extra-Bold, sans-serif;
+      font-size: 1.5rem;
+    }
+
+    button {
+      border: none;
+      color: white;
+      background: var(--primary); 
+      border-radius: 5px;
+      font-size: 0.6rem;
+      padding: 0.5rem 2rem;
+      min-width: 8rem;
+      max-width: 100%;
+    }
+
+    p {
+      margin-top: 0;
+      margin-bottom: 1rem;
+    }
+
+    @media screen and (max-width: 768px) {
+      .container {
+        flex-direction: column;
+      }
+
+      .left-container div {
+        display: none;
+      }
+
+      form {
+        text-align: center;
+      }
+    }
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="left-container">
+      <div>
+        <img class="no-selection" src="{{ url_for('static', filename='img/profile.jpg')}}" 
+        style="height: 6rem;
+          width: 6rem;
+          padding: 1px;
+          border: 1px solid var(--disabled);
+          border-radius: 2rem;">
+      </div>
+      <!-- <div><a href="https://github.com/lyming90" target="_blank" style="color: #000000;"><i class="fab fa-github fa-lg"></i> Github</a></div>
+      <div><a href="https://facebook.com/mingyuliu1916/" target="_blank" style="color: #3b5998;"><i class="fab fa-facebook fa-lg"></i> Facebook</a></div>
+      <div><a href="https://linkedin.com/in/mingyuliu16/" target="_blank" style="color: #0077B5;"><i class="fab fa-linkedin fa-lg"></i> LinkedIn</a></div>
+      <div><a href="https://www.instagram.com/mingyuliu_16/" target="_blank" style="color: #fb3958;"><i class="fab fa-instagram fa-lg"></i> Instagram</a></div> -->
+      <div><a class="icon-text no-selection" onclick="showInfo('#about')" href="#" style=""><i class="fas fa-coffee fa-sm"></i> Home</a></div>
+      <div><a class="icon-text no-selection" onclick="showInfo('#resume')" href="#" style=""><i class="fas fa-trophy fa-sm"></i> Resume</a></div>
+      <div><a class="icon-text no-selection" onclick="showInfo('#experiences')" href="#" style=""><i class="fas fa-comment-dots fa-sm"></i> Posts</a></div>
+      <div><a class="icon-text no-selection" onclick="showInfo('#contact')" href="#"><i class="fas fa-address-card fa-sm"></i> Contact</a></div>
+    </div>
+    <div class="right-container">
+      <p class="header no-selection">Home</p>
+      <p><first-word>Hi!</first-word> My name is 刘明宇 (Liu Mingyu - in which Liu is the surname). I am a rising junior at Nanyang Technological University with a major in Computer Science and a possible minor in Mathematics.
+      </p>
+      <p><first-word>I</first-word> am a self-driven and curious person who always look forward to new adventures and embrace latest technologies. I aim to design and create software solutions that are high-quality, robust and beautifully-presented. Besides my interest in Computer Science, I also enjoy traveling and hiking.
+      </p>
+      <p style="margin-top: 0.5rem;"><button class="submit no-selection">See my posts</button></p>
+      <!-- <form>
+        <input class="email" type="text" value="Email address">
+        <input class="code" type="text" value="Invitation code" >
+        <input class="submit" type="button" value="Sign Up" >
+      </form> -->
+    </div>
+  </div>
+
+  <script>
+    const seeMyPost = document.querySelector('button');
+    const onSeeMyPostClick = (event) => {
+      window.location.assign("/archive");
+    }
+
+    seeMyPost.addEventListener('click', onSeeMyPostClick);
+  </script>
+</body>
+</html>
