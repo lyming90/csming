@@ -1,0 +1,29 @@
+:root {
+  --primary: #1E656D;
+  --warning: #B9090B;
+  --text-color: #011A27;
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  color: var(--text-color);
+}
+
+p[class=upsize]:first-letter {
+  font-family: 'Open Sans Extra-Bold', sans-serif;
+  font-size: 2rem;
+}
+
+.disable-select {
+  -webkit-user-select: none;  
+  -moz-user-select: none;    
+  -ms-user-select: none;      
+  user-select: none;
+}
+
+@media screen and (max-width: 768px) {
+  .sidebar {
+    display: none;
+  }
+}
