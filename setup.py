@@ -5,7 +5,7 @@ setup(
     packages=['csming'],
     include_package_data=True,
     install_requires=[
-        'flask',
+        'Flask',
         'flask-mysql',
         'flask-mail',
         'flask-uploads',
