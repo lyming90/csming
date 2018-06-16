@@ -14,8 +14,11 @@ h1, h2, h3, h4, h5, h6 {
   /* border-left: 0.5rem solid var(--primary); */
 }
 
-hr-custom {
+line-break {
   display: block;
+  text-align: left;
+  width: 100%;
+  margin: 2rem 0;
   background-color: var(--primary);
   height: 2px;
 }
