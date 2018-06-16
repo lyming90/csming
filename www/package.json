@@ -15,8 +15,6 @@
     "serve": "^8.2.0"
   },
   "scripts": {
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
@@ -24,6 +22,5 @@
   },
   "main": "index.js",
   "author": "Liu Mingyu",
-  "license": "MIT",
-  "homepage": "https://lyming90.github.io/csming"
+  "license": "MIT"
 }
