@@ -17,6 +17,7 @@ class Page extends Component {
             <Route exact path='/contact' component={ContactContent}/>
             <Route path='/' component={HomeContent}/>
           </Switch>
+          <p className='copy-right disable-select'>&copy; 2018 Ming Yu.</p>
         </div>
       </BrowserRouter>
     );

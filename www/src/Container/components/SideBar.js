@@ -18,7 +18,10 @@ class SideBar extends Component {
       }
     }
 
+    this.onHomeClick = this.onHomeClick.bind(this);
     this.onResumeClick = this.onResumeClick.bind(this);
+    this.onPostsClick = this.onPostsClick.bind(this);
+    this.onContactClick = this.onContactClick.bind(this);
   }
 
   onHomeClick = (event) => {
@@ -45,7 +48,7 @@ class SideBar extends Component {
     window.location.assign('/resume');
   };
 
-  onPostClick = (event) => {
+  onPostsClick = (event) => {
     this.setState({
       menuSelected: {
         home: false,
@@ -100,7 +103,7 @@ class SideBar extends Component {
               <ListItemIcon style={menuItemColorScheme}>{resumeIcon}</ListItemIcon>
               <span style={menuItemColorScheme}>Resume</span>
             </MenuItem>
-            <MenuItem selected={this.state.menuSelected.posts} style={menuItemStyle} onClick={this.onPostClick}>
+            <MenuItem selected={this.state.menuSelected.posts} style={menuItemStyle} onClick={this.onPostsClick}>
               <ListItemIcon style={menuItemColorScheme}>{postsIcon}</ListItemIcon>
               <span style={menuItemColorScheme}>Posts</span>
             </MenuItem>

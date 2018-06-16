@@ -15,6 +15,10 @@ p[class=upsize]:first-letter {
   font-size: 2rem;
 }
 
+.copy-right {
+  font-size: 70%;
+}
+
 .disable-select {
   -webkit-user-select: none;  
   -moz-user-select: none;    

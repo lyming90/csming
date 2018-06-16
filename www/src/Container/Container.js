@@ -4,15 +4,8 @@ import Page from './components/Page';
 
 class Container extends Component {
   render() {
-    const containerStyle = {
-      display: 'flex',
-      flexDirection: 'row',
-      marginTop: '2rem',
-      justifyContent: 'space-evenly',
-    }
-
     return (
-      <div class='container' style={containerStyle}>
+      <div className='container'>
         <SideBar />
         <Page />
       </div>

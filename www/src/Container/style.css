@@ -8,6 +8,13 @@
   margin: auto;
 }
 
+.container {
+  display: flex;
+  flex-direction: row;
+  margin-top: 2rem;
+  justify-content: space-evenly;
+}
+
 h1, h2, h3, h4, h5, h6 {
   font-size: 1.5rem;
   color: var(--text-color);
