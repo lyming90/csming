@@ -4,14 +4,17 @@
   "private": true,
   "dependencies": {
     "@material-ui/core": "^1.2.1",
-    "eslint": "^4.19.1",
+    "axios": "^0.18.0",
     "flow": "^0.2.3",
     "gh-pages": "^1.2.0",
+    "prop-types": "^15.6.1",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
+    "react-redux": "^5.0.7",
     "react-router": "^4.3.1",
     "react-router-dom": "^4.3.1",
     "react-scripts": "1.1.4",
+    "redux": "^4.0.0",
     "serve": "^8.2.0"
   },
   "scripts": {
@@ -22,5 +25,8 @@
   },
   "main": "index.js",
   "author": "Liu Mingyu",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "eslint-config-google": "^0.9.1"
+  }
 }

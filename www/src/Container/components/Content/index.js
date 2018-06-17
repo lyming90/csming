@@ -2,6 +2,7 @@ import HomeContent from './HomeContent';
 import ResumeContent from './ResumeContent';
 import ContactContent from './ContactContent';
 import PostsContent from './PostsContent';
+import GeneralContent from './GeneralContent';
 import './style.css';
 
-export { HomeContent, ResumeContent, ContactContent, PostsContent };
+export { HomeContent, ResumeContent, ContactContent, PostsContent, GeneralContent };

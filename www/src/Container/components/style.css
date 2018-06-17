@@ -19,4 +19,6 @@
   display: flex;
   flex-direction: column;
   align-content: flex-start;
+  max-width: 768px;
+  min-width: 40%;
 }

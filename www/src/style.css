@@ -2,6 +2,7 @@
   --primary: #1E656D;
   --warning: #B9090B;
   --text-color: #011A27;
+  --text-disable: #ccc;
 }
 
 p {
@@ -24,6 +25,16 @@ p[class=upsize]:first-letter {
   -moz-user-select: none;    
   -ms-user-select: none;      
   user-select: none;
+}
+
+img[class=post-image] {
+  width: 100%;
+  border-radius: 5px;
+}
+
+span[class=small] {
+  font-size: 80%;
+  color: var(--primary);
 }
 
 @media screen and (max-width: 768px) {

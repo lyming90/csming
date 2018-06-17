@@ -1,22 +1,49 @@
 import React, { Component } from 'react';
-import { HomeContent, ResumeContent, ContactContent, PostsContent } from './Content';
+import { connect } from 'react-redux';
+import { GeneralContent } from './Content';
+import { switchPage } from './redux/actions'
 import Banner from './Banner';
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import './style.css'
 
 class Page extends Component {
+  constructor(props) {
+    super(props);
+    this.pageName = null;
+  }
+
+  // switchPage = (pageName) => {
+  //   this.props.switchPage(pageName);
+  // }
+
+  componentDidMount() {
+    console.log("this.pageName", this.pageName);
+    if (this.pageName) {
+      this.props.switchPage(this.pageName);
+    }
+  }
+
   render() {
     return (
       <BrowserRouter>
         <div className='page'>
           <Banner Text='Hey, I am updating this site! Come back later!'/>
           <Switch>
-            <Route exact path='/home' component={HomeContent}/>
-            <Route exact path='/resume' component={ResumeContent}/>
-            <Route exact path='/posts' component={PostsContent}/>
-            <Route exact path='/contact' component={ContactContent}/>
-            <Route path='/' component={HomeContent}/>
+            <Route exact path='/:pageName'
+              render={(props) => {
+                const pageName = props.match.params.pageName.toLowerCase();
+                this.pageName = pageName;  // deprecated, find a better way to do this!
+                return <GeneralContent />;
+              }}
+            />
+            <Route path='/'
+              render={() => {
+                this.pageName = 'home';  // deprecated, find a better way to do this!
+                return <GeneralContent />;
+              }
+            }/>
           </Switch>
+          <line-break style={{width: '40%'}}/>
           <p className='copy-right disable-select'>&copy; 2018 Ming Yu.</p>
         </div>
       </BrowserRouter>
@@ -24,4 +51,18 @@ class Page extends Component {
   }
 }
 
-export default Page;
+
+const mapStateToProps = (state) => {
+  return { 
+    redirect: state.redirect,
+    pageName: state.pageName
+  };
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    switchPage: (pageName) => dispatch(switchPage(pageName))
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Page);

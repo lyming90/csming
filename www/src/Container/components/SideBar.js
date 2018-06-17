@@ -1,77 +1,17 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 // import { Redirect } from 'react-router-dom';
 import './style.css';
+import { switchPage } from './redux/actions';
 import MenuList from '@material-ui/core/MenuList';
 import MenuItem from '@material-ui/core/MenuItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
-
+   
 
 class SideBar extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      menuSelected: {
-        home: true,
-        resume: false,
-        posts: false,
-        contact: false,
-      }
-    }
-
-    this.onHomeClick = this.onHomeClick.bind(this);
-    this.onResumeClick = this.onResumeClick.bind(this);
-    this.onPostsClick = this.onPostsClick.bind(this);
-    this.onContactClick = this.onContactClick.bind(this);
-  }
-
-  onHomeClick = (event) => {
-    this.setState({
-      menuSelected: {
-        home: true,
-        resume: false,
-        posts: false,
-        contact: false,
-      }
-    });
-    window.location.assign('/home');
-  };
-
-  onResumeClick = (event) => {
-    this.setState({
-      menuSelected: {
-        home: false,
-        resume: true,
-        posts: false,
-        contact: false,
-      }
-    });
-    window.location.assign('/resume');
-  };
-
-  onPostsClick = (event) => {
-    this.setState({
-      menuSelected: {
-        home: false,
-        resume: false,
-        posts: true,
-        contact: false,
-      }
-    });
-    window.location.assign('/posts');
-  };
-
-  onContactClick = (event) => {
-    this.setState({
-      menuSelected: {
-        home: false,
-        resume: false,
-        posts: false,
-        contact: true,
-      }
-    });
-    window.location.assign('/contact');
-  };
-
+  // constructor(props) {
+  //   super(props);
+  // }
 
   render() {
     const avatarURL = 'https://avatars0.githubusercontent.com/u/19569154?s=460&v=4';
@@ -95,19 +35,19 @@ class SideBar extends Component {
         </div>
         <div>
           <MenuList>
-            <MenuItem selected={this.state.menuSelected.home} style={menuItemStyle} onClick={this.onHomeClick}>
+            <MenuItem selected={this.props.pageName === 'home'} style={menuItemStyle} onClick={() => this.props.switchPage('home')}>
               <ListItemIcon style={menuItemColorScheme}>{homeIcon}</ListItemIcon>
               <span style={menuItemColorScheme}>Home</span>
             </MenuItem>
-            <MenuItem selected={this.state.menuSelected.resume} style={menuItemStyle} onClick={this.onResumeClick}>
+            <MenuItem selected={this.props.pageName === 'resume'} style={menuItemStyle} onClick={() => this.props.switchPage('resume')}>
               <ListItemIcon style={menuItemColorScheme}>{resumeIcon}</ListItemIcon>
               <span style={menuItemColorScheme}>Resume</span>
             </MenuItem>
-            <MenuItem selected={this.state.menuSelected.posts} style={menuItemStyle} onClick={this.onPostsClick}>
+            <MenuItem selected={this.props.pageName === 'posts'} style={menuItemStyle} onClick={() => this.props.switchPage('posts')}>
               <ListItemIcon style={menuItemColorScheme}>{postsIcon}</ListItemIcon>
               <span style={menuItemColorScheme}>Posts</span>
             </MenuItem>
-            <MenuItem selected={this.state.menuSelected.contact} style={menuItemStyle} onClick={this.onContactClick}>
+            <MenuItem selected={this.props.pageName === 'contact'} style={menuItemStyle} onClick={() => this.props.switchPage('contact')}>
               <ListItemIcon style={menuItemColorScheme}>{contactIcon}</ListItemIcon>
               <span style={menuItemColorScheme}>Contact</span>
             </MenuItem>
@@ -118,4 +58,19 @@ class SideBar extends Component {
   }
 }
 
-export default SideBar;
+const mapStateToProps = (state) => {
+  return {
+    pageName: state.pageName
+  };
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    switchPage: (pageName) => dispatch(switchPage(pageName)),
+  }
+}
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(SideBar);

@@ -1,4 +1,5 @@
 .banner {
+  display: block;
   background-color: var(--warning);
   margin-bottom: 1.5rem;
   color: white;
