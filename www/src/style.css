@@ -41,4 +41,9 @@ span[class=small] {
   .sidebar {
     display: none;
   }
+
+  .page {
+    min-width: 95%;
+    max-width: 95%;
+  }
 }
