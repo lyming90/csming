@@ -1,21 +1,21 @@
 .app-wrapper {
   display: flex;
   flex-direction: column;
-  padding-left: 2rem;
-  padding-right: 2rem;
-  padding-bottom: 2rem;
+  padding-top: 3rem;
+  padding-left: 3rem;
+  padding-right: 3rem;
+  padding-bottom: 3rem;
   margin: auto;
 }
 
 .container {
   display: flex;
   flex-direction: row;
-  margin-top: 2rem;
-  justify-content: center;
+  /* justify-content: center; */
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   color: var(--text-color);
   /* border-left: 0.5rem solid var(--primary); */
 }

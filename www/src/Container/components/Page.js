@@ -12,20 +12,11 @@ class Page extends Component {
     this.pageName = null;
   }
 
-  // switchPage = (pageName) => {
-  //   this.props.switchPage(pageName);
-  // }
-
   componentDidMount() {
     console.log("this.pageName", this.pageName);
     if (this.pageName) {
       this.props.switchPage(this.pageName);
     }
-  }
-
-  componentWillMount() {
-    const deviceWidth = window.innerWidth;
-    const pageDOM = document.getElementsByClassName('page');
   }
 
   render() {
@@ -59,14 +50,14 @@ class Page extends Component {
 
 const mapStateToProps = (state) => {
   return { 
-    redirect: state.redirect,
-    pageName: state.pageName
+    redirect: state.pageReducer.redirect,
+    pageName: state.pageReducer.pageName
   };
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    switchPage: (pageName) => dispatch(switchPage(pageName))
+    switchPage: (pageName) => dispatch(switchPage(pageName)),
   }
 }
 

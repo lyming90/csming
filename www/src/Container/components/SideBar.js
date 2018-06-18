@@ -60,7 +60,7 @@ class SideBar extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    pageName: state.pageName
+    pageName: state.pageReducer.pageName
   };
 };
 

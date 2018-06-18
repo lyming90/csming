@@ -3,6 +3,7 @@
   max-width: 12rem;
   /* max-height: 20rem; */
   flex-direction: column;
+  margin-left: 3rem;
   margin-right: 3rem;
   text-align: left;
 }
@@ -19,6 +20,6 @@
   display: flex;
   flex-direction: column;
   align-content: flex-start;
-  width: 40rem;
+  width: 55%;
   /* width: 50rem; */
 }

@@ -5,7 +5,7 @@ const pageReducer = (state = [], action) => {
     case 'SWITCH_PAGE':
       return {
         ...state,
-        pageName: action.pageName,
+        pageName: action.payload.pageName,
         redirect: true
       };
     case 'TRIGGER_REDIRECTION':
