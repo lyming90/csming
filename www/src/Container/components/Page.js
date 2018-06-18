@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { GeneralContent } from './Content';
+import { Content } from './Content';
 import { switchPage } from './redux/actions'
 import Banner from './Banner';
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
@@ -23,6 +23,11 @@ class Page extends Component {
     }
   }
 
+  componentWillMount() {
+    const deviceWidth = window.innerWidth;
+    const pageDOM = document.getElementsByClassName('page');
+  }
+
   render() {
     return (
       <BrowserRouter>
@@ -33,17 +38,17 @@ class Page extends Component {
               render={(props) => {
                 const pageName = props.match.params.pageName.toLowerCase();
                 this.pageName = pageName;  // deprecated, find a better way to do this!
-                return <GeneralContent />;
+                return <Content />;
               }}
             />
             <Route path='/'
               render={() => {
                 this.pageName = 'home';  // deprecated, find a better way to do this!
-                return <GeneralContent />;
+                return <Content />;
               }
             }/>
           </Switch>
-          <line-break style={{width: '40%'}}/>
+          <p></p>
           <p className='copy-right disable-select'>&copy; 2018 Ming Yu.</p>
         </div>
       </BrowserRouter>

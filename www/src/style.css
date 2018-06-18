@@ -1,6 +1,7 @@
 :root {
   --primary: #1E656D;
   --warning: #B9090B;
+  --bright: #739F3D;
   --text-color: #011A27;
   --text-disable: #ccc;
 }
@@ -43,7 +44,10 @@ span[class=small] {
   }
 
   .page {
-    min-width: 95%;
-    max-width: 95%;
+    width: 100%
+  }
+
+  .app-wrapper {
+    padding: 0 1rem;
   }
 }
