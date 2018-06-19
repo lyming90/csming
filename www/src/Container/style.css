@@ -25,6 +25,6 @@ line-break {
   text-align: left;
   width: 100%;
   margin: 2rem 0;
-  background-color: var(--primary);
-  height: 2px;
+  background-color: #ccc;
+  height: 1px;
 }

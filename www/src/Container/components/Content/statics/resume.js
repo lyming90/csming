@@ -4,6 +4,7 @@ const resume =
   <div>
     <p className='upsize'>This will be my resume!</p>
     <p>Please make a prettier & longer version!</p>
+    <p>Contact me to request for an <a href='/posts'>official resume</a>.</p>
     <h1>Education</h1>
     <p>Currently a rising junior at Nanyang Technological University, Singapore.</p>
     <p>In the past, I went to the University of Waterloo for one term.</p>

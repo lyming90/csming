@@ -22,8 +22,8 @@ class Posts extends Component {
       <div>
         {this.props.doneFetch ? null : <p style={{textAlign: 'center'}}>{spinner}</p>}
         {this.props.doneFetch && Object.keys(this.props.postList).map(postTitle => <PostCard key={this.props.postList[postTitle]} Alias={this.props.postList[postTitle]}/>)}
-        <Button variant='contained' color='secondary' onClick={() => console.log("Props now, ", this.props)}>Debug</Button>
-        <Button variant='contained' color='primary' onClick={() => this.props.fetchPostList()}>Reload</Button>
+        <p><Button variant='contained' color='secondary' onClick={() => {console.log("Props now, ", this.props); alert("Check console!")}}>Debug</Button></p>
+        <p><Button variant='contained' color='primary' onClick={() => window.location.replace('/posts')}>Reload</Button></p>
       </div>
     )
   }
