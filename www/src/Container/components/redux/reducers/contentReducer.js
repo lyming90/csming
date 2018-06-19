@@ -14,7 +14,11 @@ const contentReducer = (state = [], action) => {
         ...state,
         postContent: {
           ...state.postContent,
-          [action.alias]: '123'
+          [action.alias]: {
+            title: action.payload.title,
+            content: action.payload.content,
+            doneFetch: true
+          }
         }
       }
     default:

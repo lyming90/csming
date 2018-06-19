@@ -35,8 +35,8 @@ export const fetchPostContent = (postAlias) =>
         type: 'FETCH_POST_CONTENT',
         alias: postAlias,
         payload: {
-          title: '123',
-          content: '123'
+          title: postData.title,
+          content: postData.content
           // TODO: please add more
         }
       })
