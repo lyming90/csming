@@ -2,7 +2,7 @@ import React from 'react';
 
 const resume = 
   <div>
-    <p class='upsize'>This will be my resume!</p>
+    <p className='upsize'>This will be my resume!</p>
     <p>Please make a prettier & longer version!</p>
     <h1>Education</h1>
     <p>Currently a rising junior at Nanyang Technological University, Singapore.</p>

@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
-import { triggerRedirection, retrieveContentByPageName } from '../redux/actions';
+import { triggerRedirection } from '../redux/actions';
 import Header from './Header';
 import './style.css';
-import { posts as postsContent, home as homeContent, resume as resumeContent, contact as contactContent } from './statics';
+import { home as homeContent, resume as resumeContent, contact as contactContent } from './statics';
+import Posts from './Posts';
 import PropTypes from 'prop-types';
 
 const shouldBeReplacedByRealDatabase = {
@@ -15,10 +16,6 @@ const shouldBeReplacedByRealDatabase = {
   resume: {
     header: 'Resume',
     content: resumeContent,
-  },
-  posts: {
-    header: 'Posts',
-    content: postsContent,
   },
   contact: {
     header: 'Contact',
@@ -35,37 +32,41 @@ class Content extends Component {
     }
   }
 
+  fetchPageContent = (pageName) => {
+    if (pageName === 'posts') {
+      return {
+        header: 'Posts',
+        content: <Posts />
+      }
+    } else {
+      const pagePath = shouldBeReplacedByRealDatabase[pageName];
+      return pagePath
+        ? {
+          header: pagePath.header,
+          content: pagePath.content
+        } : {
+          header: '404 Not Found',
+          content: 'Hearily sorry.'
+        };
+    }
+  }
+
   componentDidUpdate(prevProps) {
     if (prevProps.pageName !== this.props.pageName) {
-      const pagePath = shouldBeReplacedByRealDatabase[this.props.pageName];
-
-      const header = pagePath
-        ? pagePath.header
-        : '404 Not Found';
-      const content = pagePath
-        ? pagePath.content
-        : <p>Heartily sorry.</p>;
+      const { header, content } = this.fetchPageContent(this.props.pageName);
       
       this.setState({
         header: header,
         content: content,
       });
+      
       console.log("Page updated.");
     }
   }
 
   componentDidMount() {
-    const pagePath = shouldBeReplacedByRealDatabase[this.props.pageName];
-    // experiment
-    this.props.retrieveContent('home');
-
-    const header = pagePath
-      ? pagePath.header
-      : '404 Not Found';
-    const content = pagePath
-      ? pagePath.content
-      : <p>Heartily sorry.</p>;
-    
+    const { header, content } = this.fetchPageContent(this.props.pageName);
+  
     this.setState({
       header: header,
       content: content,
@@ -106,7 +107,6 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     triggerRedirection: () => dispatch(triggerRedirection()),
-    retrieveContent: (pageName) => dispatch(retrieveContentByPageName(pageName)),
   }
 }
 

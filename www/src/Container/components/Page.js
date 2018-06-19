@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Content } from './Content';
+import Content from './Content';
 import { switchPage } from './redux/actions'
 import Banner from './Banner';
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
