@@ -2,28 +2,11 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 import { triggerRedirection } from '../redux/actions';
-import Header from './Header';
+import Header from '../Content/Header';
 import './style.css';
-import { home as homeContent, resume as resumeContent, contact as contactContent } from './statics';
-import Posts from './Posts';
 import PropTypes from 'prop-types';
 
-const staticContent = {
-  home: {
-    header: 'Home',
-    content: homeContent,
-  },
-  resume: {
-    header: 'Resume',
-    content: resumeContent,
-  },
-  contact: {
-    header: 'Contact',
-    content: contactContent,
-  },
-}
-
-class Content extends Component {
+class MarkdownContent extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -110,4 +93,4 @@ const mapDispatchToProps = (dispatch) => {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Content);
+export default connect(mapStateToProps, mapDispatchToProps)(MarkdownContent);
