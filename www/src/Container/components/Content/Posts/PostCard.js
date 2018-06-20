@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom'
 import './style.css'
 import { fetchPostContent } from '../../redux/actions';
+import ReactMarkDown from 'react-markdown';
 
 const placeHolderColor = '#ccc';
 
@@ -39,7 +40,7 @@ class PostCard extends Component {
     return (
       <div class='postcard'>
           <p className='card-title'>{this.props.Title}</p>
-          <p className='upsize'>{this.props.Content}</p>
+          {this.props.DoneFetch ? <ReactMarkDown source={this.props.Content} /> : contentLoading}
           <p>
             {
               this.props.DoneFetch 

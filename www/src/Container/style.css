@@ -16,6 +16,7 @@
 
 h1, h2, h3, h4, h5, h6 {
   font-size: 1.8rem;
+  font-weight: bold;
   color: var(--text-color);
   /* border-left: 0.5rem solid var(--primary); */
 }

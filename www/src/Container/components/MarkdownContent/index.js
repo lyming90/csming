@@ -1,95 +1,61 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Redirect } from 'react-router-dom';
-import { triggerRedirection } from '../redux/actions';
-import Header from '../Content/Header';
-import './style.css';
-import PropTypes from 'prop-types';
+import { fetchPostContent } from '../redux/actions';
+import ReactMarkDown from 'react-markdown';
+import Button from '@material-ui/core/Button';
+
+const spinner = <i class="rotating fas fa-spinner fa-6x"></i>;
+
+const placeHolderColor = '#ccc';
+
+const titleLoading = <div className='disable-select' style={{
+  backgroundColor: placeHolderColor,
+  color: placeHolderColor,
+  width: '60%',
+}}>Loading</div>
+
+const contentLoading = <div className='disable-select' style={{
+  backgroundColor: placeHolderColor,
+  color: placeHolderColor,
+  width: '100%',
+}}>Loading<br/>Loading<br/>Loading<br/></div>
 
 class MarkdownContent extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      header: '',
-      content: '',
-    }
-  }
-
-  fetchPageContent = (pageName) => {
-    if (pageName === 'posts') {
-      return {
-        header: 'Posts',
-        content: <Posts />
-      }
-    } else {
-      const pagePath = staticContent[pageName];
-      return pagePath
-        ? {
-          header: pagePath.header,
-          content: pagePath.content
-        } : {
-          header: '404 Not Found',
-          content: 'Hearily sorry.'
-        };
-    }
-  }
-
-  componentDidUpdate(prevProps) {
-    if (prevProps.pageName !== this.props.pageName) {
-      const { header, content } = this.fetchPageContent(this.props.pageName);
-      
-      this.setState({
-        header: header,
-        content: content,
-      });
-      
-      console.log("Page updated.");
-    }
+    // do something
   }
 
   componentDidMount() {
-    const { header, content } = this.fetchPageContent(this.props.pageName);
-  
-    this.setState({
-      header: header,
-      content: content,
-    });
-    console.log("Page loaded.");
+    this.props.fetchPostContent(this.props.Alias);
   }
 
-  render () {
-    const redirect = this.props.redirect;
-    if (redirect) {
-      this.props.triggerRedirection();
-      const redirectTo = this.props.pageName;
-      console.log("A redirection is triggered, to ", redirectTo);
-      return <Redirect to={'/' + redirectTo} />
-    }
-
+  render() {
     return (
-      <div className='content'>
-        <Header Text={this.state.header} />
-        <div>{this.state.content}</div>
-      </div>
-    );
+      <div class='markdown-content'>
+        <p className='markdown-content-title'>{this.props.Title}</p>
+        {this.props.DoneFetch ? <ReactMarkDown escapeHtml={false} source={this.props.Content} /> : contentLoading}
+    </div>
+    )
   }
-};
-
-Content.propTypes = {
-  pageName: PropTypes.string,
 }
 
-const mapStateToProps = (state) => {
-  console.log("Let's see what's in state!", state);
+const mapStateToProps = (state, ownProps) => {
   return {
-    redirect: state.pageReducer.redirect,
-    pageName: state.pageReducer.pageName
+    Alias: ownProps.Alias,
+    Title: state.contentReducer.postContent && state.contentReducer.postContent[ownProps.Alias]
+      ? state.contentReducer.postContent[ownProps.Alias].title
+      : [titleLoading],
+    Content: state.contentReducer.postContent && state.contentReducer.postContent[ownProps.Alias]
+      ? state.contentReducer.postContent[ownProps.Alias].content
+      : [contentLoading],
+    DoneFetch: state.contentReducer.postContent && state.contentReducer.postContent[ownProps.Alias]
   };
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    triggerRedirection: () => dispatch(triggerRedirection()),
+    fetchPostContent: (alias) => dispatch(fetchPostContent(alias))
   }
 }
 

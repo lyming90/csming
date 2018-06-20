@@ -10,9 +10,9 @@ const resume =
     <p>In the past, I went to the University of Waterloo for one term.</p>
     <line-break />
     <h1>Experience</h1>
-    <p><strong>Software Engineer Intern</strong><br/><span className='small'>May 2018 - Present<br/>Sea (Shopee), Singapore</span></p>
-    <p><strong>Peer Coach</strong><br/><span className='small'>Sept - Nov 2018<br/>SCSE-NTU, Singapore</span></p>
-    <p><strong>Teaching Assistant</strong><br/><span className='small'>Feb - Apr 2017<br/>Saturday Kids, Singapore</span></p>
+    <p>Software Engineer Intern<br/><span className='small'>May 2018 - Present<br/>Sea (Shopee), Singapore</span></p>
+    <p>Peer Coach<br/><span className='small'>Sept - Nov 2018<br/>SCSE-NTU, Singapore</span></p>
+    <p>Teaching Assistant<br/><span className='small'>Feb - Apr 2017<br/>Saturday Kids, Singapore</span></p>
     <line-break />
     <h1>Skill Set</h1>
     <p>For programming languages, I know Java, Python, C, SQL, HTML, CSS, JavaScript.</p>

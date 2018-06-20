@@ -17,7 +17,7 @@ export const triggerRedirection = () => ({
 export const fetchPostList = () => 
   async dispatch => {
     const databaseRef = firebaseRef.child('posts');
-    databaseRef.once('value', snapshot => {
+    databaseRef.on('value', snapshot => {
       dispatch({
         type: 'FETCH_POST_LIST',
         payload: snapshot.val()

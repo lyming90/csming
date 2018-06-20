@@ -5,6 +5,7 @@ import { switchPage } from './redux/actions'
 import Banner from './Banner';
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import './style.css'
+import MarkdownContent from './MarkdownContent';
 
 class Page extends Component {
   constructor(props) {
@@ -32,6 +33,12 @@ class Page extends Component {
                 return <Content />;
               }}
             />
+            <Route path='/post/:alias'
+              render={(params) => {
+                console.log("Params", params);
+                return <MarkdownContent Alias={params.match.params.alias} />;
+              }
+            }/>
             <Route path='/'
               render={() => {
                 this.pageName = 'home';  // deprecated, find a better way to do this!
