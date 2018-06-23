@@ -15,11 +15,3 @@
   border: 1px solid #ccc;
   border-radius: 2rem;
 }
-
-.page {
-  display: flex;
-  flex-direction: column;
-  align-content: flex-start;
-  width: 55%;
-  /* width: 50rem; */
-}

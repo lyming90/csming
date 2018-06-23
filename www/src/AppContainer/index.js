@@ -1,5 +1,5 @@
 import React from 'react';
-import AppWrapper from '../Container';
+import Container from '../Container';
 
 const App = () => {
   const appStyle = {
@@ -9,7 +9,7 @@ const App = () => {
 
   return (
     <div className='App' style={appStyle}>
-      <AppWrapper />
+      <Container />
     </div>
   )
 }

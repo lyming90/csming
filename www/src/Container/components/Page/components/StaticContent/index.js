@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Redirect } from 'react-router-dom';
 import { triggerRedirection } from '../redux/actions';
 import Header from './Header';
 import './style.css';
@@ -46,42 +45,17 @@ class Content extends Component {
           content: pagePath.content
         } : {
           header: '404 Not Found',
-          content: 'Hearily sorry.'
+          content: 'Heartily sorry.'
         };
     }
   }
 
-  componentDidUpdate(prevProps) {
-    if (prevProps.pageName !== this.props.pageName) {
-      const { header, content } = this.fetchPageContent(this.props.pageName);
-      
-      this.setState({
-        header: header,
-        content: content,
-      });
-      
-      console.log("Page updated.");
-    }
-  }
-
   componentDidMount() {
-    const { header, content } = this.fetchPageContent(this.props.pageName);
-  
-    this.setState({
-      header: header,
-      content: content,
-    });
-    console.log("Page loaded.");
+    console.log('props', this.props);
   }
 
   render () {
     const redirect = this.props.redirect;
-    if (redirect) {
-      this.props.triggerRedirection();
-      const redirectTo = this.props.pageName;
-      console.log("A redirection is triggered, to ", redirectTo);
-      return <Redirect to={'/' + redirectTo} />
-    }
 
     return (
       <div className='content'>

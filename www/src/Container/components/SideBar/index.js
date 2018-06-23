@@ -1,17 +1,34 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
-// import { Redirect } from 'react-router-dom';
-import './style.css';
-import { switchPage } from './redux/actions';
+import { withRouter } from 'react-router';
+import PropTypes from 'prop-types';
+
 import MenuList from '@material-ui/core/MenuList';
 import MenuItem from '@material-ui/core/MenuItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
+import './style.css';
    
 
 class SideBar extends Component {
-  // constructor(props) {
-  //   super(props);
-  // }
+  static propTypes = {
+    match: PropTypes.object.isRequired,
+    location: PropTypes.object.isRequired,
+    history: PropTypes.object.isRequired
+  }
+
+  constructor(props) {
+    super(props);
+    const pathName = this.props.location.pathname;
+    this.state = {
+      pathName: pathName
+    };
+  }
+
+  redirectTo = (destination) => {
+    this.props.history.push(destination);
+    this.setState({
+      pathName: destination
+    });
+  }
 
   render() {
     const avatarURL = 'https://avatars0.githubusercontent.com/u/19569154?s=460&v=4';
@@ -35,19 +52,19 @@ class SideBar extends Component {
         </div>
         <div>
           <MenuList>
-            <MenuItem selected={this.props.pageName === 'home'} style={menuItemStyle} onClick={() => this.props.switchPage('home')}>
-              <ListItemIcon style={menuItemColorScheme}>{homeIcon}</ListItemIcon>
-              <span style={menuItemColorScheme}>Home</span>
-            </MenuItem>
-            <MenuItem selected={this.props.pageName === 'resume'} style={menuItemStyle} onClick={() => this.props.switchPage('resume')}>
+              <MenuItem selected={this.state.pathName === '/home'} style={menuItemStyle} onClick={() => this.redirectTo('/home')}>
+                <ListItemIcon style={menuItemColorScheme}>{homeIcon}</ListItemIcon>
+                <span style={menuItemColorScheme}>Home</span>
+              </MenuItem>
+            <MenuItem selected={this.state.pathName === '/resume'} style={menuItemStyle} onClick={() => this.redirectTo('/resume')}>
               <ListItemIcon style={menuItemColorScheme}>{resumeIcon}</ListItemIcon>
               <span style={menuItemColorScheme}>Resume</span>
             </MenuItem>
-            <MenuItem selected={this.props.pageName === 'posts'} style={menuItemStyle} onClick={() => this.props.switchPage('posts')}>
+            <MenuItem selected={this.state.pathName === '/posts'} style={menuItemStyle} onClick={() => this.redirectTo('/posts')}>
               <ListItemIcon style={menuItemColorScheme}>{postsIcon}</ListItemIcon>
               <span style={menuItemColorScheme}>Posts</span>
             </MenuItem>
-            <MenuItem selected={this.props.pageName === 'contact'} style={menuItemStyle} onClick={() => this.props.switchPage('contact')}>
+            <MenuItem selected={this.state.pathName === '/contact'} style={menuItemStyle} onClick={() => this.redirectTo('/contact')}>
               <ListItemIcon style={menuItemColorScheme}>{contactIcon}</ListItemIcon>
               <span style={menuItemColorScheme}>Contact</span>
             </MenuItem>
@@ -58,19 +75,4 @@ class SideBar extends Component {
   }
 }
 
-const mapStateToProps = (state) => {
-  return {
-    pageName: state.pageReducer.pageName
-  };
-};
-
-const mapDispatchToProps = (dispatch) => {
-  return {
-    switchPage: (pageName) => dispatch(switchPage(pageName)),
-  }
-}
-
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(SideBar);
+export default withRouter(SideBar);
