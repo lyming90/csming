@@ -2,8 +2,9 @@ import React, { Component } from 'react';
 import { Route, Switch, withRouter } from 'react-router-dom'
 import PropTypes from 'prop-types';
 
-import StaticContent from './components/Content/StaticContent/index';
 import Banner from './components/Banner/index';
+import StaticContent from './components/Content/StaticContent/index';
+import DynamicContent from './components/Content/DynamicContent/index';
 // import Content from './components/Content/index';
 // import MarkdownContent from './components/MarkdownContent/index';
 
@@ -21,7 +22,7 @@ class Page extends Component {
         <div className='page'>
           <Banner Text='Hey, I am updating this site! Come back later!'/>
           <Switch>
-            <Route exact path='/posts' render={() => <div>Not done</div>} />
+            <Route exact path='/posts' component={DynamicContent} />
             <Route exact path='/:statics' component={StaticContent} />
             <Route path='/' component={StaticContent} />
           </Switch>

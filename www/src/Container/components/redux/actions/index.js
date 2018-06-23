@@ -16,7 +16,7 @@ export const triggerRedirection = () => ({
 // async: an action creator can return a(n) (async) function instead of an action object.
 export const fetchPostList = () => 
   async dispatch => {
-    const databaseRef = firebaseRef.child('posts');
+    const databaseRef = firebaseRef.child('posts').child('ref');
     databaseRef.on('value', snapshot => {
       dispatch({
         type: 'FETCH_POST_LIST',
@@ -25,9 +25,20 @@ export const fetchPostList = () =>
     });
   };
 
+export const fetchPostPreview = () =>
+  async dispatch => {
+    const databaseRef = firebaseRef.child('posts').child('preview');
+    databaseRef.on('value', snapshot => {
+      dispatch({
+        type: 'FETCH_POST_PREVIEW',
+        payload: snapshot.val()
+      });
+    });
+  };
+
 export const fetchPostContent = (postAlias) => 
   async dispatch => {
-    const databaseRef = firebaseRef.child('posts').child(postAlias);
+    const databaseRef = firebaseRef.child('posts').child('content').child(postAlias);
     databaseRef.once('value', snapshot => {
       const postData = snapshot.val();
       console.log("postData??", postData);
@@ -41,5 +52,4 @@ export const fetchPostContent = (postAlias) =>
         }
       })
     })
-
   }

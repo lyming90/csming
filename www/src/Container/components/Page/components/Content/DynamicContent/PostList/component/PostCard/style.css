@@ -1,0 +1,13 @@
+.postcard {
+  font-size: 80%;
+  display: block;
+  padding: 1rem 1rem;
+  margin-bottom: 1rem;
+  background-color: #cccccc47;
+  border-radius: 0.5rem;
+}
+
+.card-title {
+  font-size: 1.5rem;
+  font-weight: 1200;
+}

@@ -1,17 +1,19 @@
 import { createStore, applyMiddleware } from 'redux';
 import reduxThunk from 'redux-thunk'
-
-import reducer from './reducers';
+import reducer from './reducers/index';
 
 // State
 // {
-//   pageName: [pageName],
 //   postList: string[],
-//   doneFetch: boolean,
-//   content: [content],
-//   redirect: [boolean]
+//   postContent: string,
 // }
 
-const store = createStore(reducer, {}, applyMiddleware(reduxThunk));
+const initialState = {
+  postList: '',
+  postContent: '',
+  postPreview: {},
+}
+
+const store = createStore(reducer, initialState, applyMiddleware(reduxThunk));
 
 export default store;
