@@ -46,8 +46,8 @@ class StaticContent extends Component {
         content = statics.contact.content;
         break;
       default:
-        header = '404 Not Found',
-        content = 'Heartily sorry.'
+        header = '404 Not Found';
+        content = 'Heartily sorry.';
         break;
     }
 

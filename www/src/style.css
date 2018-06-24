@@ -1,7 +1,7 @@
 :root {
   --primary: #1E656D;
   --warning: #B9090B;
-  --bright: #739F3D;
+  --special: #2D4262;  /* indigo */
   --text-color: #011A27;
   --text-disable: #ccc;
 }
@@ -28,6 +28,14 @@ p[class=upsize]:first-letter {
   user-select: none;
 }
 
+.lato {
+  font-family: 'Lato', sans-serif;
+}
+
+.monaco {
+  font-family: monaco, sans-serif;
+}
+
 img[class=post-image] {
   margin: auto;
   max-width: 100%;
@@ -36,7 +44,12 @@ img[class=post-image] {
 
 span[class=small] {
   font-size: 80%;
+}
+
+a {
   color: var(--primary);
+  text-decoration: none;
+  border-bottom: 1px dashed;
 }
 
 @media screen and (max-width: 768px) {
@@ -50,5 +63,29 @@ span[class=small] {
 
   .app-wrapper {
     padding: 1rem;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .page {
+    width: 480px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .page {
+    width: 720px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .page {
+    width: 960px;
+  }
+}
+
+@media screen and (min-width: 2560px) {
+  .page {
+    width: 1440px;
   }
 }

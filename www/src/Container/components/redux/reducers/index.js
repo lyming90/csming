@@ -22,6 +22,18 @@ const reducer = (state = [], action) => {
         ...state,
         postPreview: action.payload,
       };
+    case 'FETCH_POST_CONTENT':
+      return {
+        ...state,
+        postContent: action.payload,
+      };
+    case 'CLEAR_STATE':
+      return {
+        ...state,
+        postList: '',
+        postPreview: [],
+        postContent: '',
+      }
     default:
       return state;
   }

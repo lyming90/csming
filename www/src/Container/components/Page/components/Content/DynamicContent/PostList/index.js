@@ -2,6 +2,8 @@ import React from 'react';
 import { fetchPostList, fetchPostPreview } from '../../../../../redux/actions/index'
 import { connect } from 'react-redux';
 
+import Button from '@material-ui/core/Button';
+
 import PostCard from './component/PostCard/index';
 import './style.css'
 
@@ -11,6 +13,7 @@ class PostList extends React.Component{
 
     this.fetchPostList = this.props.fetchPostList;
     this.fetchPostPreview = this.props.fetchPostPreview;
+    this.clearState = this.props.clearState;
   }
 
   componentDidMount() {
@@ -50,9 +53,13 @@ class PostList extends React.Component{
 
       return (
         <div className='placeholder'>
-          <PostCard titleLoading={titleLoading} previewLoading={previewLoading} linkLoading={linkLoading} />
-          <PostCard titleLoading={titleLoading} previewLoading={previewLoading} linkLoading={linkLoading} />
-          <PostCard titleLoading={titleLoading} previewLoading={previewLoading} linkLoading={linkLoading} />
+          {
+            function(){
+              const postCards = [];
+              for (let i = 0; i < 4; i++) postCards.push(<PostCard key={i} titleLoading={titleLoading} previewLoading={previewLoading} linkLoading={linkLoading} />);
+              return postCards;
+            }()
+          }
         </div>
       );
     }
@@ -62,7 +69,7 @@ class PostList extends React.Component{
     return (
       <div>
         {this.createPostCard()}
-        <button onClick={() => console.log("Store, ", this.props)}>Debug</button>
+        <Button variant='contained' color='secondary' onClick={() => console.log("Store, ", this.props)}>Debug</Button>
       </div>
     )
   }
