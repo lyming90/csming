@@ -6,6 +6,7 @@ import MenuList from '@material-ui/core/MenuList';
 import MenuItem from '@material-ui/core/MenuItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 
+import Floating from './components/Floating/index';
 import './style.css';
    
 
@@ -71,6 +72,7 @@ class SideBar extends Component {
             </MenuItem>
           </MenuList>
         </div>
+        <Floating />
       </div>
     );
   }

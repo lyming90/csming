@@ -1,8 +1,8 @@
 .sidebar {
   display: flex;
+  position: relative;
   max-width: 15%;
   min-width: 10rem;
-  /* max-height: 20rem; */
   flex-direction: column;
   margin-right: 3rem;
   text-align: left;

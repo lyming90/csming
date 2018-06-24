@@ -39,67 +39,67 @@ export const resume =
     <line-break />
     <h1 id='courses'>Courses</h1>
     <p><strong>Courses I've taken</strong></p>
-    <p class='lato'>
+    <p className='lato'>
       <strong>Winter 2018 (University of Waterloo)</strong>
       <br/>
-      <span class='monaco'>CS430</span> - Application Software Engineering
+      <span className='monaco'>CS430</span> - Application Software Engineering
       <br/>
-      <span class='monaco'>ECE222</span> - Digital Computers
+      <span className='monaco'>ECE222</span> - Digital Computers
       <br/>
-      <span class='monaco'>ECE351</span> - Compilers
+      <span className='monaco'>ECE351</span> - Compilers
       <br/>
-      <span class='monaco'>ECE406</span> - Algorithm Design and Analysis
+      <span className='monaco'>ECE406</span> - Algorithm Design and Analysis
       <br/>
-      <span class='monaco'>EMLS129R</span> - Written Academic English
+      <span className='monaco'>EMLS129R</span> - Written Academic English
       <br/>
-      <span class='monaco'>MATH136</span> - Linear Algebra 1 for Honors Mathematics
+      <span className='monaco'>MATH136</span> - Linear Algebra 1 for Honors Mathematics
     </p>
-    <p class='lato'>
+    <p className='lato'>
       <strong>Fall 2017 (Switched to Computer Science)</strong>
       <br/>
-      <span class='monaco'>CZ1005</span> - Digital Logic
+      <span className='monaco'>CZ1005</span> - Digital Logic
       <br/>
-      <span class='monaco'>CZ2001</span> - Algorithms
+      <span className='monaco'>CZ2001</span> - Algorithms
       <br/>
-      <span class='monaco'>CZ2002</span> - Object Oriented Design & Programming
+      <span className='monaco'>CZ2002</span> - Object Oriented Design & Programming
       <br/>
-      <span class='monaco'>CZ2006</span> - Software Engineering
+      <span className='monaco'>CZ2006</span> - Software Engineering
       <br/>
-      <span class='monaco'>CZ2007</span> - Introduction to Databases
+      <span className='monaco'>CZ2007</span> - Introduction to Databases
       <br/>
-      <span class='monaco'>PH1005</span> - Optics, Vibrations & Waves
+      <span className='monaco'>PH1005</span> - Optics, Vibrations & Waves
     </p>
-    <p class='lato'>
+    <p className='lato'>
       <strong>Spring 2017</strong>
       <br/>
-      <span class='monaco'>CZ1007</span> - Data Structures
+      <span className='monaco'>CZ1007</span> - Data Structures
       <br/>
-      <span class='monaco'>CZ1011</span> - Engineering Mathematics I
+      <span className='monaco'>CZ1011</span> - Engineering Mathematics I
       <br/>
-      <span class='monaco'>CZ1012</span> - Engineering Mathematics II
+      <span className='monaco'>CZ1012</span> - Engineering Mathematics II
       <br/>
-      <span class='monaco'>EE2008</span> - Data Structures & Algorithms
+      <span className='monaco'>EE2008</span> - Data Structures & Algorithms (for Electrical Engineering)
       <br/>
-      <span class='monaco'>EE8084</span> - Cyber Security
+      <span className='monaco'>EE8084</span> - Cyber Security
       <br/>
-      <span class='monaco'>MH1812</span> - Discrete Mathematics
+      <span className='monaco'>MH1812</span> - Discrete Mathematics
     </p>
-    <p class='lato'>
+    <p className='lato'>
       <strong>Fall 2016</strong>
       <br/>
-      <span class='monaco'>CZ1003</span> - Introduction to Computational Thinking
+      <span className='monaco'>CZ1003</span> - Introduction to Computational Thinking
       <br/>
-      <span class='monaco'>FE1008</span> - Computing (for Electrical Engineering)
+      <span className='monaco'>FE1008</span> - Computing (for Electrical Engineering)
       <br/>
-      <span class='monaco'>FE1073</span> - An Introduction to Engineering and Practices
+      <span className='monaco'>FE1073</span> - An Introduction to Engineering and Practices
       <br/>
-      <span class='monaco'>HE9091</span> - Principle of Economics
+      <span className='monaco'>HE9091</span> - Principle of Economics
       <br/>
-      <span class='monaco'>HW0188</span> - Engineering Communication I
+      <span className='monaco'>HW0188</span> - Engineering Communication I
       <br/>
-      <span class='monaco'>MH1810</span> - Mathematics I (for Electrical Engineering)
+      <span className='monaco'>MH1810</span> - Mathematics I (for Electrical Engineering)
       <br />
-      <span class='monaco'>PH1011</span> - Physics (for Electrical Engineering)
+      <span className='monaco'>PH1011</span> - Physics (for Electrical Engineering)
     </p>
   </div>
 

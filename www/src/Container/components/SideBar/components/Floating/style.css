@@ -1,0 +1,11 @@
+.floating {
+  position: sticky;
+  left: 0;
+  top: 30%;
+  display: flex;
+  flex-direction: column;
+}
+
+.floating div * {
+  margin-bottom: 1.5rem;
+}

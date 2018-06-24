@@ -33,6 +33,10 @@ class StaticContent extends Component {
     let content;
 
     switch (pathname) {
+      case '/':
+        header = statics.home.header;
+        content = statics.home.content;
+        break;
       case '/home':
         header = statics.home.header;
         content = statics.home.content;
