@@ -22,9 +22,9 @@ class Page extends Component {
         <div className='page'>
           <Banner Text='Hey, I am updating this site! Come back later!'/>
           <Switch>
-            <Route path='/' component={StaticContent} />
             <Route path='/posts' component={DynamicContent} />
             <Route path='/:statics' component={StaticContent} />
+            <Route path='/' component={StaticContent} />
           </Switch>
           <p></p>
           <p className='copy-right disable-select'>&copy; 2018 Ming Yu.</p>

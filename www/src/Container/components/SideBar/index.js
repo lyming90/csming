@@ -25,6 +25,16 @@ class SideBar extends Component {
     };
   }
 
+  componentDidMount() {
+    document.addEventListener('scroll', () => {
+      const floating = document.querySelector('.floating');
+      const menuToBottom = document.querySelector(".menu-list").getBoundingClientRect().bottom;
+      menuToBottom < 0
+        ? floating.style.visibility = 'visible'
+        : floating.style.visibility = 'hidden'
+    })
+  }
+
   redirectTo = (destination) => {
     this.props.history.push(destination);
     this.setState({
@@ -52,7 +62,7 @@ class SideBar extends Component {
         <div>
           <img className='avatar disable-select' src={avatarURL} alt='avatar' />
         </div>
-        <div>
+        <div className='menu-list'>
           <MenuList>
               <MenuItem selected={this.state.pathName === '/home'} style={menuItemStyle} onClick={() => this.redirectTo('/home')}>
                 <ListItemIcon style={menuItemColorScheme}>{homeIcon}</ListItemIcon>

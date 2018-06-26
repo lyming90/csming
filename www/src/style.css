@@ -62,11 +62,11 @@ a {
   }
 
   .app-wrapper {
-    padding: 1rem;
+    padding: 0.5rem;
   }
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 769px) {
   .page {
     width: 480px;
   }
