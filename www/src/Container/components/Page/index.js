@@ -5,8 +5,6 @@ import PropTypes from 'prop-types';
 import Banner from './components/Banner/index';
 import StaticContent from './components/Content/StaticContent/index';
 import DynamicContent from './components/Content/DynamicContent/index';
-// import Content from './components/Content/index';
-// import MarkdownContent from './components/MarkdownContent/index';
 
 import './style.css'
 

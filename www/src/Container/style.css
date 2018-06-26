@@ -13,11 +13,26 @@
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-size: 1.8rem;
-  font-weight: bold;
+  /* font-size: 1.8rem; */
+  /* font-weight: bold; */
   color: var(--text-color);
   /* border-left: 0.5rem solid var(--primary); */
 }
+
+/* h1 { font-size: 2em; }
+h2 { font-size: 1.5em; }
+h3 { font-size: 1.17em; }
+h4 { font-size: 1.12em; }
+h5 { font-size: 0.83em; }
+h6 { font-size: 0.75em; } */
+
+h1 { font-size: 1.8rem; }
+h2 { font-size: 1.6rem; }
+h3 { font-size: 1.4rem; }
+h4 { font-size: 1.2rem; }
+h5 { font-size: 1.0rem; }
+h6 { font-size: 0.8rem; }
+
 
 line-break {
   display: block;

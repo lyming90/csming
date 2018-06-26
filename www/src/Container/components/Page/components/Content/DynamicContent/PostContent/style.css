@@ -39,3 +39,8 @@
   color: var(--special);
   text-align: center;
 }
+
+.post-content {
+  font-size: 16px;
+  /* line-height: 2.4px; */
+}

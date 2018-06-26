@@ -11,7 +11,7 @@ export const resume =
   <div>
     <p className='upsize'>Contact me to request for an <Link to='/'>official resume</Link>.</p>
     <div className='table-of-contents'>
-      <p><strong>Table of Contents</strong></p>
+      <h2>Table of Contents</h2>
       <p>
         <a href='#education'>1. Education</a>
         <br/>
@@ -39,9 +39,8 @@ export const resume =
     <line-break />
     <h1 id='courses'>Courses</h1>
     <p><strong>Courses I've taken</strong></p>
+    <h4>Winter 2018 (University of Waterloo)</h4>
     <p className='lato'>
-      <strong>Winter 2018 (University of Waterloo)</strong>
-      <br/>
       <span className='monaco'>CS430</span> - Application Software Engineering
       <br/>
       <span className='monaco'>ECE222</span> - Digital Computers
@@ -54,9 +53,8 @@ export const resume =
       <br/>
       <span className='monaco'>MATH136</span> - Linear Algebra 1 for Honors Mathematics
     </p>
+    <h4>Fall 2017 (switched major to Computer Science)</h4>
     <p className='lato'>
-      <strong>Fall 2017 (Switched to Computer Science)</strong>
-      <br/>
       <span className='monaco'>CZ1005</span> - Digital Logic
       <br/>
       <span className='monaco'>CZ2001</span> - Algorithms
@@ -69,9 +67,8 @@ export const resume =
       <br/>
       <span className='monaco'>PH1005</span> - Optics, Vibrations & Waves
     </p>
+    <h4>Spring 2017</h4>
     <p className='lato'>
-      <strong>Spring 2017</strong>
-      <br/>
       <span className='monaco'>CZ1007</span> - Data Structures
       <br/>
       <span className='monaco'>CZ1011</span> - Engineering Mathematics I
@@ -84,9 +81,8 @@ export const resume =
       <br/>
       <span className='monaco'>MH1812</span> - Discrete Mathematics
     </p>
+    <h4>Fall 2016</h4>
     <p className='lato'>
-      <strong>Fall 2016</strong>
-      <br/>
       <span className='monaco'>CZ1003</span> - Introduction to Computational Thinking
       <br/>
       <span className='monaco'>FE1008</span> - Computing (for Electrical Engineering)

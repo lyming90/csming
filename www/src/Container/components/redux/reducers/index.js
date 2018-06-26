@@ -11,28 +11,33 @@
 
 const reducer = (state = [], action) => {
   switch(action.type) {
-    case 'FETCH_POST_LIST':
-      // console.log('fetching post list', Object.keys(action.payload));
+    case 'FETCH_POST_LIST.SUCCESS':
       return {
         ...state,
         postList: action.payload,
       };
-    case 'FETCH_POST_PREVIEW':
+    case 'FETCH_POST_LIST.FAILURE':
       return {
-        ...state,
-        postPreview: action.payload,
+        state,  // TODO
       };
-    case 'FETCH_POST_CONTENT':
+    case 'FETCH_POST_CONTENT.SUCCESS':
       return {
         ...state,
         postContent: action.payload,
       };
-    case 'CLEAR_STATE':
+    case 'FETCH_POST_CONTENT.FAILURE':
+      return {
+        ...state,  // TODO
+      };
+    case 'CLEAR_POST_LIST':
       return {
         ...state,
-        postList: '',
-        postPreview: [],
-        postContent: '',
+        postList: null,
+      };
+    case 'CLEAR_POST_CONTENT':
+      return {
+        ...state,
+        postContent: null,
       }
     default:
       return state;

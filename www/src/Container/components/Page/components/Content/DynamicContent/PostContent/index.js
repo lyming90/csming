@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import ReactMarkdown from 'react-markdown';
 
-import { fetchPostContent, clearState } from '../../../../../redux/actions/index';
+import { fetchPostContent, clearPostContent } from '../../../../../redux/actions/index';
 import './style.css';
 
 class PostContent extends React.Component {
@@ -25,9 +25,8 @@ class PostContent extends React.Component {
   callFetchPostContent = (pathname) => {
     const splitPathname = pathname.split('/');
     const splitLength = splitPathname.length;
-    const alias = splitPathname[splitLength-1];
-    console.log(alias);
-    this.fetchPostContent(alias);
+    const id = splitPathname[splitLength-1];
+    this.fetchPostContent(parseInt(id, 10));
   }
 
   componentDidMount() {
@@ -36,17 +35,17 @@ class PostContent extends React.Component {
   }
 
   componentWillUnmount() {
-    console.log("Unmounting...");
-    this.props.clearState();
+    // console.log('Content unmounting...');
+    this.props.clearPostContent();
   }
   
 
   render() {
-    const spinner = <div className='spinner'><i class="rotating fas fa-spinner fa-6x"></i></div>;
+    const spinner = <div className='spinner'><i className="rotating fas fa-spinner fa-6x"></i></div>;
 
     return (
       <div>
-        <p>{!this.props.postContent ? spinner : <ReactMarkdown source={this.props.postContent} />}</p>
+        { !this.props.postContent ? spinner : <div className='post-content'><ReactMarkdown source={this.props.postContent.content} /></div> }
         <button onClick={() => console.log(this.props)}>Debug</button>
       </div>
     );
@@ -58,8 +57,8 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  fetchPostContent: (alias) => dispatch(fetchPostContent(alias)),
-  clearState: () => dispatch(clearState()),
+  fetchPostContent: (id) => dispatch(fetchPostContent(id)),
+  clearPostContent: () => dispatch(clearPostContent()),
 });
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(PostContent));

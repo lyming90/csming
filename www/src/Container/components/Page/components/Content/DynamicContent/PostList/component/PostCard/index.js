@@ -12,11 +12,11 @@ class PostCard extends React.Component {
             ? this.props.titleLoading
             : this.props.title
           } </p>
-          <p> {
+          {
             this.props.previewLoading
-            ? this.props.previewLoading
+            ? <p>{this.props.previewLoading}</p>
             : <ReactMarkdown source={this.props.preview} />
-          } </p>
+          }
           <p> {
             this.props.linkLoading
             ? this.props.linkLoading
