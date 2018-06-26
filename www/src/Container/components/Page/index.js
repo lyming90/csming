@@ -1,21 +1,36 @@
 import React, { Component } from 'react';
 import { Route, Switch, withRouter } from 'react-router-dom'
-import PropTypes from 'prop-types';
+
+import Button from '@material-ui/core/Button';
+import Icon from '@material-ui/core/Icon';
 
 import Banner from './components/Banner/index';
+import NavMenu from './components/NavMenu';
 import StaticContent from './components/Content/StaticContent/index';
 import DynamicContent from './components/Content/DynamicContent/index';
 
 import './style.css'
 
 class Page extends Component {
-  static propTypes = {
-    match: PropTypes.object.isRequired,
-    location: PropTypes.object.isRequired,
-    history: PropTypes.object.isRequired
+  constructor(props) {
+    super(props);
+    this.state = {
+      anchorEl: null,
+    }
   }
 
+  handleClick = event => {
+    console.log('Clicked! state is ', this.state);
+    this.setState({ anchorEl: event.currentTarget });
+  };
+
+  handleClose = () => {
+    this.setState({ anchorEl: null });
+  };
+
   render() {
+    const anchorEl = this.state.anchorEl;
+
     return (
         <div className='page'>
           <Banner Text='Hey, I am updating this site! Come back later!'/>
@@ -25,6 +40,14 @@ class Page extends Component {
             <Route path='/' component={StaticContent} />
           </Switch>
           <p></p>
+          <Button variant="fab" color="primary" aria-label="menu" aria-haspopup="true" className='float-button' onClick={this.handleClick} >
+            <Icon>menu</Icon>
+          </Button>
+          <NavMenu
+            anchorEl={anchorEl}
+            open={Boolean(anchorEl)}
+            handleClose={this.handleClose}
+          />
           <p className='copy-right disable-select'>&copy; 2018 Ming Yu.</p>
         </div>
     );

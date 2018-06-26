@@ -46,7 +46,6 @@ class PostContent extends React.Component {
     return (
       <div>
         { !this.props.postContent ? spinner : <div className='post-content'><ReactMarkdown source={this.props.postContent.content} /></div> }
-        <button onClick={() => console.log(this.props)}>Debug</button>
       </div>
     );
   }

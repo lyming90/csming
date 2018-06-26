@@ -3,4 +3,11 @@
   flex-direction: column;
   align-content: flex-start;
   width: 55%;
+  position: relative;
+}
+
+.float-button {
+  position: fixed !important;
+  right: 1rem;
+  bottom: 1rem;
 }

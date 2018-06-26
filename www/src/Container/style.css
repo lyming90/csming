@@ -19,13 +19,6 @@ h1, h2, h3, h4, h5, h6 {
   /* border-left: 0.5rem solid var(--primary); */
 }
 
-/* h1 { font-size: 2em; }
-h2 { font-size: 1.5em; }
-h3 { font-size: 1.17em; }
-h4 { font-size: 1.12em; }
-h5 { font-size: 0.83em; }
-h6 { font-size: 0.75em; } */
-
 h1 { font-size: 1.8rem; }
 h2 { font-size: 1.6rem; }
 h3 { font-size: 1.4rem; }
@@ -33,8 +26,30 @@ h4 { font-size: 1.2rem; }
 h5 { font-size: 1.0rem; }
 h6 { font-size: 0.8rem; }
 
+blockquote {
+  display: block;
+  background: #cccccc47;
+  border-left: 0.25rem solid var(--primary);
+  margin-left: 0;
+  padding: 0.5rem 1rem;
+}
 
-line-break {
+blockquote p {
+  display: inline;
+}
+
+pre {
+  overflow-x: scroll;
+  padding: 0.5rem;
+  font-family: monospace, sans-serif;
+  line-height:1.5rem;
+  background:linear-gradient(180deg,#cccccc47 0,#cccccc47 1.5rem,rgba(238, 238, 238, 0.37) 0);
+  background-size:3rem 3rem;
+  background-origin:content-box;
+}
+
+
+line-break hr {
   display: block;
   text-align: left;
   width: 100%;
