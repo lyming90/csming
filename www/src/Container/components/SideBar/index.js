@@ -6,10 +6,6 @@ import './style.css';
    
 
 class SideBar extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   componentDidMount() {
     document.addEventListener('scroll', () => {
       const floating = document.querySelector('.floating');

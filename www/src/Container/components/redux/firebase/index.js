@@ -1,4 +1,3 @@
-import * as firebase from 'firebase/app';
 import flamelink from 'flamelink';
 
 // Initialize and export Firebase.
@@ -11,7 +10,6 @@ const firebaseConfig = {
   messagingSenderId: "1077104744428"
 };
 
-const firebaseApp = firebase.initializeApp(firebaseConfig);
-const flamelinkInit = flamelink({ firebaseApp });
+const flamelinkInit = flamelink( firebaseConfig );
 
 export default flamelinkInit;
