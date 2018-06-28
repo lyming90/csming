@@ -1,4 +1,4 @@
-import flamelink from 'flamelink';
+import flamelink from "flamelink";
 
 // Initialize and export Firebase.
 const firebaseConfig = {
@@ -10,6 +10,6 @@ const firebaseConfig = {
   messagingSenderId: "1077104744428"
 };
 
-const flamelinkInit = flamelink( firebaseConfig );
+const flamelinkInit = flamelink(firebaseConfig);
 
 export default flamelinkInit;

@@ -57,6 +57,10 @@ a {
     display: none;
   }
 
+  .float-button {
+    visibility: visible;
+  }
+
   .page {
     width: 100%
   }

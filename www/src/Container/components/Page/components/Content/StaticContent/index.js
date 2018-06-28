@@ -1,16 +1,16 @@
-import React, { Component } from 'react';
-import Header from '../Header';
-import statics from './statics/index';
+import React, { Component } from "react";
+import Header from "../Header";
+import statics from "./statics/index";
 
-import '../style.css';
+import "../style.css";
 
 class StaticContent extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      header: '',
-      content: ''
-    }
+      header: "",
+      content: ""
+    };
 
     this.fetchContent = this.fetchContent.bind(this);
   }
@@ -19,56 +19,55 @@ class StaticContent extends Component {
     const pathname = this.props.location.pathname;
     this.fetchContent(pathname);
   }
-  
+
   componentDidUpdate(prevProps, prevState) {
     if (prevProps.location.pathname !== this.props.location.pathname) {
       const pathname = this.props.location.pathname;
       this.fetchContent(pathname);
     }
   }
-  
 
-  fetchContent = (pathname) => {
+  fetchContent = pathname => {
     let header;
     let content;
 
     switch (pathname) {
-      case '/':
+      case "/":
         header = statics.home.header;
         content = statics.home.content;
         break;
-      case '/home':
+      case "/home":
         header = statics.home.header;
         content = statics.home.content;
         break;
-      case '/resume':
+      case "/resume":
         header = statics.resume.header;
         content = statics.resume.content;
         break;
-      case '/contact':
+      case "/contact":
         header = statics.contact.header;
         content = statics.contact.content;
         break;
       default:
-        header = '404 Not Found';
-        content = 'Heartily sorry.';
+        header = "404 Not Found";
+        content = "Heartily sorry.";
         break;
     }
 
     this.setState({
       header: header,
-      content: content,
-    })
-  }
+      content: content
+    });
+  };
 
-  render () {
+  render() {
     return (
-      <div className='content'>
+      <div className="content">
         <Header Text={this.state.header} />
         <div>{this.state.content}</div>
       </div>
     );
   }
-};
+}
 
 export default StaticContent;

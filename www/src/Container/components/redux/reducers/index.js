@@ -10,35 +10,37 @@
 // export default rootReducer;
 
 const reducer = (state = [], action) => {
-  switch(action.type) {
-    case 'FETCH_POST_LIST.SUCCESS':
+  switch (action.type) {
+    case "FETCH_POST_LIST.SUCCESS":
       return {
         ...state,
-        postList: action.payload,
+        postList: action.payload
       };
-    case 'FETCH_POST_LIST.FAILURE':
-      return {
-        state,  // TODO
-      };
-    case 'FETCH_POST_CONTENT.SUCCESS':
+    case "FETCH_POST_LIST.FAILURE":
       return {
         ...state,
-        postContent: action.payload,
+        postList: action.payload // TODO: error message
       };
-    case 'FETCH_POST_CONTENT.FAILURE':
-      return {
-        ...state,  // TODO
-      };
-    case 'CLEAR_POST_LIST':
+    case "FETCH_POST_CONTENT.SUCCESS":
       return {
         ...state,
-        postList: null,
+        postContent: action.payload
       };
-    case 'CLEAR_POST_CONTENT':
+    case "FETCH_POST_CONTENT.FAILURE":
       return {
         ...state,
-        postContent: null,
-      }
+        postList: action.payload // TODO: error message
+      };
+    case "CLEAR_POST_LIST":
+      return {
+        ...state,
+        postList: null
+      };
+    case "CLEAR_POST_CONTENT":
+      return {
+        ...state,
+        postContent: null
+      };
     default:
       return state;
   }

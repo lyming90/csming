@@ -1,17 +1,17 @@
-import React from 'react';
-import Container from '../Container';
+import React from "react";
+import Container from "../Container";
 
 const App = () => {
   const appStyle = {
-    fontFamily: 'Open Sans, sans-serif',
-    fontSize: '20px',
-  }
+    fontFamily: "Open Sans, sans-serif",
+    fontSize: "20px"
+  };
 
   return (
-    <div className='App' style={appStyle}>
+    <div className="App" style={appStyle}>
       <Container />
     </div>
-  )
-}
+  );
+};
 
 export default App;

@@ -1,26 +1,26 @@
-import React, { Component } from 'react';
-import { Route, Switch, withRouter } from 'react-router-dom'
+import React, { Component } from "react";
+import { Route, Switch, withRouter } from "react-router-dom";
 
-import Button from '@material-ui/core/Button';
-import Icon from '@material-ui/core/Icon';
+import Button from "@material-ui/core/Button";
+import Icon from "@material-ui/core/Icon";
 
-import Banner from './components/Banner/index';
-import NavMenu from './components/NavMenu';
-import StaticContent from './components/Content/StaticContent/index';
-import DynamicContent from './components/Content/DynamicContent/index';
+import Banner from "./components/Banner/index";
+import NavMenu from "./components/NavMenu";
+import StaticContent from "./components/Content/StaticContent/index";
+import DynamicContent from "./components/Content/DynamicContent/index";
 
-import './style.css'
+import "./style.css";
 
 class Page extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      anchorEl: null,
-    }
+      anchorEl: null
+    };
   }
 
   handleClick = event => {
-    console.log('Clicked! state is ', this.state);
+    console.log("Clicked! state is ", this.state);
     this.setState({ anchorEl: event.currentTarget });
   };
 
@@ -32,27 +32,33 @@ class Page extends Component {
     const anchorEl = this.state.anchorEl;
 
     return (
-        <div className='page'>
-          <Banner Text='Hey, I am updating this site! Come back later!'/>
-          <Switch>
-            <Route path='/posts' component={DynamicContent} />
-            <Route path='/:statics' component={StaticContent} />
-            <Route path='/' component={StaticContent} />
-          </Switch>
-          <p></p>
-          <Button variant="fab" color="primary" aria-label="menu" aria-haspopup="true" className='float-button' onClick={this.handleClick} >
-            <Icon>menu</Icon>
-          </Button>
-          <NavMenu
-            anchorEl={anchorEl}
-            open={Boolean(anchorEl)}
-            handleClose={this.handleClose}
-          />
-          <p className='copy-right disable-select'>&copy; 2018 Ming Yu.</p>
-        </div>
+      <div className="page">
+        <Banner Text="Hey, I am updating this site! Come back later!" />
+        <Switch>
+          <Route path="/posts" component={DynamicContent} />
+          <Route path="/:statics" component={StaticContent} />
+          <Route path="/" component={StaticContent} />
+        </Switch>
+        <p />
+        <Button
+          variant="fab"
+          color="primary"
+          aria-label="menu"
+          aria-haspopup="true"
+          className="float-button"
+          onClick={this.handleClick}
+        >
+          <Icon>menu</Icon>
+        </Button>
+        <NavMenu
+          anchorEl={anchorEl}
+          open={Boolean(anchorEl)}
+          handleClose={this.handleClose}
+        />
+        <p className="copy-right disable-select">&copy; 2018 Ming Yu.</p>
+      </div>
     );
   }
 }
-
 
 export default withRouter(Page);
