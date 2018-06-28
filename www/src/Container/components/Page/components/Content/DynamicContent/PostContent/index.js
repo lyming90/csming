@@ -35,7 +35,10 @@ class PostContent extends React.Component {
   componentDidMount() {
     const pathname = this.props.location.pathname;
     this.callFetchPostContent(pathname);
-    document.addEventListener("click", () => console.log(this.props));
+    // document.addEventListener("click", () => {
+    //   let date = Date.parse(this.props.postContent.postDate);
+    //   console.log("date", date);
+    // });
   }
 
   componentWillUnmount() {
@@ -54,11 +57,14 @@ class PostContent extends React.Component {
         {!this.props.postContent ? (
           spinner
         ) : (
-          <div className="post-meta">
-            <h1>{this.props.postContent.title}</h1>
-          </div>
-          <div className="post-content">
-            <ReactMarkdown source={this.props.postContent.content} />
+          <div>
+            <div className="post-meta">
+              <div className="post-title">{this.props.postContent.title}</div>
+              <div className="post-date">{this.props.postContent.postDate}</div>
+            </div>
+            <div className="post-content">
+              <ReactMarkdown source={this.props.postContent.content} />
+            </div>
           </div>
         )}
       </div>

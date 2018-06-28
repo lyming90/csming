@@ -49,7 +49,7 @@ pre {
 }
 
 
-line-break hr {
+line-break {
   display: block;
   text-align: left;
   width: 100%;
