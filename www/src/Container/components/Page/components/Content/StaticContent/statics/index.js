@@ -16,8 +16,7 @@ export const home = (
     </p>
     <p>
       <span className='upsize'>Hi!</span> My name is 刘明宇 (Liu Mingyu - Liu is my surname). Call me Ming if 
-      it makes things easier. I am a
-      rising junior at Nanyang Technological University with a major in Computer
+      it makes things easier. I am a rising junior at Nanyang Technological University with a major in Computer
       Science and a possible minor in Mathematics.
     </p>
     <p>

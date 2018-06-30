@@ -58,12 +58,13 @@ a {
     visibility: visible;
   }
 
-  .page {
-    width: 100%
+  .container {
+    margin-top: 0;
+    padding: 0.5rem;
   }
 
-  .app-wrapper {
-    padding: 0.5rem;
+  .page {
+    width: 100%;
   }
 }
 

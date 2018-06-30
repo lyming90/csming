@@ -55,7 +55,7 @@ class Page extends Component {
           open={Boolean(anchorEl)}
           handleClose={this.handleClose}
         />
-        <p className="copy-right disable-select">&copy; 2018 Ming Yu.</p>
+        <p className="copy-right disable-select">&copy; 2018 Ming Y. Liu</p>
       </div>
     );
   }
