@@ -12,7 +12,7 @@ class PostCard extends React.Component {
           {" "}
           {this.props.titleLoading
             ? this.props.titleLoading
-            : this.props.title}{" "}
+            : <Link to={`/posts/${this.props.alias}`} style={{color: "black", borderBottom: "none"}}>{this.props.title}</Link>}{" "}
         </p>
         {this.props.previewLoading ? (
           <p>{this.props.previewLoading}</p>

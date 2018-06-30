@@ -23,7 +23,7 @@ class PostList extends React.Component {
     const postList = this.props.postList;
     if (postList) {
       const postListKeys = Object.keys(postList);
-      const postCards = postListKeys.map((id, index) => (
+      const postCards = postListKeys.filter(id => postList[id].status === 'published').map((id, index) => (
         <PostCard
           key={index}
           title={postList[id].title}

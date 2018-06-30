@@ -33,7 +33,7 @@ class Page extends Component {
 
     return (
       <div className="page">
-        <Banner Text="Hey, I am updating this site! Come back later!" />
+        <Banner Text="Hey, thanks for visiting!" />
         <Switch>
           <Route path="/posts" component={DynamicContent} />
           <Route path="/:statics" component={StaticContent} />
