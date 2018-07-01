@@ -3,7 +3,7 @@ import { withRouter } from "react-router-dom";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import ReactMarkdown from "react-markdown";
-import dateFormat from 'dateformat';
+import { formatDate } from "../../../../../../../utils/index";
 
 import {
   fetchPostContent,
@@ -64,7 +64,7 @@ class PostContent extends React.Component {
           <div>
             <div className="post-meta">
               <div className="post-title">{this.props.postContent.title}</div>
-              <div className="post-date">{dateFormat(this.props.postContent.postDate, "mmmm dS, yyyy")}</div>
+              <div className="post-date">{formatDate(this.props.postDate)}</div>
             </div>
             <div className="post-content">
               <ReactMarkdown source={this.props.postContent.content} escapeHtml={false} />
