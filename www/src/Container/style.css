@@ -40,7 +40,7 @@ pre {
 }
 
 
-line-break {
+line-break, hr {
   display: block;
   text-align: left;
   width: 100%;

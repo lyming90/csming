@@ -67,7 +67,7 @@ class PostContent extends React.Component {
               <div className="post-date">{dateFormat(this.props.postContent.postDate, "mmmm dS, yyyy")}</div>
             </div>
             <div className="post-content">
-              <ReactMarkdown source={this.props.postContent.content} />
+              <ReactMarkdown source={this.props.postContent.content} escapeHtml={false} />
             </div>
           </div>
         )}
