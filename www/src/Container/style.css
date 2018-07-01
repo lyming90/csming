@@ -22,6 +22,7 @@ blockquote {
   background: #cccccc47;
   border-left: 0.25rem solid var(--primary);
   margin-left: 0;
+  -webkit-margin-end: 0;
   padding: 0.5rem 1rem;
 }
 

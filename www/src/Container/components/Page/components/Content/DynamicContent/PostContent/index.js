@@ -3,8 +3,12 @@ import { withRouter } from "react-router-dom";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import ReactMarkdown from "react-markdown";
-import { formatDate } from "../../../../../../../utils/index";
+import Prism from 'prismjs';
+import 'prismjs/themes/prism-okaidia.css'
+import 'prismjs/components/prism-lua.min.js'
 
+
+import { formatDate } from "../../../../../../../utils/index";
 import {
   fetchPostContent,
   clearPostContent
@@ -37,6 +41,7 @@ class PostContent extends React.Component {
       const title = this.props.postContent.title;
       document.title = title + " \u00B7 " + postFix;
     }
+    Prism.highlightAll();
   }
 
   componentDidMount() {
