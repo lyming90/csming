@@ -55,6 +55,7 @@ class Page extends Component {
           open={Boolean(anchorEl)}
           handleClose={this.handleClose}
         />
+        <p className="copy-right disable-select">💪 Last released on July 1st. I update this site regularly to fix bugs and add new features.</p>
         <p className="copy-right disable-select">&copy; 2018 Ming Y. Liu</p>
       </div>
     );

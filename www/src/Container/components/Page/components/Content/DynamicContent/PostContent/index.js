@@ -11,6 +11,8 @@ import {
 } from "../../../../../redux/actions/index";
 import "./style.css";
 
+const postFix = "Ming \u00B7 刘明宇 \u00B7 Liu Mingyu";
+
 class PostContent extends React.Component {
   static propTypes = {
     match: PropTypes.object.isRequired,
@@ -20,9 +22,6 @@ class PostContent extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = {
-      content: ""
-    };
     this.fetchPostContent = this.props.fetchPostContent;
   }
 
@@ -33,12 +32,20 @@ class PostContent extends React.Component {
     this.fetchPostContent(parseInt(id, 10));
   };
 
+  componentDidUpdate(prevProps) {
+    if (prevProps.postContent !== this.props.postContent) {
+      const title = this.props.postContent.title;
+      document.title = title + " \u00B7 " + postFix;
+    }
+  }
+
   componentDidMount() {
     const pathname = this.props.location.pathname;
     this.callFetchPostContent(pathname);
   }
 
   componentWillUnmount() {
+    document.title = postFix;
     this.props.clearPostContent();
   }
 

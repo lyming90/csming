@@ -39,7 +39,7 @@ export const home = (
       <a href='https://www.instagram.com/mingyuliu_16/' target='_blank' rel="noopener noreferrer" style={{color: '#fb3958', borderBottom: 'none'}}>{instagramIcon}</a>
     </p>
     <p>
-      Or send me an Email via <a href='mailto:lyming90@gmail.com'>lyming90@gmail.com</a>.
+      Or send me an Email at <a href='mailto:lyming90@gmail.com'>lyming90@gmail.com</a>.
     </p>
   </div>
 );
@@ -65,11 +65,11 @@ export const resume = (
     <h1 id="education">Education</h1>
     <p>
       <img
-        style={{height: '7rem'}}
+        style={{height: '7.5rem'}}
         alt="Nanyang Technological University"
         src="https://media.licdn.com/dms/image/C4D0BAQG0nfM0ZH4emA/company-logo_400_400/0?e=2130105600&v=beta&t=I6QzuFlj4Gm_hYOPiFRs2O4V9gL9lX6RtY25cuxmEUs" />
       <img
-        style={{height: '7rem'}}
+        style={{height: '7.5rem'}}
         alt="University of Waterloo"
         src="https://media.licdn.com/dms/image/C560BAQFI41Ly6leq7Q/company-logo_400_400/0?e=2130105600&v=beta&t=aUzK0hebU5KpN5MVXblhipedGdpyEZ7uEF7HgXXXDRg" />
     </p>
