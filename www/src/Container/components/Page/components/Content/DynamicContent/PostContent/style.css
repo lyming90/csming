@@ -44,3 +44,8 @@
   font-size: 18px;
   /* line-height: 2.4px; */
 }
+
+.post-title {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}

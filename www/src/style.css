@@ -50,6 +50,7 @@ a {
   color: var(--primary);
   text-decoration: none;
   border-bottom: 1px dashed;
+  overflow-wrap: break-word;
 }
 
 @media screen and (max-width: 768px) {
