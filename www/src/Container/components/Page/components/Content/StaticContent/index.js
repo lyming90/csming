@@ -44,9 +44,9 @@ class StaticContent extends Component {
         header = statics.resume.header;
         content = statics.resume.content;
         break;
-      case "/contact":
-        header = statics.contact.header;
-        content = statics.contact.content;
+      case "/projects":
+        header = statics.projects.header;
+        content = statics.projects.content;
         break;
       default:
         header = "404 Not Found";

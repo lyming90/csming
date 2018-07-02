@@ -11,7 +11,7 @@ class SideBar extends Component {
       const menuToBottom = document
         .querySelector(".menu-list")
         .getBoundingClientRect().bottom;
-      menuToBottom < 0
+      menuToBottom < 20 // carefully calculated
         ? (floating.style.visibility = "visible")
         : (floating.style.visibility = "hidden");
     });

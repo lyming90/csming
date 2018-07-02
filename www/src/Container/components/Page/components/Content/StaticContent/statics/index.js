@@ -182,7 +182,7 @@ export const resume = (
   </div>
 );
 
-export const contact = (
+export const projects = (
   <div>
     <p>To be added</p>
   </div>
@@ -197,9 +197,9 @@ const statics = {
     header: "Resume",
     content: resume
   },
-  contact: {
-    header: "Contact",
-    content: contact
+  projects: {
+    header: "Projects",
+    content: projects
   }
 };
 

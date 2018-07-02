@@ -36,7 +36,7 @@ p {
 }
 
 .monaco {
-  font-family: monaco, sans-serif;
+  font-family: monospace, sans-serif;
 }
 
 span[class=small] {
