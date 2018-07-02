@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 
-import Button from "@material-ui/core/Button";
+// import Button from "@material-ui/core/Button";
 import { fetchPostList } from "../../../../../redux/actions/index";
 
 import PostCard from "./component/PostCard/index";
@@ -23,7 +23,15 @@ class PostList extends React.Component {
     const postList = this.props.postList;
     if (postList) {
       const postListKeys = Object.keys(postList);
-      const postCards = postListKeys.map((id, index) => (
+      const postCards = postListKeys.filter(id => postList[id].status === 'published')
+        .sort((idA, idB) => {
+          // sort by postDate
+          const cmp = new Date(postList[idA].postDate) - new Date(postList[idB].postDate);
+          if (cmp < 0) return 1;
+          else if (cmp > 0) return -1;
+          else return 0;
+        })
+        .map((id, index) => (
         <PostCard
           key={index}
           title={postList[id].title}
@@ -97,13 +105,13 @@ class PostList extends React.Component {
     return (
       <div>
         {this.createPostCard()}
-        <Button
+        {/* <Button
           variant="contained"
           color="secondary"
           onClick={() => console.log("Store, ", this.props)}
         >
           Debug
-        </Button>
+        </Button> */}
       </div>
     );
   }

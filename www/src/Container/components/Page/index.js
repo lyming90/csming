@@ -20,7 +20,6 @@ class Page extends Component {
   }
 
   handleClick = event => {
-    console.log("Clicked! state is ", this.state);
     this.setState({ anchorEl: event.currentTarget });
   };
 
@@ -33,7 +32,7 @@ class Page extends Component {
 
     return (
       <div className="page">
-        <Banner Text="Hey, I am updating this site! Come back later!" />
+        <Banner Text="Hey, thanks for visiting!" />
         <Switch>
           <Route path="/posts" component={DynamicContent} />
           <Route path="/:statics" component={StaticContent} />
@@ -55,7 +54,8 @@ class Page extends Component {
           open={Boolean(anchorEl)}
           handleClose={this.handleClose}
         />
-        <p className="copy-right disable-select">&copy; 2018 Ming Yu.</p>
+        <p className="copy-right disable-select"><span role="img" aria-label="emoji">💪</span> Last released on July 1st. I update this site constantly to fix bugs and add new features.</p>
+        <p className="copy-right disable-select">&copy; 2018 Ming Y. Liu</p>
       </div>
     );
   }

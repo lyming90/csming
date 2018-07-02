@@ -11,12 +11,10 @@ class Container extends Component {
     return (
       <Provider store={store}>
         <Router>
-          <div className="app-wrapper">
             <div className="container">
               <SideBar />
               <Page />
             </div>
-          </div>
         </Router>
       </Provider>
     );

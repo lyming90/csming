@@ -9,4 +9,5 @@
 
 .floating div * {
   margin-bottom: 1.5rem;
+  width: 0;
 }

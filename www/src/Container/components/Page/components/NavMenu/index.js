@@ -31,7 +31,7 @@ class NavMenu extends React.Component {
   componentDidMount() {
     const pathName = this.props.location.pathname;
     this.setState({
-      pathName: pathName
+      pathName: pathName === '/' ? '/home' : pathName
     });
   }
 
@@ -73,12 +73,12 @@ class NavMenu extends React.Component {
         >
           Post
         </MenuItem>
-        <MenuItem
+        {/* <MenuItem
           selected={this.state.pathName === "/contact"}
           onClick={() => this.handleClick("/contact")}
         >
           Contact
-        </MenuItem>
+        </MenuItem> */}
       </Menu>
     );
   }

@@ -6,7 +6,7 @@ import flamelinkRef from "../firebase";
 export const fetchPostList = () => async dispatch => {
   flamelinkRef.content
     .get("posts", {
-      fields: ["id", "title", "preview"]
+      fields: ["id", "title", "preview", "status", "postDate"]
     })
     .then(response => {
       dispatch({

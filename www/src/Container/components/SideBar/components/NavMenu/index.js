@@ -23,6 +23,13 @@ class NavMenu extends React.Component {
     this.redirectTo = this.redirectTo.bind(this);
   }
 
+  componentDidMount() {
+    const pathName = this.props.location.pathname;
+    this.setState({
+      pathName: pathName === '/' ? '/home' : pathName
+    });
+  }
+
   redirectTo = destination => {
     this.props.history.push(destination);
     this.setState({
@@ -34,7 +41,7 @@ class NavMenu extends React.Component {
     const homeIcon = <i className="fas fa-coffee fa-lg fa-fw" />;
     const resumeIcon = <i className="fas fa-trophy fa-lg fa-fw" />;
     const postsIcon = <i className="fas fa-comment-dots fa-lg fa-fw" />;
-    const contactIcon = <i className="fas fa-address-card fa-lg fa-fw" />;
+    // const contactIcon = <i className="fas fa-address-card fa-lg fa-fw" />;
 
     const menuItemColorScheme = {
       color: "#1E1F26"
@@ -72,7 +79,7 @@ class NavMenu extends React.Component {
             <ListItemIcon style={menuItemColorScheme}>{postsIcon}</ListItemIcon>
             <span style={menuItemColorScheme}>Posts</span>
           </MenuItem>
-          <MenuItem
+          {/* <MenuItem
             selected={this.state.pathName === "/contact"}
             style={menuItemStyle}
             onClick={() => this.redirectTo("/contact")}
@@ -81,7 +88,7 @@ class NavMenu extends React.Component {
               {contactIcon}
             </ListItemIcon>
             <span style={menuItemColorScheme}>Contact</span>
-          </MenuItem>
+          </MenuItem> */}
         </MenuList>
       </div>
     );

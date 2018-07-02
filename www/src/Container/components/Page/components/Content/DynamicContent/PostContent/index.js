@@ -3,12 +3,19 @@ import { withRouter } from "react-router-dom";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import ReactMarkdown from "react-markdown";
+import Prism from 'prismjs';
+import 'prismjs/themes/prism-okaidia.css'
+import 'prismjs/components/prism-lua.min.js'
 
+
+import { formatDate } from "../../../../../../../utils/index";
 import {
   fetchPostContent,
   clearPostContent
 } from "../../../../../redux/actions/index";
 import "./style.css";
+
+const postFix = "Ming \u00B7 刘明宇 \u00B7 Liu Mingyu";
 
 class PostContent extends React.Component {
   static propTypes = {
@@ -19,9 +26,6 @@ class PostContent extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = {
-      content: ""
-    };
     this.fetchPostContent = this.props.fetchPostContent;
   }
 
@@ -32,13 +36,21 @@ class PostContent extends React.Component {
     this.fetchPostContent(parseInt(id, 10));
   };
 
+  componentDidUpdate(prevProps) {
+    if (prevProps.postContent !== this.props.postContent) {
+      const title = this.props.postContent.title;
+      document.title = title + " \u00B7 " + postFix;
+    }
+    Prism.highlightAll();
+  }
+
   componentDidMount() {
     const pathname = this.props.location.pathname;
     this.callFetchPostContent(pathname);
-    document.addEventListener("click", () => console.log(this.props));
   }
 
   componentWillUnmount() {
+    document.title = postFix;
     this.props.clearPostContent();
   }
 
@@ -57,10 +69,10 @@ class PostContent extends React.Component {
           <div>
             <div className="post-meta">
               <div className="post-title">{this.props.postContent.title}</div>
-              <div className="post-date">{this.props.postContent.postDate}</div>
+              <div className="post-date">{formatDate(this.props.postDate)}</div>
             </div>
             <div className="post-content">
-              <ReactMarkdown source={this.props.postContent.content} />
+              <ReactMarkdown source={this.props.postContent.content} escapeHtml={false} />
             </div>
           </div>
         )}

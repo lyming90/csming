@@ -6,14 +6,17 @@
   --text-disable: #ccc;
 }
 
+/* body {
+  background-color: #F0F0F0;
+} */
+
 p {
   margin-top: 0;
   margin-bottom: 1.5rem;
   color: var(--text-color);
 }
 
-p[class=upsize]:first-letter {
-  font-family: 'Open Sans Extra-Bold', sans-serif;
+.upsize {
   font-size: 2rem;
 }
 
@@ -36,12 +39,6 @@ p[class=upsize]:first-letter {
   font-family: monaco, sans-serif;
 }
 
-img[class=post-image] {
-  margin: auto;
-  max-width: 100%;
-  border-radius: 5px;
-}
-
 span[class=small] {
   font-size: 80%;
 }
@@ -62,12 +59,13 @@ a {
     visibility: visible;
   }
 
-  .page {
-    width: 100%
+  .container {
+    margin-top: 0;
+    padding: 0.5rem;
   }
 
-  .app-wrapper {
-    padding: 0.5rem;
+  .page {
+    width: 100%;
   }
 }
 

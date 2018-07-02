@@ -1,26 +1,52 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
+const facebookIcon = <i className="fab fa-facebook-square fa-2x" style={{marginRight: '2rem'}}/>;
+const linkedinIcon = <i className="fab fa-linkedin fa-2x" style={{marginRight: '2rem'}}/>;
+const instagramIcon = <i className="fab fa-instagram fa-2x" style={{marginRight: '2rem'}}/>;
+
 export const home = (
   <div>
-    <p className="upsize">
-      Hi! My name is 刘明宇 (Liu Mingyu - in which Liu is my surname). I am a
-      rising junior at Nanyang Technological University with a major in Computer
+  <p>
+      <img src="/static/old-faithful-1-min.jpg" alt="Old Faithful" />
+      <span style={{
+        color: 'var(--primary)',
+        fontSize: '90%',
+      }}>Old faithful Geyser, Yellowstone National Park | Feb, 2018</span>
+    </p>
+    <p>
+      <span className='upsize'>Hi!</span> My name is 刘明宇 (Liu Mingyu - Liu is my surname). Call me Ming if 
+      it makes things easier. I am a rising junior at Nanyang Technological University with a major in Computer
       Science and a possible minor in Mathematics.
     </p>
-    <p className="upsize">
-      I am a self-driven and curious person who always look forward to new
-      adventures and embrace latest technologies. I aim to design and create
+    <p>
+      <span className='upsize'>I</span> am a self-driven and curious person who always look forward to new
+      adventures and embrace latest technologies. As a software developer, I aim to design and create
       software solutions that are high-quality, robust and
       beautifully-presented. Besides my interest in Computer Science, I also
       enjoy traveling and hiking.
+    </p>
+    <h1>Contact Me</h1>
+    <p>
+      You're always welcomed to drop me a message! But, if you're a recruiter, <Link to='/resume'>look into here first</Link>.
+    </p>
+    <p>
+      Me on social media:
+    </p>
+    <p className="disable-select">
+      <a href='https://www.facebook.com/mingyuliu1916' target='_blank' rel="noopener noreferrer" style={{color: '#3b5998', borderBottom: 'none'}}>{facebookIcon}</a>
+      <a href='https://www.linkedin.com/in/mingyuliu16/' target='_blank' rel="noopener noreferrer" style={{color: '#0077B5', borderBottom: 'none'}}>{linkedinIcon}</a>
+      <a href='https://www.instagram.com/mingyuliu_16/' target='_blank' rel="noopener noreferrer" style={{color: '#fb3958', borderBottom: 'none'}}>{instagramIcon}</a>
+    </p>
+    <p>
+      Or send me an Email at <a href='mailto:lyming90@gmail.com'>lyming90@gmail.com</a>.
     </p>
   </div>
 );
 
 export const resume = (
   <div>
-    <p className="upsize">
+    <p>
       Contact me to request for an <Link to="/">official resume</Link>.
     </p>
     <div className="table-of-contents">
@@ -38,9 +64,19 @@ export const resume = (
     <line-break />
     <h1 id="education">Education</h1>
     <p>
+      <img
+        style={{height: '7.5rem'}}
+        alt="Nanyang Technological University"
+        src="https://media.licdn.com/dms/image/C4D0BAQG0nfM0ZH4emA/company-logo_400_400/0?e=2130105600&v=beta&t=I6QzuFlj4Gm_hYOPiFRs2O4V9gL9lX6RtY25cuxmEUs" />
+      <img
+        style={{height: '7.5rem'}}
+        alt="University of Waterloo"
+        src="https://media.licdn.com/dms/image/C560BAQFI41Ly6leq7Q/company-logo_400_400/0?e=2130105600&v=beta&t=aUzK0hebU5KpN5MVXblhipedGdpyEZ7uEF7HgXXXDRg" />
+    </p>
+    <p>
       Currently a rising junior at Nanyang Technological University, Singapore.
     </p>
-    <p>In the past, I went to the University of Waterloo for one term.</p>
+    <p>In the past, I went to the University of Waterloo for a short term exchange.</p>
     <line-break />
     <h1 id="experience">Experience</h1>
     <p>
@@ -69,7 +105,7 @@ export const resume = (
     </p>
     <p>
       For frameworks and libraries, I have used JavaFX, Python-Flask, OpenCV,
-      Nginx, Gunicorn, ReactJS, Redux, jQuery.
+      Nginx, Gunicorn, React, Redux, jQuery.
     </p>
     <p>As for tools, I played with Git, LaTeX, Markdown, Firebase, MySQL.</p>
     <line-break />
