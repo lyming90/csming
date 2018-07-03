@@ -18,6 +18,7 @@ class StaticContent extends Component {
   componentDidMount() {
     const pathname = this.props.location.pathname;
     this.fetchContent(pathname);
+    window.scrollTo(0, 0);
   }
 
   componentDidUpdate(prevProps, prevState) {

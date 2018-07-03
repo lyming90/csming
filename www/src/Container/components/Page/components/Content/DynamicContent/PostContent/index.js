@@ -47,6 +47,7 @@ class PostContent extends React.Component {
   componentDidMount() {
     const pathname = this.props.location.pathname;
     this.callFetchPostContent(pathname);
+    window.scrollTo(0, 0);
   }
 
   componentWillUnmount() {

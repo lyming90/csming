@@ -6,9 +6,10 @@
   --text-disable: #ccc;
 }
 
-/* body {
-  background-color: #F0F0F0;
-} */
+.App {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 20px;
+}
 
 p {
   margin-top: 0;
@@ -51,6 +52,10 @@ a {
 }
 
 @media screen and (max-width: 768px) {
+  .App {
+    font-size: 18px;
+  }
+
   .sidebar {
     display: none;
   }
