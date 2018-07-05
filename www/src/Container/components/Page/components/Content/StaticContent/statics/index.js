@@ -1,5 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import * as ntuLogo from '../../../../../../../assets/ntu_logo.png';
+import * as uwaterlooLogo from '../../../../../../../assets/uwaterloo_logo.png';
 
 const facebookIcon = <i className="fab fa-facebook-square fa-2x" style={{marginRight: '2rem'}}/>;
 const linkedinIcon = <i className="fab fa-linkedin fa-2x" style={{marginRight: '2rem'}}/>;
@@ -67,11 +69,11 @@ export const resume = (
       <img
         style={{height: '7.5rem'}}
         alt="Nanyang Technological University"
-        src="https://media.licdn.com/dms/image/C4D0BAQG0nfM0ZH4emA/company-logo_400_400/0?e=2130105600&v=beta&t=I6QzuFlj4Gm_hYOPiFRs2O4V9gL9lX6RtY25cuxmEUs" />
+        src={ntuLogo} />
       <img
         style={{height: '7.5rem'}}
         alt="University of Waterloo"
-        src="https://media.licdn.com/dms/image/C560BAQFI41Ly6leq7Q/company-logo_400_400/0?e=2130105600&v=beta&t=aUzK0hebU5KpN5MVXblhipedGdpyEZ7uEF7HgXXXDRg" />
+        src={uwaterlooLogo} />
     </p>
     <p>
       Currently a rising junior at Nanyang Technological University, Singapore.

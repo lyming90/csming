@@ -58,7 +58,11 @@ class PostContent extends React.Component {
   render() {
     const spinner = (
       <div className="spinner">
-        <i className="rotating fas fa-spinner fa-6x" />
+        <i className="rotating fas fa-spinner fa-4x" />
+        <br/>
+        <br/>
+        <br/>
+        Eagerly loading...
       </div>
     );
 
@@ -70,7 +74,7 @@ class PostContent extends React.Component {
           <div>
             <div className="post-meta">
               <div className="post-title">{this.props.postContent.title}</div>
-              <div className="post-date">{formatDate(this.props.postDate)}</div>
+              <div className="post-date">{formatDate(this.props.postContent.postDate)}</div>
             </div>
             <div className="post-content">
               <ReactMarkdown source={this.props.postContent.content} escapeHtml={false} />

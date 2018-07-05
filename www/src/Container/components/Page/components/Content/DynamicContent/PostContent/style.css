@@ -38,6 +38,8 @@
 .spinner {
   color: var(--special);
   text-align: center;
+  margin-top: 20%;
+  margin-bottom: 20%;
 }
 
 .post-content {

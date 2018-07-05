@@ -35,6 +35,7 @@ class PostList extends React.Component {
         <PostCard
           key={index}
           title={postList[id].title}
+          postDate={postList[id].postDate}
           preview={postList[id].preview}
           alias={id}
         />
@@ -58,6 +59,17 @@ class PostList extends React.Component {
           Loading
         </span>
       );
+      const postDateLoading = (
+        <span
+          className="disable-select placeholder"
+          style={{
+            ...placeHolderStyle,
+            display: "inline",
+          }}
+        >
+          Fuel 4th, 2018
+        </span>
+      );
       const previewLoading = (
         <span
           className="disable-select placeholder"
@@ -77,7 +89,7 @@ class PostList extends React.Component {
             display: "inline"
           }}
         >
-          Go to the post
+          Go to the posi
         </span>
       );
 
@@ -90,6 +102,7 @@ class PostList extends React.Component {
                 <PostCard
                   key={i}
                   titleLoading={titleLoading}
+                  postDateLoading={postDateLoading}
                   previewLoading={previewLoading}
                   linkLoading={linkLoading}
                 />

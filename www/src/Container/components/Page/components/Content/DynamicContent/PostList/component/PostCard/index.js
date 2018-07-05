@@ -2,6 +2,8 @@ import React from "react";
 import { Link } from "react-router-dom";
 import ReactMarkdown from "react-markdown";
 
+import { formatDate } from '../../../../../../../../../utils/index';
+
 import "./style.css";
 
 class PostCard extends React.Component {
@@ -13,6 +15,7 @@ class PostCard extends React.Component {
             ? this.props.titleLoading
             : <Link to={`/posts/${this.props.alias}`} style={{color: "black", borderBottom: "none"}}>{this.props.title}</Link>}
         </p>
+        {<div className="post-date">{this.props.postDateLoading ? this.props.postDateLoading : formatDate(this.props.postDate)}</div>}
         {this.props.previewLoading ? (
           <p>{this.props.previewLoading}</p>
         ) : (

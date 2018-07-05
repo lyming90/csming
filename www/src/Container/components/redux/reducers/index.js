@@ -29,7 +29,10 @@ const reducer = (state = [], action) => {
     case "FETCH_POST_CONTENT.FAILURE":
       return {
         ...state,
-        postList: action.payload // TODO: error message
+        postContent: {
+          title: '404 Not Found',
+          content: 'I\'m sorry, but this post does not exist. :(\n\nPerhaps this is a wrong address.'
+        }
       };
     case "CLEAR_POST_LIST":
       return {
