@@ -17,6 +17,11 @@ p {
   color: var(--text-color);
 }
 
+img {
+  border-radius: 5px;
+  max-width: 100%;
+}
+
 .upsize {
   font-size: 2rem;
 }
