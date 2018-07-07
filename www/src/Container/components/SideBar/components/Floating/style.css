@@ -1,8 +1,9 @@
 .floating {
   visibility: hidden;
   position: sticky;
+  position: -webkit-sticky;
   left: 0;
-  top: 20%;
+  top: 30%;
   display: flex;
   flex-direction: column;
 }

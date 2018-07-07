@@ -1,6 +1,7 @@
 import React from "react";
 import { withRouter } from "react-router-dom";
 import { connect } from "react-redux";
+import { Helmet } from 'react-helmet';
 import PropTypes from "prop-types";
 import ReactMarkdown from "react-markdown";
 import Prism from 'prismjs';
@@ -14,8 +15,6 @@ import {
   clearPostContent
 } from "../../../../../redux/actions/index";
 import "./style.css";
-
-const postFix = "Ming \u00B7 刘明宇 \u00B7 Liu Mingyu";
 
 class PostContent extends React.Component {
   static propTypes = {
@@ -36,11 +35,13 @@ class PostContent extends React.Component {
     this.fetchPostContent(parseInt(id, 10));
   };
 
+  setTitle(title) {
+    const postFix = "Ming \u00B7 刘明宇 \u00B7 Liu Mingyu";
+    const newTitle = title + " \u00B7 " + postFix;
+    return newTitle;
+  }
+
   componentDidUpdate(prevProps) {
-    if (prevProps.postContent !== this.props.postContent) {
-      const title = this.props.postContent.title;
-      document.title = title + " \u00B7 " + postFix;
-    }
     Prism.highlightAll();
   }
 
@@ -51,7 +52,6 @@ class PostContent extends React.Component {
   }
 
   componentWillUnmount() {
-    document.title = postFix;
     this.props.clearPostContent();
   }
 
@@ -65,24 +65,32 @@ class PostContent extends React.Component {
         Eagerly loading...
       </div>
     );
+    const postContent = this.props.postContent;
 
-    return (
-      <div>
-        {!this.props.postContent ? (
-          spinner
-        ) : (
-          <div>
+    if (!postContent) {
+      return [spinner];
+    } else {
+      const { id, title, preview, content, postDate } = postContent;
+      return (
+        <div>
+            <Helmet>
+                <title>{this.setTitle(this.props.postContent.title)}</title>
+                <link rel="canonical" href="#" />
+                <meta property="og:url"         content={"https://www.csming.com/posts/" + id} />
+                <meta property="og:type"        content= "article"/>
+                <meta property="og:title"       content={this.setTitle(title)} />
+                <meta property="og:description" content={preview}/>
+            </Helmet>
             <div className="post-meta">
-              <div className="post-title">{this.props.postContent.title}</div>
-              <div className="post-date">{formatDate(this.props.postContent.postDate)}</div>
+              <div className="post-title">{title}</div>
+              <div className="post-date">{formatDate(postDate)}</div>
             </div>
             <div className="post-content">
-              <ReactMarkdown source={this.props.postContent.content} escapeHtml={false} />
+              <ReactMarkdown source={content} escapeHtml={false} />
             </div>
-          </div>
-        )}
-      </div>
-    );
+        </div>
+      )
+    }
   }
 }
 

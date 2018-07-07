@@ -47,7 +47,7 @@
 }
 
 .post-meta {
-  font-family: 'Lato', sans-serif;
+  font-family: 'Raleway', sans-serif;
 }
 
 .post-title {
@@ -58,5 +58,5 @@
 .post-date {
   color: var(--primary);
   font-size: 0.85rem;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
 }
