@@ -1,5 +1,5 @@
 import React from "react";
-import { Helmet } from 'react-helmet';
+import { Helmet } from "react-helmet";
 import { connect } from "react-redux";
 import { Route } from "react-router";
 
@@ -17,11 +17,11 @@ class DynamicContent extends React.Component {
   render() {
     return (
       <div className="content">
-       <Helmet>
-          <title>{setTitle('Posts')}</title>
-          <meta property="og:url"         content={"https://www.csming.com/posts/"} />
-          <meta property="og:type"        content= "website"/>
-          <meta property="og:title"       content={setTitle('Posts')} />
+        <Helmet>
+          <title>{setTitle("Posts")}</title>
+          <meta property="og:url" content={"https://www.csming.com/posts/"} />
+          <meta property="og:type" content="website" />
+          <meta property="og:title" content={setTitle("Posts")} />
         </Helmet>
         <Header Text="Posts" />
         <Route exact path="/posts" component={PostList} />

@@ -26,7 +26,7 @@ class NavMenu extends React.Component {
   componentDidMount() {
     const pathName = this.props.location.pathname;
     this.setState({
-      pathName: pathName === '/' ? '/home' : pathName
+      pathName: pathName === "/" ? "/home" : pathName
     });
   }
 

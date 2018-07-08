@@ -18,8 +18,7 @@ class SideBar extends Component {
   }
 
   render() {
-    const avatarURL =
-      "/static/profile.jpg";
+    const avatarURL = "/static/profile.jpg";
 
     return (
       <div className="sidebar">

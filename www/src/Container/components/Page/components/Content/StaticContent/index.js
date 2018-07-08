@@ -67,10 +67,13 @@ class StaticContent extends Component {
     return (
       <div className="content">
         <Helmet>
-            <title>{setTitle(header)}</title>
-            <meta property="og:url"         content={"https://www.csming.com/" + header} />
-            <meta property="og:type"        content= "website"/>
-            <meta property="og:title"       content={setTitle(header)} />
+          <title>{setTitle(header)}</title>
+          <meta
+            property="og:url"
+            content={"https://www.csming.com/" + header}
+          />
+          <meta property="og:type" content="website" />
+          <meta property="og:title" content={setTitle(header)} />
         </Helmet>
         <Header Text={this.state.header} />
         <div>{this.state.content}</div>

@@ -1,13 +1,12 @@
 import React from "react";
 import { withRouter } from "react-router-dom";
 import { connect } from "react-redux";
-import { Helmet } from 'react-helmet';
+import { Helmet } from "react-helmet";
 import PropTypes from "prop-types";
 import ReactMarkdown from "react-markdown";
-import Prism from 'prismjs';
-import 'prismjs/themes/prism-okaidia.css'
-import 'prismjs/components/prism-lua.min.js'
-
+import Prism from "prismjs";
+import "prismjs/themes/prism-okaidia.css";
+import "prismjs/components/prism-lua.min.js";
 
 import { formatDate, setTitle } from "../../../../../../../utils/index";
 import {
@@ -53,9 +52,9 @@ class PostContent extends React.Component {
     const spinner = (
       <div className="spinner">
         <i className="rotating fas fa-spinner fa-4x" />
-        <br/>
-        <br/>
-        <br/>
+        <br />
+        <br />
+        <br />
         Eagerly loading...
       </div>
     );
@@ -67,22 +66,25 @@ class PostContent extends React.Component {
       const { id, title, preview, content, postDate } = postContent;
       return (
         <div>
-            <Helmet>
-                <title>{setTitle(title)}</title>
-                <meta property="og:url"         content={"https://www.csming.com/posts/" + id} />
-                <meta property="og:type"        content= "article"/>
-                <meta property="og:title"       content={setTitle(title)} />
-                <meta property="og:description" content={preview}/>
-            </Helmet>
-            <div className="post-meta">
-              <div className="post-title">{title}</div>
-              <div className="post-date">{formatDate(postDate)}</div>
-            </div>
-            <div className="post-content">
-              <ReactMarkdown source={content} escapeHtml={false} />
-            </div>
+          <Helmet>
+            <title>{setTitle(title)}</title>
+            <meta
+              property="og:url"
+              content={"https://www.csming.com/posts/" + id}
+            />
+            <meta property="og:type" content="article" />
+            <meta property="og:title" content={setTitle(title)} />
+            <meta property="og:description" content={preview} />
+          </Helmet>
+          <div className="post-meta">
+            <div className="post-title">{title}</div>
+            <div className="post-date">{formatDate(postDate)}</div>
+          </div>
+          <div className="post-content">
+            <ReactMarkdown source={content} escapeHtml={false} />
+          </div>
         </div>
-      )
+      );
     }
   }
 }

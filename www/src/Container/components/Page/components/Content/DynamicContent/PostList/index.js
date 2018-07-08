@@ -23,23 +23,25 @@ class PostList extends React.Component {
     const postList = this.props.postList;
     if (postList) {
       const postListKeys = Object.keys(postList);
-      const postCards = postListKeys.filter(id => postList[id].status === 'published')
+      const postCards = postListKeys
+        .filter(id => postList[id].status === "published")
         .sort((idA, idB) => {
           // sort by postDate
-          const cmp = new Date(postList[idA].postDate) - new Date(postList[idB].postDate);
+          const cmp =
+            new Date(postList[idA].postDate) - new Date(postList[idB].postDate);
           if (cmp < 0) return 1;
           else if (cmp > 0) return -1;
           else return 0;
         })
         .map((id, index) => (
-        <PostCard
-          key={index}
-          title={postList[id].title}
-          postDate={postList[id].postDate}
-          preview={postList[id].preview}
-          alias={id}
-        />
-      ));
+          <PostCard
+            key={index}
+            title={postList[id].title}
+            postDate={postList[id].postDate}
+            preview={postList[id].preview}
+            alias={id}
+          />
+        ));
       return postCards;
     } else {
       const placeHolderColor = "#ccc";
@@ -64,7 +66,7 @@ class PostList extends React.Component {
           className="disable-select placeholder"
           style={{
             ...placeHolderStyle,
-            display: "inline",
+            display: "inline"
           }}
         >
           Fuel 4th, 2018

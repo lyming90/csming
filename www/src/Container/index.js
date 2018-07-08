@@ -11,10 +11,10 @@ class Container extends Component {
     return (
       <Provider store={store}>
         <Router>
-            <div className="container">
-              <SideBar />
-              <Page />
-            </div>
+          <div className="container">
+            <SideBar />
+            <Page />
+          </div>
         </Router>
       </Provider>
     );
