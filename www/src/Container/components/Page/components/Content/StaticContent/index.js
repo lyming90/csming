@@ -1,7 +1,9 @@
 import React, { Component } from "react";
+import { Helmet } from "react-helmet";
 import Header from "../Header";
 import statics from "./statics/index";
 
+import { setTitle } from "../../../../../../utils/index";
 import "../style.css";
 
 class StaticContent extends Component {
@@ -61,8 +63,15 @@ class StaticContent extends Component {
   };
 
   render() {
+    const { header } = this.state;
     return (
       <div className="content">
+        <Helmet>
+            <title>{setTitle(header)}</title>
+            <meta property="og:url"         content={"https://www.csming.com/" + header} />
+            <meta property="og:type"        content= "website"/>
+            <meta property="og:title"       content={setTitle(header)} />
+        </Helmet>
         <Header Text={this.state.header} />
         <div>{this.state.content}</div>
       </div>

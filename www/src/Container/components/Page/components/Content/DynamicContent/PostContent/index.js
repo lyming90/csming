@@ -9,7 +9,7 @@ import 'prismjs/themes/prism-okaidia.css'
 import 'prismjs/components/prism-lua.min.js'
 
 
-import { formatDate } from "../../../../../../../utils/index";
+import { formatDate, setTitle } from "../../../../../../../utils/index";
 import {
   fetchPostContent,
   clearPostContent
@@ -34,12 +34,6 @@ class PostContent extends React.Component {
     const id = splitPathname[splitLength - 1];
     this.fetchPostContent(parseInt(id, 10));
   };
-
-  setTitle(title) {
-    const postFix = "Ming \u00B7 刘明宇 \u00B7 Liu Mingyu";
-    const newTitle = title + " \u00B7 " + postFix;
-    return newTitle;
-  }
 
   componentDidUpdate(prevProps) {
     Prism.highlightAll();
@@ -74,11 +68,10 @@ class PostContent extends React.Component {
       return (
         <div>
             <Helmet>
-                <title>{this.setTitle(this.props.postContent.title)}</title>
-                <link rel="canonical" href="#" />
+                <title>{setTitle(title)}</title>
                 <meta property="og:url"         content={"https://www.csming.com/posts/" + id} />
                 <meta property="og:type"        content= "article"/>
-                <meta property="og:title"       content={this.setTitle(title)} />
+                <meta property="og:title"       content={setTitle(title)} />
                 <meta property="og:description" content={preview}/>
             </Helmet>
             <div className="post-meta">
