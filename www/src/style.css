@@ -6,9 +6,8 @@
   --text-disable: #ccc;
 }
 
-.App {
-  font-family: 'Open Sans', sans-serif;
-  font-size: 20px;
+body {
+  margin: 0;
 }
 
 p {

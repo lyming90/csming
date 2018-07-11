@@ -8,9 +8,9 @@ class SideBar extends Component {
   toggleFloat = () => {
     const floating = document.querySelector(".floating");
     const menuToBottom = document
-      .querySelector(".menu-list")
+      .querySelector(".avatar")
       .getBoundingClientRect().bottom;
-    menuToBottom < 20 // carefully calculated
+    menuToBottom < 0 // carefully calculated. If menu-list, then 20 instead of 0
       ? (floating.style.visibility = "visible")
       : (floating.style.visibility = "hidden");
   };
