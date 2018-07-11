@@ -120,13 +120,6 @@ class PostList extends React.Component {
     return (
       <div>
         {this.createPostCard()}
-        {/* <Button
-          variant="contained"
-          color="secondary"
-          onClick={() => console.log("Store, ", this.props)}
-        >
-          Debug
-        </Button> */}
       </div>
     );
   }

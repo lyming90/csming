@@ -5,16 +5,19 @@ import Floating from "./components/Floating/index";
 import "./style.css";
 
 class SideBar extends Component {
+  toggleFloat = () => {
+    const floating = document.querySelector(".floating");
+    const menuToBottom = document
+      .querySelector(".menu-list")
+      .getBoundingClientRect().bottom;
+    menuToBottom < 20 // carefully calculated
+      ? (floating.style.visibility = "visible")
+      : (floating.style.visibility = "hidden");
+  };
+
   componentDidMount() {
-    document.addEventListener("scroll", () => {
-      const floating = document.querySelector(".floating");
-      const menuToBottom = document
-        .querySelector(".menu-list")
-        .getBoundingClientRect().bottom;
-      menuToBottom < 20 // carefully calculated
-        ? (floating.style.visibility = "visible")
-        : (floating.style.visibility = "hidden");
-    });
+    window.addEventListener("scroll", this.toggleFloat);
+    window.addEventListener("resize", this.toggleFloat);
   }
 
   render() {

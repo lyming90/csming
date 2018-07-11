@@ -6,6 +6,8 @@ import MenuList from "@material-ui/core/MenuList";
 import MenuItem from "@material-ui/core/MenuItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
 
+import "./style.css";
+
 class NavMenu extends React.Component {
   static propTypes = {
     match: PropTypes.object.isRequired,

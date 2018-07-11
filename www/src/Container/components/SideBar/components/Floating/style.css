@@ -1,8 +1,6 @@
 .floating {
   visibility: hidden;
-  position: sticky;
-  position: -webkit-sticky;
-  left: 0;
+  position: fixed;
   top: 30%;
   display: flex;
   flex-direction: column;
@@ -11,4 +9,15 @@
 .floating div * {
   margin-bottom: 1.5rem;
   width: 0;
+}
+
+.toast {
+  font-family: 'Open Sans', sans-serif;
+  color: white;
+  background-color: var(--primary) !important;
+  height: 1rem !important;
+  border-radius: 10px !important;
+  position: fixed;
+  right: 5px;
+  bottom: 0;
 }

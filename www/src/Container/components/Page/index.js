@@ -58,7 +58,11 @@ class Page extends Component {
           <span role="img" aria-label="emoji">
             💪
           </span>{" "}
-          Last released on July 4th.<br />I constantly update this site to keep
+          Last released on July 10th.<br />
+          <span role="img" aria-label="emoji">
+            🚀
+          </span>{" "}
+          I constantly update this site to keep
           you impressed.
         </p>
         <p className="copy-right disable-select">&copy; 2018 Ming Y. Liu</p>

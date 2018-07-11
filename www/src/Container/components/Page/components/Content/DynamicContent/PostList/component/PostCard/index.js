@@ -23,7 +23,7 @@ class PostCard extends React.Component {
           )}
         </p>
         {
-          <div className="post-date">
+          <div className="post-card-date">
             {this.props.postDateLoading
               ? this.props.postDateLoading
               : formatDate(this.props.postDate)}
