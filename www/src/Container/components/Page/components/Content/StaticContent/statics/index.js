@@ -95,7 +95,7 @@ export const resume = (
         <a href="#courses">4. Courses</a>
       </p>
     </div>
-    <line-break />
+    <hr />
     <h1 id="education">Education</h1>
     <p>
       <img
@@ -113,10 +113,10 @@ export const resume = (
       Currently a rising junior at Nanyang Technological University, Singapore.
     </p>
     <p>
-      In the past, I went to the University of Waterloo for a short term
+      In the past, I went to the University of Waterloo for a term-long
       exchange.
     </p>
-    <line-break />
+    <hr />
     <h1 id="experience">Experience</h1>
     <p>
       Software Engineer Intern<br />
@@ -136,7 +136,7 @@ export const resume = (
         Feb - Apr 2017<br />Saturday Kids, Singapore
       </span>
     </p>
-    <line-break />
+    <hr />
     <h1 id="skill-set">Skill Set</h1>
     <p>
       For programming languages, I know Java, Python, C, SQL, HTML, CSS,
@@ -147,7 +147,7 @@ export const resume = (
       Nginx, Gunicorn, React, Redux, jQuery.
     </p>
     <p>As for tools, I played with Git, LaTeX, Markdown, Firebase, MySQL.</p>
-    <line-break />
+    <hr />
     <h1 id="courses">Courses</h1>
     <p>
       <strong>Courses I've taken</strong>

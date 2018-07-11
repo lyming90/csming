@@ -32,7 +32,7 @@ const reducer = (state = [], action) => {
         postContent: {
           title: "404 Not Found",
           content:
-            "I'm sorry, but this post does not exist. :(\n\nPerhaps this is a wrong address."
+            "I'm sorry, but this post does not exist.\n\nThis could be a wrong address, or perhaps the url has moved.\n\n*Or what else could it be?*"
         }
       };
     case "CLEAR_POST_LIST":

@@ -11,6 +11,15 @@ import DynamicContent from "./components/Content/DynamicContent/index";
 
 import "./style.css";
 
+const routes = 
+  <Switch>
+    <Route exact path="/home" component={StaticContent} />
+    <Route exact path="/resume" component={StaticContent} />
+    <Route exact path="/posts" component={DynamicContent} />
+    <Route exact path="/posts/:id" component={DynamicContent} />
+    <Route path="/" component={StaticContent} />
+  </Switch>
+
 class Page extends Component {
   constructor(props) {
     super(props);
@@ -33,11 +42,7 @@ class Page extends Component {
     return (
       <div className="page">
         <Banner Text="Hey, thanks for visiting!" />
-        <Switch>
-          <Route path="/posts" component={DynamicContent} />
-          <Route path="/:statics" component={StaticContent} />
-          <Route path="/" component={StaticContent} />
-        </Switch>
+        {routes}
         <p />
         <Button
           variant="fab"
@@ -58,12 +63,12 @@ class Page extends Component {
           <span role="img" aria-label="emoji">
             💪
           </span>{" "}
-          Last released on July 10th.<br />
+          Last released on July 10th<br />
           <span role="img" aria-label="emoji">
             🚀
           </span>{" "}
           I constantly update this site to keep
-          you impressed.
+          you impressed
         </p>
         <p className="copy-right disable-select">&copy; 2018 Ming Y. Liu</p>
       </div>
