@@ -4,9 +4,11 @@ The initial version was designed during the first month of my exchange term to U
 
 ## Demo
 
-[Ming · 刘明宇 · Liu Mingyu](https://www.csming.com)
+[Ming · 刘明宇 · Liu Mingyu](https://csming.com)
 
 ##  Getting Started
+
+> Since July 2018, the website has migrated into a React + Redux model. Therfore, the following instructions are no longer applicable.
 
 To run the project, you will need
 
