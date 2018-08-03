@@ -1,0 +1,21 @@
+@import '_colors';
+@import '_typography';
+
+:local {
+  .container {
+    @include raleway-medium;
+    display: flex;
+    justify-content: space-around;
+    background-color: $light-gray;
+    width: 100%;
+    a {
+      color: black;
+      text-decoration: none;
+      padding: 1rem 0.5rem;
+    }
+    a:hover {
+      padding-bottom: calc(1rem - 3px);
+      border-bottom: 3px solid blue;
+    }
+  }
+}

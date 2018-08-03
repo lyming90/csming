@@ -1,0 +1,102 @@
+@import '_colors';
+@import '_typography';
+@import '_functions';
+
+:local {
+  .container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    line-height: 1.5;
+    word-spacing: 0.25rem;
+  }
+
+  .welcome {
+    margin-top: 2rem;
+    font-size: 5rem;
+    @include modern-antiqua;
+    @include disable-select;
+  }
+
+  .name {
+    @include modern-antiqua;
+  }
+
+  .uni {
+    font-variant: small-caps;
+  }
+
+  .highlight {
+    @include modern-antiqua;
+    color: crimson;
+  }
+
+  .header {
+    margin-top: 3rem;
+    text-align: center;
+    width: 50%;
+    @include lato-bold;
+  }
+
+  .socialMedia {
+    width: 40%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: 1rem;
+  }
+
+  .section_a {
+    @include lato-regular;
+    margin-top: 2rem;
+    width: 40%;
+  }
+
+  .section_b {
+    @include lato-regular;
+    color: rgb(65, 65, 65);
+    font-size: 1.1rem;
+    margin-top: 3rem;
+    width: 50%;
+  }
+
+  .section_c {
+    margin-top: 3rem;
+    width: 30%;
+    @include raleway-regular;
+  }
+
+  .footer {
+    word-spacing: 2px;
+    font-size: 0.85rem;
+    color: rgb(93, 93, 93);
+    margin-top: 3rem;
+    position: relative;
+    margin-bottom: 2rem;
+    &_text::before {
+      content: " ";
+      background-color: rgb(93, 93, 93);
+      height: 1px;
+      display: inline-block;
+      position: absolute;
+      top: calc(50% + 2px);
+      width: 3rem;
+      left: 100%;
+      margin-left: 2rem;
+    }
+    &_text::after {
+      content: " ";
+      background-color: rgb(93, 93, 93);
+      // margin-left: 2rem;
+      height: 1px;
+      display: inline-block;
+      position: absolute;
+      top: calc(50% + 2px);
+      width: 3rem;
+      right: 100%;
+      margin-right: 2rem;
+    }
+  }
+
+}

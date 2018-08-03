@@ -1,0 +1,7 @@
+@import '_typography';
+
+:global {
+  body {
+    @include lato-regular;
+  }
+}

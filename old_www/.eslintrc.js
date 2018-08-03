@@ -22,6 +22,7 @@ module.exports = {
     semi: ["error", "always"],
     eqeqeq: 'error',
     "no-console": 0,
+    "react/prop-types": 0, // this is a bad practice
 
     // Prettier
     "prettier/prettier": "error",
