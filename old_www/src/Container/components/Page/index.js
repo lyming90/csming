@@ -14,9 +14,9 @@ import "./style.css";
 const routes = (
   <Switch>
     <Route exact path="/home" component={StaticContent} />
-    <Route exact path="/resume" component={StaticContent} />
-    <Route exact path="/posts" component={DynamicContent} />
-    <Route exact path="/posts/:id" component={DynamicContent} />
+    <Route exact path="/bio" component={StaticContent} />
+    <Route exact path="/blog" component={DynamicContent} />
+    <Route exact path="/blog/article/:id" component={DynamicContent} />
     <Route path="/" component={StaticContent} />
   </Switch>
 );
@@ -64,7 +64,7 @@ class Page extends Component {
           <span role="img" aria-label="emoji">
             💪
           </span>{" "}
-          Last released on July 10th<br />
+          Last released on Aug 3rd<br />
           <span role="img" aria-label="emoji">
             🚀
           </span>{" "}

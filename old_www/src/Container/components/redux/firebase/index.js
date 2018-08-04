@@ -1,4 +1,4 @@
-import flamelink from "../../../../packages/flamelink";
+import flamelink from "flamelink";
 
 // Initialize and export Firebase.
 const firebaseConfig = {

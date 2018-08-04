@@ -42,7 +42,7 @@ class StaticContent extends Component {
         header = statics.home.header;
         content = statics.home.content;
         break;
-      case "/resume":
+      case "/bio":
         header = statics.resume.header;
         content = statics.resume.content;
         break;

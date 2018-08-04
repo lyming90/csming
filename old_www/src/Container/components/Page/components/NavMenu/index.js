@@ -62,10 +62,10 @@ class NavMenu extends React.Component {
           Home
         </MenuItem>
         <MenuItem
-          selected={this.state.pathName === "/resume"}
-          onClick={() => this.handleClick("/resume")}
+          selected={this.state.pathName === "/bio"}
+          onClick={() => this.handleClick("/bio")}
         >
-          Resume
+          Bio
         </MenuItem>
         <MenuItem
           selected={this.state.pathName === "/posts"}

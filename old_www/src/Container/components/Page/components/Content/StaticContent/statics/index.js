@@ -42,7 +42,7 @@ export const home = (
     <h1>Contact Me</h1>
     <p>
       You&#39;re always welcomed to drop me a message! But, if you&#39;re a
-      recruiter, <Link to="/resume">look into here first</Link>.
+      recruiter, <Link to="/bio">look into here first</Link>.
     </p>
     <p>Me on social media:</p>
     <p className="disable-select">
@@ -233,7 +233,7 @@ const statics = {
     content: home
   },
   resume: {
-    header: "Resume",
+    header: "Bio",
     content: resume
   },
   projects: {

@@ -1,5 +1,6 @@
 import React from "react";
 import { withRouter } from "react-router";
+import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 
 import MenuList from "@material-ui/core/MenuList";
@@ -55,32 +56,30 @@ class NavMenu extends React.Component {
     return (
       <div className="menu-list">
         <MenuList>
-          <MenuItem
-            selected={this.state.pathName === "/home"}
-            style={menuItemStyle}
-            onClick={() => this.redirectTo("/home")}
-          >
-            <ListItemIcon style={menuItemColorScheme}>{homeIcon}</ListItemIcon>
-            <span style={menuItemColorScheme}>Home</span>
-          </MenuItem>
-          <MenuItem
-            selected={this.state.pathName === "/resume"}
-            style={menuItemStyle}
-            onClick={() => this.redirectTo("/resume")}
-          >
-            <ListItemIcon style={menuItemColorScheme}>
-              {resumeIcon}
-            </ListItemIcon>
-            <span style={menuItemColorScheme}>Resume</span>
-          </MenuItem>
-          <MenuItem
-            selected={this.state.pathName === "/posts"}
-            style={menuItemStyle}
-            onClick={() => this.redirectTo("/posts")}
-          >
-            <ListItemIcon style={menuItemColorScheme}>{postsIcon}</ListItemIcon>
-            <span style={menuItemColorScheme}>Posts</span>
-          </MenuItem>
+          <Link to="/">
+            <MenuItem style={menuItemStyle}>
+              <ListItemIcon style={menuItemColorScheme}>
+                {homeIcon}
+              </ListItemIcon>
+              <span style={menuItemColorScheme}>Home</span>
+            </MenuItem>
+          </Link>
+          <Link to="/bio">
+            <MenuItem style={menuItemStyle}>
+              <ListItemIcon style={menuItemColorScheme}>
+                {resumeIcon}
+              </ListItemIcon>
+              <span style={menuItemColorScheme}>Bio</span>
+            </MenuItem>
+          </Link>
+          <Link to="/blog">
+            <MenuItem style={menuItemStyle}>
+              <ListItemIcon style={menuItemColorScheme}>
+                {postsIcon}
+              </ListItemIcon>
+              <span style={menuItemColorScheme}>Posts</span>
+            </MenuItem>
+          </Link>
           {/* <MenuItem
             selected={this.state.pathName === "/projects"}
             style={menuItemStyle}

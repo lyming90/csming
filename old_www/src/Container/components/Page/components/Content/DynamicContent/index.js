@@ -18,14 +18,14 @@ class DynamicContent extends React.Component {
     return (
       <div className="content">
         <Helmet>
-          <title>{setTitle("Posts")}</title>
+          <title>{setTitle("Blog")}</title>
           <meta property="og:url" content={"https://www.csming.com/posts/"} />
           <meta property="og:type" content="website" />
-          <meta property="og:title" content={setTitle("Posts")} />
+          <meta property="og:title" content={setTitle("Blog")} />
         </Helmet>
-        <Header Text="Posts" />
-        <Route exact path="/posts" component={PostList} />
-        <Route exact path="/posts/:alias" component={PostContent} />
+        <Header Text="Blog" />
+        <Route exact path="/blog" component={PostList} />
+        <Route exact path="/blog/article/:alias" component={PostContent} />
       </div>
     );
   }
