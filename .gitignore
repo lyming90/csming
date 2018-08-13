@@ -1,4 +1,7 @@
 www/node_modules
 www/build
-old_www/node_modules
-old_www/build
+www_2.0/node_modules
+www_2.0/build
+__pycache__
+.vscode
+venv

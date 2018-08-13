@@ -1,18 +1,13 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import Container from "./Container";
 
-import NavBar from "./components/NavBar";
-import PageHome from "./PageHome";
-
-import "src/styles/app.scss";
-import "src/styles/normalize.scss";
-import * as styles from "./style.scss";
+import "./style.css";
 
 const App = () => (
-  <div className={styles.appContainer}>
-    <NavBar />
-    <PageHome />
+  <div className="App">
+    <Container />
   </div>
 );
 
-ReactDOM.render(<App />, document.getElementById("app"));
+ReactDOM.render(<App />, document.getElementById("root"));
