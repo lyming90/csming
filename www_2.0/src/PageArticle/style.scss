@@ -3,10 +3,8 @@
 
 :local {
   .container {
-    margin-top: 2rem;
     display: flex;
     flex-direction: column;
-    align-items: center;
   }
 
   .title {
@@ -20,7 +18,6 @@
     @include lato-regular;
     font-size: 1.05rem;
     line-height: 1.5;
-    width: 50%;
     img {
       max-width: 100%;
     }

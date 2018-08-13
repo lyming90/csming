@@ -36,6 +36,7 @@
     "babel-loader": "^7.1.5",
     "babel-plugin-dynamic-import-node": "^2.0.0",
     "babel-plugin-syntax-dynamic-import": "^6.18.0",
+    "babel-plugin-transform-es3-member-expression-literals": "^6.22.0",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-preset-env": "^1.7.0",
     "babel-preset-es2015": "^6.24.1",
@@ -70,7 +71,8 @@
   "babel": {
     "plugins": [
       "dynamic-import-node",
-      "syntax-dynamic-import"
+      "syntax-dynamic-import",
+      "transform-es3-member-expression-literals"
     ],
     "presets": [
       "env",

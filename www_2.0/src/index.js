@@ -5,7 +5,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 import * as ROUTES from "./routes";
 import store from "src/redux/store";
-import NavBar from "./components/NavBar";
+import SideBar from "./components/SideBar";
 import PageBlog from "./PageBlog";
 import PageHome from "./PageHome";
 import PageArticle from "./PageArticle";
@@ -18,8 +18,8 @@ const App = () => (
   <div className={styles.appContainer}>
     <Provider store={store}>
       <Router>
-        <div className={styles.appContainer}>
-          <NavBar />
+        <div className={styles.container}>
+          <SideBar />
           <Switch>
             <Route exact path="/" component={PageHome} />
             <Route exact path="/blog" component={PageBlog} />

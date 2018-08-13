@@ -2,6 +2,8 @@ import React from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import { fetchPostList } from "src/redux/actions";
+import Card from "./component/Card";
+
 // import * as styles from "./style.scss";
 
 class PageBlog extends React.PureComponent {
@@ -19,13 +21,17 @@ class PageBlog extends React.PureComponent {
     articleIdList.forEach((id, index) => {
       const articleData = data[id];
       const articleDOM = (
-        <li key={index}>
-          <Link to={"/blog/article/".concat(id)}>{articleData.title}</Link>
-        </li>
+        <Card
+          key={index}
+          title={articleData.title}
+          date={articleData.postDate}
+          preview={articleData.preview}
+          alias={articleData.id}
+        />
       );
       articleList.push(articleDOM);
     });
-    return <ul>{articleList}</ul>;
+    return <div>{articleList}</div>;
   }
 }
 
