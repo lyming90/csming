@@ -1,8 +1,11 @@
+@import "_functions";
+
 :local {
   .container {
     display: flex;
     flex-direction: column;
-    margin-right: 2rem;
+    margin-right: 4rem;
+    max-width: 10rem;
     a {
       color: rgba(0, 0, 0, 0.87);
       text-decoration: none;
@@ -10,7 +13,7 @@
     div {
       display: flex;
       align-items: center;
-      padding: 0.75rem 1.25rem;
+      padding: 0.75rem 1.5rem;
       overflow: hidden;
       color: rgba(0, 0, 0, 0.87);
       transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
@@ -24,5 +27,11 @@
     .icon {
       margin-right: 0.75rem;
     }
+  }
+  .avatar {
+    width: 100%;
+    border-radius: 2rem;
+    margin-bottom: 1rem;
+    @include medium-shadow;
   }
 }

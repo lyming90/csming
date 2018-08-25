@@ -80,22 +80,7 @@ export const home = (
 
 export const resume = (
   <div>
-    <p>
-      Contact me to request for an <Link to="/">official resume</Link>.
-    </p>
-    <div className="table-of-contents">
-      <h2>Table of Contents</h2>
-      <p>
-        <a href="#education">1. Education</a>
-        <br />
-        <a href="#experience">2. Experience</a>
-        <br />
-        <a href="#skill-set">3. Skill Set</a>
-        <br />
-        <a href="#courses">4. Courses</a>
-      </p>
-    </div>
-    <hr />
+    <p>Contact me to request for an official resume :D.</p>
     <h1 id="education">Education</h1>
     <p>
       <img
@@ -109,9 +94,7 @@ export const resume = (
         src={uwaterlooLogo}
       />
     </p>
-    <p>
-      Currently a rising junior at Nanyang Technological University, Singapore.
-    </p>
+    <p>Currently a junior at Nanyang Technological University, Singapore.</p>
     <p>
       In the past, I went to the University of Waterloo for a term-long
       exchange.
@@ -121,13 +104,13 @@ export const resume = (
     <p>
       Software Engineer Intern<br />
       <span className="small">
-        May 2018 - Present<br />Sea (Shopee), Singapore
+        May - Aug 2018<br />Sea (Shopee), Singapore
       </span>
     </p>
     <p>
       Peer Coach<br />
       <span className="small">
-        Sept - Nov 2018<br />SCSE-NTU, Singapore
+        Sept - Nov 2017<br />SCSE-NTU, Singapore
       </span>
     </p>
     <p>
@@ -144,11 +127,28 @@ export const resume = (
     </p>
     <p>
       For frameworks and libraries, I have used JavaFX, Python-Flask, OpenCV,
-      Nginx, Gunicorn, React, Redux, jQuery.
+      React, Redux, jQuery.
     </p>
     <p>As for tools, I played with Git, LaTeX, Markdown, Firebase, MySQL.</p>
     <hr />
     <h1 id="courses">Courses</h1>
+    <p>
+      <strong>Courses I&#39;m taking (Fall 2018)</strong>
+    </p>
+    <p className="lato">
+      <span className="monaco">CZ2003</span> - Computer Graphics & Visualization
+      <br />
+      <span className="monaco">CZ2004</span> - Human Computer Interaction
+      <br />
+      <span className="monaco">CZ2005</span> - Operating Systems
+      <br />
+      <span className="monaco">CZ3003</span> - Software Systems Analysis &
+      Design
+      <br />
+      <span className="monaco">CZ3006</span> - Net Centric Computing
+      <br />
+      <span className="monaco">HY0001</span> - Ethics & Moral Reasoning
+    </p>
     <p>
       <strong>Courses I&#39;ve taken</strong>
     </p>

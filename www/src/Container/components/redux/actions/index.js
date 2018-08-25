@@ -9,9 +9,13 @@ export const fetchPostList = () => async dispatch => {
       fields: ["id", "title", "preview", "status", "postDate"]
     })
     .then(response => {
+      const keys = Object.keys(response);
+      const result = keys
+        .filter(id => response[id].status === "published")
+        .map(id => response[id]);
       dispatch({
         type: "FETCH_POST_LIST.SUCCESS",
-        payload: response
+        payload: result
       });
     })
     .catch(error => {

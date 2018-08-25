@@ -24,7 +24,6 @@ class PostList extends React.Component {
     if (postList) {
       const postListKeys = Object.keys(postList);
       const postCards = postListKeys
-        .filter(id => postList[id].status === "published")
         .sort((idA, idB) => {
           // sort by postDate
           const cmp =
@@ -39,7 +38,7 @@ class PostList extends React.Component {
             title={postList[id].title}
             postDate={postList[id].postDate}
             preview={postList[id].preview}
-            alias={id}
+            alias={postList[id].id}
           />
         ));
       return postCards;

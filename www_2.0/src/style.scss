@@ -9,9 +9,34 @@
     width: 100%;
   }
   .container {
-    margin-top: 1.25rem;
+    // margin-top: 1.25rem;
     display: flex;
     flex-direction: row;
-    width: 60%;
+    padding: 1.25rem;
+    width: 480px;
+  }
+
+  @media (min-width: 768px) {
+    .container {
+      width: 480px;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .container {
+      width: 720px;
+    }
+  }
+
+  @media (min-width: 1440px) {
+    .container {
+      width: 960px;
+    }
+  }
+
+  @media (min-width: 2560px) {
+    .container {
+      width: 1440px;
+    }
   }
 }

@@ -25,11 +25,11 @@ const PageHome = () => {
         <span className={styles.name}>Ming</span> if it makes things easier. I
         am a rising junior at{" "}
         <span className={styles.uni}>Nanyang Technological University</span>{" "}
-        with a major in Computer Science and a possible minor in Mathematics.
+        studying computer science.
       </div>
       <div className={styles.section_b}>
-        I believe technologies can impact the way we live and those with
-        computer science skills have the capability of making it better.
+        I believe technologies can impact the way we live and move the world
+        forward.
       </div>
       <div className={styles.section_c}>
         Defining myself as a software engineer, my mission is to design and

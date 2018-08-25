@@ -12,6 +12,11 @@ class SideBar extends React.PureComponent {
   render() {
     return (
       <div className={styles.container}>
+        <img
+          className={styles.avatar}
+          src={"https://csming.com/static/profile.jpg"}
+          alt="avatar"
+        />
         <Link to="/">
           <div>
             <span className={styles.icon}>{homeIcon}</span> Home

@@ -65,7 +65,7 @@ class Page extends Component {
           <span role="img" aria-label="emoji">
             💪
           </span>{" "}
-          Last released on Aug 3rd<br />
+          Last released on Aug 25th<br />
           <span role="img" aria-label="emoji">
             🚀
           </span>{" "}
