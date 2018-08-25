@@ -27,18 +27,28 @@ export const home = (
       </span>
     </p>
     <p>
-      <span className="upsize">Hi!</span> My name is 刘明宇 (Liu Mingyu - Liu is
-      my surname). Call me Ming if it makes things easier. I am a rising junior
-      at Nanyang Technological University with a major in Computer Science and a
+      <span className="upsize">Hi!</span> My name is Liu Mingyu - Liu is my
+      surname. Call me Ming if it makes things easier. I am a rising junior at
+      Nanyang Technological University with a major in Computer Science and a
       possible minor in Mathematics.
     </p>
     <p>
+      Technologies affect the way we live, and can be leveraged to move the
+      world forward. Defining myself as a software engineer, my mission is to
+      design and create high-quality software solutions that can influence
+      people&#39;s lives.
+    </p>
+    <p>
+      Besides my interest in Computer Science, I also enjoy traveling and
+      hiking.
+    </p>
+    {/* <p>
       <span className="upsize">I</span> am a self-driven and curious person who
       always look forward to new adventures and embrace latest technologies. As
       a software developer, I aim to design and create software solutions that
       are high-quality, robust and beautifully-presented. Besides my interest in
       Computer Science, I also enjoy traveling and hiking.
-    </p>
+    </p> */}
     <h1>Contact Me</h1>
     <p>
       You&#39;re always welcomed to drop me a message! But, if you&#39;re a
