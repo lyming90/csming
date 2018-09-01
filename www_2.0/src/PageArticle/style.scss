@@ -1,0 +1,30 @@
+@import '_functions';
+@import '_typography';
+
+:local {
+  .container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .title {
+    font-family: "Raleway", sans-serif !important;
+    font-weight: 600 !important;
+    font-size: 1.4rem !important;
+    margin-bottom: 1rem;
+  }
+
+  .container > div {
+    @include lato-regular;
+    font-size: 1.05rem;
+    line-height: 1.5;
+    img {
+      max-width: 100%;
+    }
+    pre {
+      white-space: pre-line;
+      overflow: auto;
+      max-width: 100%
+    }
+  }
+}

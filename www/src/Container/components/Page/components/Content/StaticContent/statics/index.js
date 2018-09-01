@@ -27,22 +27,32 @@ export const home = (
       </span>
     </p>
     <p>
-      <span className="upsize">Hi!</span> My name is 刘明宇 (Liu Mingyu - Liu is
-      my surname). Call me Ming if it makes things easier. I am a rising junior
-      at Nanyang Technological University with a major in Computer Science and a
+      <span className="upsize">Hi!</span> My name is Liu Mingyu - Liu is my
+      surname. Call me Ming if it makes things easier. I am a rising junior at
+      Nanyang Technological University with a major in Computer Science and a
       possible minor in Mathematics.
     </p>
     <p>
+      Technologies affect the way we live, and can be leveraged to move the
+      world forward. Defining myself as a software engineer, my mission is to
+      design and create high-quality software solutions that can influence
+      people&#39;s lives.
+    </p>
+    <p>
+      Besides my interest in Computer Science, I also enjoy traveling and
+      hiking.
+    </p>
+    {/* <p>
       <span className="upsize">I</span> am a self-driven and curious person who
       always look forward to new adventures and embrace latest technologies. As
       a software developer, I aim to design and create software solutions that
       are high-quality, robust and beautifully-presented. Besides my interest in
       Computer Science, I also enjoy traveling and hiking.
-    </p>
+    </p> */}
     <h1>Contact Me</h1>
     <p>
-      You're always welcomed to drop me a message! But, if you're a recruiter,{" "}
-      <Link to="/resume">look into here first</Link>.
+      You&#39;re always welcomed to drop me a message! But, if you&#39;re a
+      recruiter, <Link to="/bio">look into here first</Link>.
     </p>
     <p>Me on social media:</p>
     <p className="disable-select">
@@ -80,22 +90,7 @@ export const home = (
 
 export const resume = (
   <div>
-    <p>
-      Contact me to request for an <Link to="/">official resume</Link>.
-    </p>
-    <div className="table-of-contents">
-      <h2>Table of Contents</h2>
-      <p>
-        <a href="#education">1. Education</a>
-        <br />
-        <a href="#experience">2. Experience</a>
-        <br />
-        <a href="#skill-set">3. Skill Set</a>
-        <br />
-        <a href="#courses">4. Courses</a>
-      </p>
-    </div>
-    <hr />
+    <p>Contact me to request for an official resume :D.</p>
     <h1 id="education">Education</h1>
     <p>
       <img
@@ -109,9 +104,7 @@ export const resume = (
         src={uwaterlooLogo}
       />
     </p>
-    <p>
-      Currently a rising junior at Nanyang Technological University, Singapore.
-    </p>
+    <p>Currently a junior at Nanyang Technological University, Singapore.</p>
     <p>
       In the past, I went to the University of Waterloo for a term-long
       exchange.
@@ -121,13 +114,13 @@ export const resume = (
     <p>
       Software Engineer Intern<br />
       <span className="small">
-        May 2018 - Present<br />Sea (Shopee), Singapore
+        May - Aug 2018<br />Sea (Shopee), Singapore
       </span>
     </p>
     <p>
       Peer Coach<br />
       <span className="small">
-        Sept - Nov 2018<br />SCSE-NTU, Singapore
+        Sept - Nov 2017<br />SCSE-NTU, Singapore
       </span>
     </p>
     <p>
@@ -144,13 +137,30 @@ export const resume = (
     </p>
     <p>
       For frameworks and libraries, I have used JavaFX, Python-Flask, OpenCV,
-      Nginx, Gunicorn, React, Redux, jQuery.
+      React, Redux, jQuery.
     </p>
     <p>As for tools, I played with Git, LaTeX, Markdown, Firebase, MySQL.</p>
     <hr />
     <h1 id="courses">Courses</h1>
     <p>
-      <strong>Courses I've taken</strong>
+      <strong>Courses I&#39;m taking (Fall 2018)</strong>
+    </p>
+    <p className="lato">
+      <span className="monaco">CZ2003</span> - Computer Graphics & Visualization
+      <br />
+      <span className="monaco">CZ2004</span> - Human Computer Interaction
+      <br />
+      <span className="monaco">CZ2005</span> - Operating Systems
+      <br />
+      <span className="monaco">CZ3003</span> - Software Systems Analysis &
+      Design
+      <br />
+      <span className="monaco">CZ3006</span> - Net Centric Computing
+      <br />
+      <span className="monaco">HY0001</span> - Ethics & Moral Reasoning
+    </p>
+    <p>
+      <strong>Courses I&#39;ve taken</strong>
     </p>
     <h4>Winter 2018 (University of Waterloo)</h4>
     <p className="lato">
@@ -233,7 +243,7 @@ const statics = {
     content: home
   },
   resume: {
-    header: "Resume",
+    header: "Bio",
     content: resume
   },
   projects: {

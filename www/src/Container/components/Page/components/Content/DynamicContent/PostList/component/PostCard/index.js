@@ -15,7 +15,7 @@ class PostCard extends React.Component {
             this.props.titleLoading
           ) : (
             <Link
-              to={`/posts/${this.props.alias}`}
+              to={`/blog/article/${this.props.alias}`}
               style={{ color: "black", borderBottom: "none" }}
             >
               {this.props.title}
@@ -38,7 +38,7 @@ class PostCard extends React.Component {
           {this.props.linkLoading ? (
             this.props.linkLoading
           ) : (
-            <Link to={`/posts/${this.props.alias}`}>Go to the post</Link>
+            <Link to={`/blog/article/${this.props.alias}`}>Go to the post</Link>
           )}
         </p>
       </div>

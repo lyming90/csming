@@ -1,35 +1,36 @@
 module.exports = {
-  parser: 'babel-eslint',
-  "extends": [
-    "eslint:recommended",
-    "plugin:react/recommended",
-    "prettier",
-    "prettier/react",
-  ],
-  "plugins": [
-    "react",
-    "prettier",
-  ],
-  "parserOptions": {
+  env: {
+    browser: true,
+    es6: true,
+    node: true
+  },
+  parser: "babel-eslint",
+  extends: ["eslint:recommended", "plugin:react/recommended", "prettier", "prettier/react",],
+  parserOptions: {
+    ecmaFeatures: {
+      jsx: true,
+      experimentalObjectRestSpread: true
+    },
     ecmaVersion: 7,
-    "sourceType": "module",
-    "ecmaFeatures": {
-      experimentalObjectRestSpread: true,
-      jsx: true
-    }
+    sourceType: "module"
   },
-  "env": {
-    "browser": true,
-    "es6": true,
-    "node": true
-  },
-  "rules": {
-    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+  plugins: ["react", "prettier", "json"],
+  rules: {
+    // indent: ["error", 2],
+    "linebreak-style": ["error", "unix"],
+    quotes: ["error", "double"],
+    semi: ["error", "always"],
+    eqeqeq: 'error',
+    "no-console": 0,
+    "react/prop-types": 0, // this is a bad practice
+
+    // Prettier
     "prettier/prettier": "error",
-    'max-depth': ['error', { max: 3 }],
-    'max-statements': ['error', { max: 20 }],
-    complexity: 'error',
-    'max-params': ['error', { max: 4 }],
-    'max-nested-callbacks': ['error', { max: 3 }],
+    "no-tabs": "error",
+    "max-depth": ["error", { max: 3 }],
+    "max-statements": ["error", { max: 20 }],
+    complexity: "error",
+    "max-params": ["error", { max: 4 }],
+    "max-nested-callbacks": ["error", { max: 3 }]
   }
 };

@@ -22,7 +22,7 @@ class StaticContent extends Component {
     this.fetchContent(pathname);
   }
 
-  componentDidUpdate(prevProps, prevState) {
+  componentDidUpdate(prevProps) {
     if (prevProps.location.pathname !== this.props.location.pathname) {
       const pathname = this.props.location.pathname;
       this.fetchContent(pathname);
@@ -42,7 +42,7 @@ class StaticContent extends Component {
         header = statics.home.header;
         content = statics.home.content;
         break;
-      case "/resume":
+      case "/bio":
         header = statics.resume.header;
         content = statics.resume.content;
         break;

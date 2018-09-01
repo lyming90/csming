@@ -34,7 +34,7 @@ class PostContent extends React.Component {
     this.fetchPostContent(parseInt(id, 10));
   };
 
-  componentDidUpdate(prevProps) {
+  componentDidUpdate() {
     Prism.highlightAll();
   }
 
@@ -70,7 +70,7 @@ class PostContent extends React.Component {
             <title>{setTitle(title)}</title>
             <meta
               property="og:url"
-              content={"https://www.csming.com/posts/" + id}
+              content={"https://www.csming.com/blog/article/" + id}
             />
             <meta property="og:type" content="article" />
             <meta property="og:title" content={setTitle(title)} />

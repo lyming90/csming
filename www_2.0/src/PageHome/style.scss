@@ -1,0 +1,58 @@
+@import '_colors';
+@import '_typography';
+@import '_functions';
+
+:local {
+  .container {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.25;
+  }
+  .section_a {
+    @include lato-regular;
+    margin-top: 1rem;
+  }
+
+  .section_b {
+    @include lato-regular;
+    color: rgb(65, 65, 65);
+    font-size: 1.25rem;
+    margin-top: 1rem;
+  }
+
+  .section_c {
+    margin-top: 1rem;
+  }
+
+  .highlight {
+    @include modern-antiqua;
+    color: rgb(31, 64, 92);
+  }
+
+  .getInTouch {
+    @include raleway-medium;
+    margin-top: 1rem;
+    font-size: 1.25rem;
+  }
+
+  .socialMedia {
+    margin-top: 1rem;
+
+    .facebook, .medium, .linkedin, .instagram {
+      margin-right: 2rem;
+    }
+    .facebook {
+      color: #3b5998;
+    }
+    .medium {
+      color: black;
+    }
+    .linkedin {
+      color: #0077B5;
+    }
+    .instagram {
+      color: #fb3958;
+    }
+  }
+
+}
