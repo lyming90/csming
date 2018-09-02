@@ -50,6 +50,14 @@ class StaticContent extends Component {
         header = statics.projects.header;
         content = statics.projects.content;
         break;
+      case "/vote-en":
+        header = statics.vote_en.header;
+        content = statics.vote_en.content;
+        break;
+      case "/vote-cn":
+        header = statics.vote_cn.header;
+        content = statics.vote_cn.content;
+        break;
       default:
         header = "404 Not Found";
         content = "Heartily sorry.";

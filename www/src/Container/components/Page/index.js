@@ -15,6 +15,8 @@ const routes = (
   <Switch>
     <Route exact path="/home" component={StaticContent} />
     <Route exact path="/bio" component={StaticContent} />
+    <Route exact path="/vote-en" component={StaticContent} />
+    <Route exact path="/vote-cn" component={StaticContent} />
     <Route exact path="/posts/:alias" component={DynamicContent} />
     <Route exact path="/blog" component={DynamicContent} />
     <Route exact path="/blog/article/:id" component={DynamicContent} />

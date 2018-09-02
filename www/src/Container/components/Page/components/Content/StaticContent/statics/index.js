@@ -237,6 +237,70 @@ export const projects = (
   </div>
 );
 
+export const vote_en = (
+  <div>
+    <p>
+      I am running for the Academic Executive of Computer Science and
+      Engineering Club.
+    </p>
+    <p>
+      I want to let you know that electing me to this position will directly
+      make a difference to your life because -{" "}
+    </p>
+    <p>
+      I am proposing to introduce proofreaders in addition to our current search
+      for PYP (Past Year Paper) solvers. I am proposing this because I want to
+      enhance the overall quality of our PYP solutions.
+    </p>
+    <p>
+      Having been PYP solvers for multiple times I understand how hard it is to
+      provide high quality exam solutions months after the end of exams. I have
+      more than once noticed errors in our PYP solutions and I myself have
+      submitted PYP solutions that I am not proud of.
+    </p>
+    <p>
+      I don't want to see this happen so I'd like to improve the situation. Vote
+      for me and we'll enhance the qualify of PYP solutions together, which will
+      not just benefit you and me, but thousands of future SCSE students.
+    </p>
+    <p>
+      If you want to know more details about how proofreaders work, here are the{" "}
+      <a href="https://goo.gl/wwDSri">presentation slides</a> I used in the
+      rally.
+    </p>
+    <p>
+      So cast your vote on September 11th and together we can all excel in
+      academics.
+    </p>
+    <p>Liu Mingyu</p>
+  </div>
+);
+
+export const vote_cn = (
+  <div>
+    <p>
+      我最近在竞选CSE Club的Academic
+      Executive，在9月11日投票之前想让大家知道为什么你的这一票会充满意义。
+    </p>
+    <p>
+      我打算在邀请同学成为solver写PYP答案的同时，也鼓励大家申请当作Proofreader（审核员）来校对写好的答案，以降低PYP答案的错误率，从而提高答案的质量。
+    </p>
+    <p>
+      在过去我为PYP贡献过两次答案，因此我深有体会在考试结束后的数月后写答案是一件多么不容易的事情。在以往用其他人写的答案时我也注意到有些有不少的错误，我自己也曾经提交过并不让我引以为豪的答案。
+    </p>
+    <p>
+      现在，我想改变这个情况。投我一票，我们一起来提高PYP答案的质量。这不但会让你我在未来考试的时候准备更加充分，而且会造福成千上万的未来SCSE学生。
+    </p>
+    <p>
+      如果你对我提出的Proofreader计划有进一步了解的兴趣，可以参考我在竞选演讲上用的<a href="https://goo.gl/wwDSri">
+        幻灯片。
+      </a>
+    </p>
+    <p>所以9月11号快来为我投票吧！大家一起拿A+！</p>
+    <p>刘明宇</p>
+  </div>
+);
+
 const statics = {
   home: {
     header: "Home",
@@ -249,6 +313,14 @@ const statics = {
   projects: {
     header: "Projects",
     content: projects
+  },
+  vote_en: {
+    header: "Why Your Vote Will Affect You",
+    content: vote_en
+  },
+  vote_cn: {
+    header: "投我一票，让SCSE PYP更加高质量",
+    content: vote_cn
   }
 };
 
