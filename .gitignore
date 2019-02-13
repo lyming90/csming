@@ -2,6 +2,9 @@ www/node_modules
 www/build
 www_2.0/node_modules
 www_2.0/build
+*node_modules
+*dist
+*.next
 __pycache__
 .vscode
 venv
