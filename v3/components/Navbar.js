@@ -5,11 +5,11 @@ export default () => (
   <React.Fragment>
     <div className="navbar">
       <div className="navbar-inner">
-        <Link href="/">
-          <div className="logo-container">
+        <div className="logo-container">
+          <Link href="/">
             <img className="logo" src="/static/assets/M.png" />
-          </div>
-        </Link>
+          </Link>
+        </div>
         <div className="item">
           <Link href="/blog">
             <a className="link">BLOG</a>
@@ -29,7 +29,6 @@ export default () => (
       }
       .logo-container {
         flex: self-end;
-        cursor: pointer;
       }
       .logo {
         display: block;
@@ -37,6 +36,7 @@ export default () => (
         width: 2.25rem;
         margin-right: 2rem;
         margin-left: 1rem;
+        cursor: pointer;
       }
       .navbar-inner {
         max-width: 1032px;
