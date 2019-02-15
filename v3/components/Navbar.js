@@ -5,19 +5,25 @@ export default () => (
   <React.Fragment>
     <div className="navbar">
       <div className="navbar-inner">
-        <div className="logo-container">
-          <Link href="/">
-            <img className="logo" src="/static/assets/M.png" />
+        <Link href="/">
+          <div className="logo-container">
+            <img className="logo" src="/static/assets/dp.jpg" />
+            <div className="halo">
+              <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+                <path d="M3.44615311,11.6601601 C6.57294867,5.47967718 12.9131553,1.5 19.9642857,1.5 C27.0154162,1.5 33.3556228,5.47967718 36.4824183,11.6601601 L37.3747245,11.2087295 C34.0793076,4.69494641 27.3961457,0.5 19.9642857,0.5 C12.5324257,0.5 5.84926381,4.69494641 2.55384689,11.2087295 L3.44615311,11.6601601 Z" />
+                <path d="M36.4824183,28.2564276 C33.3556228,34.4369105 27.0154162,38.4165876 19.9642857,38.4165876 C12.9131553,38.4165876 6.57294867,34.4369105 3.44615311,28.2564276 L2.55384689,28.7078582 C5.84926381,35.2216412 12.5324257,39.4165876 19.9642857,39.4165876 C27.3961457,39.4165876 34.0793076,35.2216412 37.3747245,28.7078582 L36.4824183,28.2564276 Z" />
+              </svg>
+            </div>
+          </div>
+        </Link>
+        <div className="item">
+          <Link href="/about">
+            <a className="link">ABOUT</a>
           </Link>
         </div>
         <div className="item">
           <Link href="/blog">
             <a className="link">BLOG</a>
-          </Link>
-        </div>
-        <div className="item">
-          <Link href="#">
-            <a className="link">VENTURE</a>
           </Link>
         </div>
       </div>
@@ -28,18 +34,25 @@ export default () => (
         font-family: "Lato", sans-serif;
       }
       .logo-container {
-        flex: self-end;
+        position: relative;
+        cursor: pointer;
+        margin-right: 2rem;
+        margin-left: 1rem;
       }
       .logo {
         display: block;
-        height: 2.25rem;
-        width: 2.25rem;
-        margin-right: 2rem;
-        margin-left: 1rem;
-        cursor: pointer;
+        height: 3rem;
+        width: 3rem;
+        border-radius: 3rem;
+      }
+      .halo {
+        position: absolute;
+        width: calc(100% + 8px);
+        height: calc(100% + 8px);
+        top: -4px;
+        left: -4px;
       }
       .navbar-inner {
-        max-width: 1032px;
         margin: 0 auto;
         display: flex;
         flex-direction: row;
@@ -54,8 +67,7 @@ export default () => (
         color: black;
       }
       .link:hover {
-        color: dimgrey;
-        border-bottom: 3px solid dimgrey;
+        border-bottom: 3px solid;
       }
     `}</style>
   </React.Fragment>

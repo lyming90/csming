@@ -41,6 +41,9 @@ const Card = props => {
           justify-content: space-between;
           align-items: center;
         }
+        .container:last-of-type {
+          border: none;
+        }
         .left > p {
           margin-block-start: 0;
           margin-block-end: 0;
@@ -53,11 +56,11 @@ const Card = props => {
         }
         .right {
           margin-left: 2rem;
+          margin-right: 2rem;
           height: 5rem;
           width: 8.05rem;
           display: flex;
           justify-content: center;
-          overflow: hidden;
         }
         .image {
           height: 5rem;

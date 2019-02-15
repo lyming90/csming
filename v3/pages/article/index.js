@@ -1,5 +1,6 @@
 import React from "react";
 import { withRouter } from "next/router";
+import Link from "next/link";
 import Layout from "../../components/Layout";
 import moment from "moment";
 import Butter from "buttercms";
@@ -15,6 +16,14 @@ const Content = props => (
     <style jsx global>{`
       .content p {
         margin-block-start: 0;
+      }
+      .content a {
+        color: #00a699;
+        text-decoration: none;
+      }
+      .content a:hover {
+        color: #007970;
+        text-decoration: underline;
       }
       .content h2,
       .content h3,
@@ -102,6 +111,18 @@ class Article extends React.Component {
               )}
             </div>
             <Content content={body} />
+            <div className="continue-reading-container">
+              {data.meta.next_post && (
+                <Link
+                  as={`/blog/${data.meta.next_post.slug}`}
+                  href={`/article?slug=${data.meta.next_post.slug}`}
+                >
+                  <a className="continue-reading">
+                    Next: {data.meta.next_post.title}
+                  </a>
+                </Link>
+              )}
+            </div>
           </div>
         </div>
         <style jsx>{`
@@ -147,6 +168,24 @@ class Article extends React.Component {
           }
           .content {
             line-height: 1.5;
+          }
+          .continue-reading-container {
+            text-align: right;
+            display: none;
+          }
+          .continue-reading {
+            font-family: "Lora", serif;
+            color: dimgrey;
+            text-decoration: none;
+            border-bottom: 2px solid dimgrey;
+            max-width: 50%;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+          }
+          .continue-reading:hover {
+            color: black;
+            border-bottom-color: black;
           }
         `}</style>
       </Layout>

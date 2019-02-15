@@ -1,6 +1,7 @@
 import React from "react";
 import Head from "next/head";
 import Navbar from "./Navbar";
+import Footer from "./Footer";
 
 export default props => (
   <React.Fragment>
@@ -13,8 +14,9 @@ export default props => (
       {props.head}
     </Head>
     <div>
-      <Navbar />
+      {!props.hideNavbar && <Navbar />}
       {props.children}
+      {!props.hideFooter && <Footer />}
     </div>
     <style jsx>{`
       div {
