@@ -33,18 +33,6 @@ export default () => (
             .
           </div>
         </div>
-        {/* <div className="section-links">
-          <div className="item">
-            <Link href="/about">
-              <a className="link">ABOUT</a>
-            </Link>
-          </div>
-          <div className="item">
-            <Link href="/blog">
-              <a className="link">BLOG</a>
-            </Link>
-          </div>
-        </div> */}
       </div>
     </div>
     <style jsx>{`
@@ -65,7 +53,19 @@ export default () => (
       }
       .section-upper-left {
         flex: 1;
-        margin-right: 2rem;
+        margin-right: 4rem;
+        max-width: 480px;
+        align-self: center;
+      }
+      .image {
+        width: 100%;
+        display: block;
+      }
+      .section-upper-right {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
       }
       .section-lower {
         margin-top: 3rem;
@@ -79,13 +79,6 @@ export default () => (
       }
       .section-lower > div {
         margin: 0.5rem;
-      }
-      .section-upper-right {
-        flex: 1;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
       }
       .section-links {
         font-family: "Lato", sans-serif;
@@ -119,11 +112,6 @@ export default () => (
       }
       .big {
         font-size: 150%;
-      }
-      .image {
-        max-width: 100%;
-        max-height: 100%;
-        display: block;
       }
     `}</style>
   </Layout>

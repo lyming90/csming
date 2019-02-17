@@ -15,7 +15,8 @@ const Content = props => (
     />
     <style jsx global>{`
       .content p {
-        margin-block-start: 0;
+        margin-top: 0;
+        word-break: break-word;
       }
       .content a {
         color: #00a699;
@@ -30,7 +31,7 @@ const Content = props => (
       .content h4,
       .content h5,
       .content h6 {
-        margin-block-end: 0.25rem;
+        margin-bottom: 0.25rem;
       }
       .content img {
         max-width: 100%;
@@ -130,14 +131,14 @@ class Article extends React.Component {
             font-family: "Lora", serif;
           }
           p {
-            margin-block-start: 0;
+            margin-top: 0;
           }
           h2,
           h3,
           h4,
           h5,
           h6 {
-            margin-block-end: 0.25rem;
+            margin-bottom: 0.25rem;
           }
           img {
             max-width: 100%;
@@ -153,7 +154,7 @@ class Article extends React.Component {
           .meta {
             font-size: 80%;
             color: rgba(0, 0, 0, 0.54);
-            margin-block-end: 0.67rem;
+            margin-bottom: 0.67rem;
           }
           .meta > .middot {
             padding: 0 0.3em;

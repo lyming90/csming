@@ -35,8 +35,8 @@ const Card = props => {
           font-family: "Lato", sans-serif;
           padding-bottom: 2rem;
           border-bottom: 1px solid #ccc;
-          margin-block-start: 2rem;
-          margin-block-end: 2rem;
+          margin-top: 2rem;
+          margin-bottom: 2rem;
           display: flex;
           justify-content: space-between;
           align-items: center;
@@ -45,8 +45,8 @@ const Card = props => {
           border: none;
         }
         .left > p {
-          margin-block-start: 0;
-          margin-block-end: 0;
+          margin-top: 0;
+          margin-bottom: 0;
           margin-top: 1rem;
           margin-bottom: 1rem;
           font-size: 80%;
@@ -77,6 +77,11 @@ const Card = props => {
           font-weight: bold;
           text-decoration: none;
           color: black;
+        }
+        @media screen and (max-width: 740px) {
+          .right {
+            display: none;
+          }
         }
       `}</style>
     </React.Fragment>
@@ -126,7 +131,7 @@ class Blog extends React.Component {
         </div>
         <style jsx>{`
           .container-inner {
-            max-width: 960px;
+            max-width: 740px;
             margin: 0 auto;
             padding: 0 1rem;
           }

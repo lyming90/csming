@@ -23,6 +23,7 @@ module.exports = {
     "no-console": 0,
     "react/display-name" : 0,
     "react/no-unescaped-entities": 0,
+    "react/prop-types": 0,
 
     // Prettier
     "prettier/prettier": "error",

@@ -9,6 +9,7 @@ app
   .prepare()
   .then(() => {
     const server = express();
+    const PORT = dev ? 3000 : 80;
 
     server.get("/blog/:slug", (req, res) => {
       const actualPage = "/article";
@@ -20,7 +21,7 @@ app
       return handle(req, res);
     });
 
-    server.listen(3000, err => {
+    server.listen(PORT, err => {
       if (err) throw err;
       console.log("Ready on http://localhost:3000");
     });

@@ -37,7 +37,7 @@ export default () => (
         position: relative;
         cursor: pointer;
         margin-right: 2rem;
-        margin-left: 1rem;
+        margin-left: 2rem;
       }
       .logo {
         display: block;
@@ -68,6 +68,14 @@ export default () => (
       }
       .link:hover {
         border-bottom: 3px solid;
+      }
+      @media screen and (max-width: 740px) {
+        .logo-container {
+          margin-left: 1rem;
+        }
+        .item {
+          margin: 0 1rem;
+        }
       }
     `}</style>
   </React.Fragment>
