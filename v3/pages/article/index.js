@@ -84,21 +84,26 @@ class Article extends React.Component {
 
   render() {
     const { data } = this.props;
+    console.log("data", data);
 
     if (data === null) {
       return <div>404 Not Found</div>;
     }
 
-    const { title, body, published } = data.content;
+    const { title, body, published, slug, meta_description } = data.content;
 
     const head = (
       <React.Fragment>
-        <title>{title}</title>
+        <link
+          rel="canonical"
+          href={"https://www.csming.com/blog/".concat(slug)}
+        />
+        <meta name="description" content={meta_description} />
       </React.Fragment>
     );
 
     return (
-      <Layout head={head}>
+      <Layout head={head} title={title}>
         <div className="container">
           <div className="container-inner">
             <h1>{data.content.title}</h1>

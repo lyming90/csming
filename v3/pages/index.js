@@ -2,8 +2,18 @@ import React from "react";
 import Link from "next/link";
 import Layout from "../components/Layout";
 
+const head = (
+  <React.Fragment>
+    <link rel="canonical" href="https://www.csming.com" />
+    <meta
+      name="description"
+      content="Mingyu Liu. College junior. Read my blog, or read about me."
+    />
+  </React.Fragment>
+);
+
 export default () => (
-  <Layout hideFooter hideNavbar>
+  <Layout hideFooter hideNavbar hideTitleDash head={head}>
     <div className="container">
       <div className="container-inner">
         <div className="section-upper">
@@ -23,11 +33,11 @@ export default () => (
           <div>Mingyu Liu. College junior.</div>
           <div>
             Read my{" "}
-            <Link href="/blog">
+            <Link prefetch href="/blog">
               <a>blog</a>
             </Link>
             , or read{" "}
-            <Link href="/about">
+            <Link prefetch href="/about">
               <a>about me</a>
             </Link>
             .
@@ -112,6 +122,11 @@ export default () => (
       }
       .big {
         font-size: 150%;
+      }
+      @media screen and (max-width: 740px) {
+        .section-upper {
+          margin-top: 0;
+        }
       }
     `}</style>
   </Layout>

@@ -7,9 +7,19 @@ import Footer from "./Footer";
 export default props => (
   <React.Fragment>
     <Head>
+      <title>
+        {props.title}
+        {!props.hideTitleDash ? " - " : ""}Mingyu Liu
+      </title>
       <meta charset="utf-8" />
-      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <meta
+        name="title"
+        content={
+          props.title + (!props.hideTitleDash ? " - " : "") + "Mingyu Liu"
+        }
+      />
       <link href="/static/css/normalize.css" rel="stylesheet" />
       <link
         href="https://fonts.googleapis.com/css?family=Lato:400,400i,700,700i|Lora"

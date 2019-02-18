@@ -5,7 +5,7 @@ export default () => (
   <React.Fragment>
     <div className="navbar">
       <div className="navbar-inner">
-        <Link href="/">
+        <Link prefetch href="/">
           <div className="logo-container">
             <img className="logo" src="/static/assets/dp.jpg" />
             <div className="halo">
@@ -17,12 +17,12 @@ export default () => (
           </div>
         </Link>
         <div className="item">
-          <Link href="/about">
+          <Link prefetch href="/about">
             <a className="link">ABOUT</a>
           </Link>
         </div>
         <div className="item">
-          <Link href="/blog">
+          <Link prefetch href="/blog">
             <a className="link">BLOG</a>
           </Link>
         </div>

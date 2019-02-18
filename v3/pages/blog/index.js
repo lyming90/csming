@@ -6,6 +6,13 @@ import Layout from "../../components/Layout";
 
 const butter = Butter("58db10ebc2dbc8562691a0f274b9e8c1f513f1ef");
 
+const head = (
+  <React.Fragment>
+    <link rel="canonical" href="https://www.csming.com/blog" />
+    {/* TODO: meta description */}
+  </React.Fragment>
+);
+
 const Card = props => {
   const { data } = props;
   return (
@@ -13,11 +20,19 @@ const Card = props => {
       <div className="container">
         <div className="left">
           <div className="title">
-            <Link as={`/blog/${data.slug}`} href={`/article?slug=${data.slug}`}>
+            <Link
+              prefetch
+              as={`/blog/${data.slug}`}
+              href={`/article?slug=${data.slug}`}
+            >
               <a className="link">{data.title}</a>
             </Link>
           </div>
-          <Link as={`/blog/${data.slug}`} href={`/article?slug=${data.slug}`}>
+          <Link
+            prefetch
+            as={`/blog/${data.slug}`}
+            href={`/article?slug=${data.slug}`}
+          >
             <p>{data.summary}</p>
           </Link>
           <div className="meta">
@@ -25,7 +40,11 @@ const Card = props => {
           </div>
         </div>
         <div className="right">
-          <Link as={`/blog/${data.slug}`} href={`/article?slug=${data.slug}`}>
+          <Link
+            prefetch
+            as={`/blog/${data.slug}`}
+            href={`/article?slug=${data.slug}`}
+          >
             <img className="image" src={data.featured_image} />
           </Link>
         </div>
@@ -123,7 +142,7 @@ class Blog extends React.Component {
     const renderedList = list.map(item => <Card data={item} key={item.slug} />);
 
     return (
-      <Layout>
+      <Layout title="Blog" head={head}>
         <div className="container">
           <div className="container-inner">
             <div className="card-container">{renderedList}</div>

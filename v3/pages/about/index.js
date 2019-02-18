@@ -1,6 +1,17 @@
 import React from "react";
 import Layout from "../../components/Layout";
 
+const head = (
+  <React.Fragment>
+    <link rel="canonical" href="https://www.csming.com/about" />
+    <meta
+      name="description"
+      content="I respect all ways of living and everyone's life decisions, as
+                  long as they are not harmful to others."
+    />
+  </React.Fragment>
+);
+
 const Card = props => (
   <React.Fragment>
     <div className="container">
@@ -71,10 +82,29 @@ export default () => {
   };
 
   return (
-    <Layout>
+    <Layout title="About" head={head}>
       <div className="container">
         <div className="container-inner">
           <h1 className="lora">Mingyu Liu (Ming)</h1>
+          <div className="intro">
+            {/* <div className="display-picture-container">
+            <Link href="/">
+              <img
+                className="display-picture"
+                src="static/assets/dp-cropped.png"
+              />
+            </Link>
+          </div> */}
+            <div className="intro-text">
+              <p>
+                I am a Computer Science junior at Nanyang Technological
+                Singapore.
+              </p>
+              <p>
+                I enjoy working on beautiful projects of my diverse interests.
+              </p>
+            </div>
+          </div>
           <div className="belief">
             <p>
               I believe human beings are extremely{" "}
@@ -88,23 +118,11 @@ export default () => {
                 </i>
               </span>
             </p>
-          </div>
-          <div className="intro">
-            {/* <div className="display-picture-container">
-            <Link href="/">
-              <img
-                className="display-picture"
-                src="static/assets/dp-cropped.png"
-              />
-            </Link>
-          </div> */}
-            <div className="intro-text">
-              <p>
-                A Computer Science junior at Nanyang Technological University in
-                Singapore. I enjoy working on beautiful projects of my diverse
-                interests.
-              </p>
-            </div>
+            <p>
+              I have a <a href="https://youtu.be/mbE8wvZ59Ss">YouTube video</a>{" "}
+              that somehow attracts <strong>1.2 million</strong> views.I still
+              don't understand <em>why</em>.
+            </p>
           </div>
           <p>
             <i>This page deliberately imitates Wikipedia.</i>
@@ -118,7 +136,7 @@ export default () => {
                 I am attending Nanyang Technological University since August
                 2016, with anticipated graduation in mid-2020. In the second
                 half of my sophomore year, I went to study abroad at the
-                University of Canada.
+                University of Waterloo in Canada.
               </p>
             </section>
           </div>
@@ -236,6 +254,15 @@ export default () => {
             </h3>
             <section className="section-content">
               <p>
+                For general communication, contact{" "}
+                <a href="mailto:liumcse@gmail.com">liumcse@gmail.com</a>.
+              </p>
+              <p>
+                For school-related communication, contact{" "}
+                <a href="mailto:lium0029@e.ntu.edu.sg">lium0029@e.ntu.edu.sg</a>
+                .
+              </p>
+              <p>
                 For professional purpose, download my{" "}
                 <a
                   href="https://drive.google.com/file/d/1XNO2MC0L7AIkGGZ6Yz1yPtnQ0FITyNGp/view?usp=sharing"
@@ -245,17 +272,12 @@ export default () => {
                   Résumé (US format)
                 </a>
                 .
-                <br />
-                To send me a quick message, find me on <a href="#">
-                  Instagram
-                </a>{" "}
-                and <a href="#">LinkedIn</a>.
-                <br />
-                For general communication, contact{" "}
-                <a href="mailto:liumcse@gmail.com">liumcse@gmail.com</a>.
-                <br />
-                For school-related communication, contact{" "}
-                <a href="mailto:lium0029@e.ntu.edu.sg">lium0029@e.ntu.edu.sg</a>.
+              </p>
+              <p>
+                To send me a quick message, find me on{" "}
+                <a href="https://www.instagram.com/mingyuliu_16/">Instagram</a>{" "}
+                and{" "}
+                <a href="https://www.linkedin.com/in/mingyuliu16/">LinkedIn</a>.
               </p>
             </section>
           </div>
