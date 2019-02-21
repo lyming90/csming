@@ -1,6 +1,7 @@
 {
   "version": 2,
-  "builds": [
-    { "src": "package.json", "use": "@now/next" }
+  "builds": [{"src": "package.json", "use": "@now/next"}],
+  "routes":[
+      {"src": "/blog/(?<slug>.+)", "dest": "/article?slug=$slug"}
   ]
 }

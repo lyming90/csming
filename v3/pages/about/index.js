@@ -101,16 +101,17 @@ export default () => {
                 Singapore.
               </p>
               <p>
-                I enjoy working on beautiful projects of my diverse interests.
+                I enjoy working on beautiful{" "}
+                <a href="https://github.com/liumcse">projects</a> of my diverse
+                interests.
               </p>
             </div>
           </div>
           <div className="belief">
             <p>
               I believe human beings are extremely{" "}
-              <span className="rainbow-text">diverse</span>. I don't believe
-              there is the norm of life, nor do I agree on traditional societal
-              expectations.{" "}
+              <span className="rainbow-text">diverse</span>. The diversity of
+              humanity blossoms into a colorful world we live in.{" "}
               <span className="lora">
                 <i>
                   I respect all ways of living and everyone's life decisions, as
@@ -120,7 +121,7 @@ export default () => {
             </p>
             <p>
               I have a <a href="https://youtu.be/mbE8wvZ59Ss">YouTube video</a>{" "}
-              that somehow attracts <strong>1.2 million</strong> views.I still
+              that somehow attracted <strong>1.2 million</strong> views. I still
               don't understand <em>why</em>.
             </p>
           </div>

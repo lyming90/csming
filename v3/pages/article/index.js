@@ -84,13 +84,19 @@ class Article extends React.Component {
 
   render() {
     const { data } = this.props;
-    console.log("data", data);
 
     if (data === null) {
       return <div>404 Not Found</div>;
     }
 
-    const { title, body, published, slug, meta_description } = data.content;
+    const {
+      title,
+      body,
+      published,
+      slug,
+      meta_description,
+      featured_image
+    } = data.content;
 
     const head = (
       <React.Fragment>
@@ -99,6 +105,21 @@ class Article extends React.Component {
           href={"https://www.csming.com/blog/".concat(slug)}
         />
         <meta name="description" content={meta_description} />
+        <meta property="og:type" content="website" />
+        <meta
+          property="og:url"
+          content={"https://www.csming.com/blog/".concat(slug)}
+        />
+        <meta property="og:title" content={title.concat(" - Mingyu Liu")} />
+        <meta
+          property="og:image"
+          content={
+            featured_image || "https://cdn.buttercms.com/2wVfykepT8KEJqGKdvUn"
+          }
+        />
+        <meta property="og:description" content={meta_description} />
+        <meta property="og:site_name" content="Mingyu Liu" />
+        <meta property="og:locale" content="en_US" />
       </React.Fragment>
     );
 
