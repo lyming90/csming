@@ -5,7 +5,7 @@
     {
       "src": "/(.*)",
       "status": 301,
-      "headers": { "Location": "https://csming.com/about" }
+      "headers": { "Location": "https://csming.com/$1" }
     }
   ]
 }

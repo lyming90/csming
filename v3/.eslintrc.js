@@ -14,7 +14,7 @@ module.exports = {
     ecmaVersion: 7,
     sourceType: "module"
   },
-  plugins: ["react", "prettier"],
+  plugins: ["react", "prettier", "jest"],
   rules: {
     "linebreak-style": ["error", "unix"],
     quotes: ["error", "double"],
