@@ -4,7 +4,7 @@ import Layout from "../components/Layout";
 
 const head = (
   <React.Fragment>
-    <link rel="canonical" href="https://www.csming.com" />
+    <link rel="canonical" href="https://csming.com" />
     <meta
       name="description"
       content="Mingyu Liu. College junior. Read my blog, or read about me."

@@ -100,15 +100,12 @@ class Article extends React.Component {
 
     const head = (
       <React.Fragment>
-        <link
-          rel="canonical"
-          href={"https://www.csming.com/blog/".concat(slug)}
-        />
+        <link rel="canonical" href={"https://csming.com/blog/".concat(slug)} />
         <meta name="description" content={meta_description} />
         <meta property="og:type" content="website" />
         <meta
           property="og:url"
-          content={"https://www.csming.com/blog/".concat(slug)}
+          content={"https://csming.com/blog/".concat(slug)}
         />
         <meta property="og:title" content={title.concat(" - Mingyu Liu")} />
         <meta

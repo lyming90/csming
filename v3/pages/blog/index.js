@@ -8,7 +8,7 @@ const butter = Butter("58db10ebc2dbc8562691a0f274b9e8c1f513f1ef");
 
 const head = (
   <React.Fragment>
-    <link rel="canonical" href="https://www.csming.com/blog" />
+    <link rel="canonical" href="https://csming.com/blog" />
     {/* TODO: meta description */}
   </React.Fragment>
 );

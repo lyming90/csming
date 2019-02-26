@@ -3,7 +3,7 @@ import Layout from "../../components/Layout";
 
 const head = (
   <React.Fragment>
-    <link rel="canonical" href="https://www.csming.com/about" />
+    <link rel="canonical" href="https://csming.com/about" />
     <meta
       name="description"
       content="I respect all ways of living and everyone's life decisions, as
@@ -111,7 +111,7 @@ export default () => {
             <p>
               I believe human beings are extremely{" "}
               <span className="rainbow-text">diverse</span>. The diversity of
-              humanity blossoms into a colorful world we live in.{" "}
+              humanity blossoms into the colorful world we live in.{" "}
               <span className="lora">
                 <i>
                   I respect all ways of living and everyone's life decisions, as
@@ -221,7 +221,7 @@ export default () => {
                 I love reading a wide range of books. I am particularly
                 interested in novels. You can see books I've read or am reading
                 at{" "}
-                <a href="https://www.goodreads.com/user/show/57560338-mingyu-liu">
+                <a href="httpsgoodreads.com/user/show/57560338-mingyu-liu">
                   Goodreads
                 </a>
                 .
@@ -276,9 +276,9 @@ export default () => {
               </p>
               <p>
                 To send me a quick message, find me on{" "}
-                <a href="https://www.instagram.com/mingyuliu_16/">Instagram</a>{" "}
+                <a href="httpsinstagram.com/mingyuliu_16/">Instagram</a>{" "}
                 and{" "}
-                <a href="https://www.linkedin.com/in/mingyuliu16/">LinkedIn</a>.
+                <a href="httpslinkedin.com/in/mingyuliu16/">LinkedIn</a>.
               </p>
             </section>
           </div>
