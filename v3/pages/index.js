@@ -234,7 +234,7 @@ export default () => {
                 I love reading a wide range of books. I am particularly
                 interested in novels. You can see books I've read or am reading
                 at{" "}
-                <a href="httpsgoodreads.com/user/show/57560338-mingyu-liu">
+                <a href="https://goodreads.com/user/show/57560338-mingyu-liu">
                   Goodreads
                 </a>
                 .
@@ -305,7 +305,7 @@ export default () => {
                 <a
                   target="_blank"
                   rel="noopener noreferrer"
-                  href="httpsinstagram.com/mingyuliu_16/"
+                  href="https://instagram.com/mingyuliu_16/"
                 >
                   Instagram
                 </a>{" "}
@@ -313,7 +313,7 @@ export default () => {
                 <a
                   target="_blank"
                   rel="noopener noreferrer"
-                  href="httpslinkedin.com/in/mingyuliu16/"
+                  href="https://linkedin.com/in/mingyuliu16/"
                 >
                   LinkedIn
                 </a>
