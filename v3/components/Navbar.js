@@ -18,7 +18,7 @@ export default () => (
         </Link>
         <div className="item">
           <Link prefetch href="/">
-            <a className="link">ABOUT</a>
+            <a className="link">ME</a>
           </Link>
         </div>
         <div className="item">

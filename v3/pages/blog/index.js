@@ -63,12 +63,15 @@ const Card = props => {
         .container:last-of-type {
           border: none;
         }
+        .title {
+          font-size: 1.2rem;
+        }
         .left > p {
           margin-top: 0;
           margin-bottom: 0;
           margin-top: 1rem;
           margin-bottom: 1rem;
-          font-size: 80%;
+          font-size: 1rem;
           line-height: 1.5;
           color: rgba(0, 0, 0, 0.85);
           cursor: pointer;
@@ -87,7 +90,7 @@ const Card = props => {
           display: block;
         }
         .meta {
-          font-size: 80%;
+          font-size: 0.8rem;
           color: rgba(0, 0, 0, 0.54);
           margin-top: 1rem;
         }
@@ -150,7 +153,7 @@ class Blog extends React.Component {
         </div>
         <style jsx>{`
           .container-inner {
-            max-width: 740px;
+            max-width: 960px;
             margin: 0 auto;
             padding: 0 1rem;
           }
