@@ -168,14 +168,14 @@ class Article extends React.Component {
           }
           figcaption {
             text-align: center;
-            font-size: 80%;
+            font-size: 0.8rem;
             color: rgba(0, 0, 0, 0.54);
           }
           .container {
             font-family: "Lato", sans-serif;
           }
           .meta {
-            font-size: 80%;
+            font-size: 0.8rem;
             color: rgba(0, 0, 0, 0.54);
             margin-bottom: 0.67rem;
           }
@@ -187,7 +187,7 @@ class Article extends React.Component {
           }
           .container-inner {
             margin: 0 auto;
-            max-width: 740px;
+            max-width: 960px;
             padding: 0 1rem;
           }
           .content {

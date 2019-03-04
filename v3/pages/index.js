@@ -54,13 +54,13 @@ const Card = props => (
         }
         .date {
           color: #2f2f2f;
-          font-size: 80%;
+          font-size: 0.8rem;
         }
         .company {
           font-weight: bold;
         }
         .description {
-          font-size: 80%;
+          font-size: 0.8rem;
         }
       `}
     </style>
@@ -82,7 +82,7 @@ export default () => {
   };
 
   return (
-    <Layout title="About" head={head}>
+    <Layout title="Me" head={head}>
       <div className="container">
         <div className="container-inner">
           <h1 className="lora">Mingyu Liu (Ming)</h1>
