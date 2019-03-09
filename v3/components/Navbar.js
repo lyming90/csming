@@ -72,6 +72,7 @@ export default () => (
       @media screen and (max-width: 740px) {
         .logo-container {
           margin-left: 1rem;
+          margin-right: 1rem;
         }
         .item {
           margin: 0 1rem;

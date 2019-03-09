@@ -76,10 +76,22 @@ class Article extends React.Component {
     return Math.ceil(wordLength / 200);
   };
 
+  _reloadDisqus = () => {
+    (function() {
+      var d = document,
+        s = d.createElement("script");
+      s.src = "https://csming.disqus.com/embed.js";
+      s.setAttribute("data-timestamp", +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  };
+
   componentDidMount() {
     this.setState({
       readingTime: this.calculateReadingTime()
     });
+    // load Disqus
+    this._reloadDisqus();
   }
 
   render() {
@@ -147,8 +159,28 @@ class Article extends React.Component {
                 </Link>
               )}
             </div>
+            <div id="disqus_thread" />
           </div>
         </div>
+        <div
+          dangerouslySetInnerHTML={{
+            __html: `
+          <script>
+var disqus_config = function () {
+this.page.url = "${"https://csming.com/blog/".concat(slug)}";
+this.page.identifier = "${slug}";
+};
+(function() {
+var d = document, s = d.createElement('script');
+s.src = 'https://csming.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+          `
+          }}
+        />
         <style jsx>{`
           h1 {
             font-family: "Lora", serif;
