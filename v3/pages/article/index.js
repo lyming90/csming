@@ -33,6 +33,10 @@ const Content = props => (
       .content h6 {
         margin-bottom: 0.25rem;
       }
+      .content figure {
+        margin-left: 0;
+        margin-right: 0;
+      }
       .content img {
         max-width: 100%;
       }
