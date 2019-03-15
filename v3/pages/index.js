@@ -234,7 +234,11 @@ export default () => {
                 I love reading a wide range of books. I am particularly
                 interested in novels. You can see books I've read or am reading
                 at{" "}
-                <a href="https://goodreads.com/user/show/57560338-mingyu-liu">
+                <a
+                  href="https://goodreads.com/user/show/57560338-mingyu-liu"
+                  rel="noopener noreferrer"
+                  href="mailto:liumcse@gmail.com"
+                >
                   Goodreads
                 </a>
                 .
@@ -422,13 +426,6 @@ export default () => {
           background-color: #cccccc14;
           border-radius: 3px;
         }
-        /*
-        .header-clickable:before {
-          content: "\\25BC";
-          font-size: 10px;
-          margin-right: 1rem;
-        }
-        */
         .section-content {
           display: none;
           // border-top: 1px dashed #a2a9b1;
