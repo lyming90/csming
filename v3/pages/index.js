@@ -12,19 +12,19 @@ const head = (
   </React.Fragment>
 );
 
-const Card = props => (
+const Card = ({ company, position, date, description, image }) => (
   <React.Fragment>
     <div className="container">
       <div className="left">
         <div className="header">
-          <span className="company">{props.company}</span> -{" "}
-          <span className="position">{props.position}</span>
+          <span className="company">{company}</span> -{" "}
+          <span className="position">{position}</span>
         </div>
-        <div className="date">{props.date}</div>
-        <div className="description">{props.description}</div>
+        <div className="date">{date}</div>
+        <div className="description">{description}</div>
       </div>
       <div className="right">
-        <img className="image" src={props.image} />
+        <img className="image" src={image} />
       </div>
     </div>
     <style jsx>
@@ -36,9 +36,13 @@ const Card = props => (
           align-items: center;
           margin-top: 1em;
           margin-bottom: 1em;
+          border-top: 1px solid rgba(0, 0, 0, 0.05);
+          padding-top: 1rem;
         }
         .container:first-of-type {
           margin-top: 0;
+          border-top: 0;
+          padding-top: 0;
         }
         .container:last-of-type {
         }
@@ -87,17 +91,9 @@ export default () => {
         <div className="container-inner">
           <h1 className="lora">Mingyu Liu (Ming)</h1>
           <div className="intro">
-            {/* <div className="display-picture-container">
-            <Link href="/">
-              <img
-                className="display-picture"
-                src="static/assets/dp-cropped.png"
-              />
-            </Link>
-          </div> */}
             <div className="intro-text">
               <p>
-                I am a Computer Science junior at Nanyang Technological
+                I am a rising Computer Science senior at Nanyang Technological
                 Singapore.
               </p>
               <p>
@@ -109,7 +105,7 @@ export default () => {
                 >
                   projects
                 </a>{" "}
-                of my diverse interests.
+                of my various interests.
               </p>
             </div>
           </div>
@@ -134,8 +130,8 @@ export default () => {
               >
                 YouTube video
               </a>{" "}
-              that somehow attracted <strong>1.2 million</strong> views. I still
-              don't understand <em>why</em>.
+              that somehow attracted <strong>1.4 million</strong> views. No idea{" "}
+              <em>why</em>, though.
             </p>
           </div>
           <p>
@@ -228,7 +224,7 @@ export default () => {
               Personal life
             </h3>
             <section className="section-content">
-              <p>I enjoy many more things despite computer science.</p>
+              <p>Despite computer science, I have a wide variety of hobbies.</p>
               <h4>Reading</h4>
               <p>
                 I love reading a wide range of books. I am particularly
@@ -237,7 +233,6 @@ export default () => {
                 <a
                   href="https://goodreads.com/user/show/57560338-mingyu-liu"
                   rel="noopener noreferrer"
-                  href="mailto:liumcse@gmail.com"
                 >
                   Goodreads
                 </a>
@@ -254,18 +249,6 @@ export default () => {
               <p />
             </section>
           </div>
-          {/* <div className="belief">
-          <h3>What I believe</h3>
-          <p>
-            I believe human beings are extremely diverse. I don't believe there
-            is the norm of life, nor do I agree on traditional societal
-            expectations.
-          </p>
-          <p>
-            I respect all ways of living. I respect everyone's life
-            decisions.
-          </p>
-        </div> */}
           <div className="contact">
             <h3 className="header-clickable" onClick={toggleCollapse}>
               Contact me

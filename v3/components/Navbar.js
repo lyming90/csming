@@ -26,6 +26,11 @@ export default () => (
             <a className="link">BLOG</a>
           </Link>
         </div>
+        {/* <div className="item">
+          <Link prefetch href="/capstone-project">
+            <a className="link">CAPSTONE PROJECT</a>
+          </Link>
+        </div> */}
       </div>
     </div>
     <style jsx>{`
@@ -72,10 +77,10 @@ export default () => (
       @media screen and (max-width: 740px) {
         .logo-container {
           margin-left: 1rem;
-          margin-right: 1rem;
+          margin-right: 0.75rem;
         }
         .item {
-          margin: 0 1rem;
+          margin: 0 0.75rem;
         }
       }
     `}</style>

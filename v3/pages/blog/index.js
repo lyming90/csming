@@ -13,8 +13,7 @@ const head = (
   </React.Fragment>
 );
 
-const Card = props => {
-  const { data } = props;
+const Card = ({ data }) => {
   return (
     <React.Fragment>
       <div className="container">
