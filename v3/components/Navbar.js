@@ -28,7 +28,7 @@ export default () => (
         </div>
         {/* <div className="item">
           <Link prefetch href="/capstone-project">
-            <a className="link">CAPSTONE PROJECT</a>
+            <a className="link">CAPSTONE</a>
           </Link>
         </div> */}
       </div>

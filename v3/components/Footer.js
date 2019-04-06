@@ -4,7 +4,7 @@ export default () => (
   <React.Fragment>
     <div className="footer-container">
       <div className="container-inner">
-        <span>&copy; 2019 Mingyu Liu. Powered by </span>{" "}
+        <span>&copy; Mingyu Liu. Powered by </span>{" "}
         <img
           className="butter"
           src="https://cdn.buttercms.com/PGJPyIwaQ2KnOA8UyKfH"
