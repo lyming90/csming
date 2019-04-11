@@ -46,7 +46,7 @@ const Content = props => (
         color: rgba(0, 0, 0, 0.54);
       }
       .content {
-        line-height: 1.5;
+        line-height: 1.75;
       }
     `}</style>
   </React.Fragment>

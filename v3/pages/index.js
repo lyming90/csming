@@ -93,8 +93,8 @@ export default () => {
           <div className="intro">
             <div className="intro-text">
               <p>
-                I am a rising Computer Science senior at Nanyang Technological
-                Singapore.
+                Rising Computer Science senior at Nanyang Technological
+                University, Singapore.
               </p>
               <p>
                 I enjoy working on beautiful{" "}
@@ -177,7 +177,7 @@ export default () => {
               />
               <Card
                 company="Grab"
-                position="Information Security Engineering Intern"
+                position="Engineering Intern"
                 date="Dec 2018 - May 2019"
                 description="The leading ride-hailing and mobile payments platform in Southeast Asia."
                 image="https://media.licdn.com/dms/image/C4E0BAQGMv0-OtFdbYw/company-logo_400_400/0?e=1557964800&v=beta&t=8gxQW1C9OSdvb-xuPIb4BKzJq3XrOSO7OPs9v5-FnDs"
@@ -209,9 +209,9 @@ export default () => {
               </p>
               <p>
                 From September to November 2017, I volunteered as a peer coach
-                to provide help to two of my peers who were then struggling with
-                their academic performance. They eventually lifted themselves
-                out from academic probation.
+                to help my two peers who were then struggling with their
+                academic performance. They were eventually lifted out from
+                academic probation.
               </p>
               <p>
                 In September 2018, I was elected as Academic Executive at
