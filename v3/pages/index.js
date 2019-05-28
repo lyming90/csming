@@ -130,7 +130,7 @@ export default () => {
               >
                 YouTube video
               </a>{" "}
-              that somehow attracted <strong>1.4 million</strong> views. No idea{" "}
+              that somehow attracted <strong>1.6 million</strong> views. No idea{" "}
               <em>why</em>, though.
             </p>
           </div>
@@ -173,21 +173,21 @@ export default () => {
                 position="Software Engineering Intern"
                 date="Jun - Aug 2019"
                 description="Empower the next billion users."
-                image="https://media.licdn.com/dms/image/C4D0BAQHiNSL4Or29cg/company-logo_400_400/0?e=1557964800&v=beta&t=L35e81-bOeAwoxD9mWzFDyFQH7iH5PE8sxb6wgczoRs"
+                image="/static/assets/logo-google.png"
               />
               <Card
                 company="Grab"
                 position="Engineering Intern"
                 date="Dec 2018 - May 2019"
                 description="The leading ride-hailing and mobile payments platform in Southeast Asia."
-                image="https://media.licdn.com/dms/image/C4E0BAQGMv0-OtFdbYw/company-logo_400_400/0?e=1557964800&v=beta&t=8gxQW1C9OSdvb-xuPIb4BKzJq3XrOSO7OPs9v5-FnDs"
+                image="/static/assets/logo-grab.png"
               />
               <Card
                 company="Sea"
                 position="Software Engineering Intern"
                 date="May - Aug 2018"
                 description="Shopee, the leading e-commerce company in Southeast Asia."
-                image="https://media.licdn.com/dms/image/C560BAQEAIrDkWI_p6g/company-logo_400_400/0?e=1557964800&v=beta&t=mTPLdSuxFQA2mBFXfzpf38P4pnqhnW-z92fzXf2uoUQ"
+                image="/static/assets/logo-sea.png"
               />
             </section>
           </div>
@@ -283,7 +283,7 @@ export default () => {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  Résumé (US format)
+                  Résumé (A4)
                 </a>
                 .
               </p>
