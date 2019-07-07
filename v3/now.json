@@ -2,7 +2,7 @@
   "version": 2,
   "builds": [{"src": "package.json", "use": "@now/next"}],
   "routes":[
-      {"src": "/blog/(?<slug>.+)", "dest": "/article?slug=$slug"},
+      {"src": "/blog/(.+)", "dest": "/article?slug=$1"},
       {"src": "/download/(.*)", "dest": "/static/download/$1"},
       {"src": "/books-and-quotes", "dest": "/special/books-and-quotes"}
 
