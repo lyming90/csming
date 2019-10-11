@@ -93,8 +93,8 @@ export default () => {
           <div className="intro">
             <div className="intro-text">
               <p>
-                Rising Computer Science senior at Nanyang Technological
-                University, Singapore.
+                Computer Science senior at Nanyang Technological University,
+                Singapore.
               </p>
               <p>
                 I enjoy working on beautiful{" "}
