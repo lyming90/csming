@@ -8,6 +8,7 @@
     "build": "next build",
     "now-build": "next build",
     "start": "NODE_ENV=production node server.js",
+    "deploy": "now --prod",
     "test": "jest"
   },
   "dependencies": {

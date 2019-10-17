@@ -130,7 +130,7 @@ export default () => {
               >
                 YouTube video
               </a>{" "}
-              that somehow attracted <strong>1.6 million</strong> views. No idea{" "}
+              that somehow attracted <strong>1.8 million</strong> views. No idea{" "}
               <em>why</em>, though.
             </p>
           </div>
@@ -183,7 +183,7 @@ export default () => {
                 image="/static/assets/logo-grab.png"
               />
               <Card
-                company="Sea"
+                company="Sea (Shopee)"
                 position="Software Engineering Intern"
                 date="May - Aug 2018"
                 description="Shopee, the leading e-commerce company in Southeast Asia."
