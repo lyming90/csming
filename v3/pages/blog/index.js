@@ -152,7 +152,7 @@ class Blog extends React.Component {
         </div>
         <style jsx>{`
           .container-inner {
-            max-width: 960px;
+            max-width: 1200px;
             margin: 0 auto;
             padding: 0 1rem;
           }

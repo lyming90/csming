@@ -209,13 +209,14 @@ export default () => {
               </p>
               <p>
                 From September to November 2017, I volunteered as a peer coach
-                to help my two peers who were then struggling with their
+                to help my two peers who were at that time struggling with their
                 academic performance. They were eventually lifted out from
                 academic probation.
               </p>
               <p>
                 In September 2018, I was elected as Academic Executive at
-                Computer Science and Engineering Club at the university.
+                Computer Science and Engineering Club at the university. I
+                served until September 2019.
               </p>
             </section>
           </div>
@@ -237,6 +238,11 @@ export default () => {
                   Goodreads
                 </a>
                 .
+              </p>
+              <h4>Swimming</h4>
+              <p>
+                One day I decided to pick up my swimming skills. Since then, I
+                started to go swimming regularly (and passionately).
               </p>
               <h4>Hiking</h4>
               <p>
@@ -352,7 +358,7 @@ export default () => {
         }
         .container-inner {
           margin: 0 auto;
-          max-width: 960px;
+          max-width: 1200px;
           padding: 0 1rem;
           line-height: 1.5;
         }
