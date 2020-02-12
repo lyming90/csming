@@ -130,7 +130,7 @@ export default () => {
               >
                 YouTube video
               </a>{" "}
-              that somehow attracted <strong>1.8 million</strong> views. No idea{" "}
+              that somehow attracted <strong>2.1 million</strong> views. No idea{" "}
               <em>why</em>, though.
             </p>
           </div>
@@ -144,7 +144,7 @@ export default () => {
             <section className="section-content">
               <p>
                 I am attending Nanyang Technological University since August
-                2016, with anticipated graduation in mid-2020. In the second
+                2016, with anticipated graduation in late 2020. In the second
                 half of my sophomore year, I went to study abroad at the
                 University of Waterloo in Canada.
               </p>
