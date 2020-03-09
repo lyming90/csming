@@ -115,6 +115,7 @@ export default class extends React.Component {
             margin: 0 auto;
             max-width: 1200px;
             padding: 0 1rem;
+            line-height: 1.5;
           }
           .noselect {
             -webkit-touch-callout: none; /* iOS Safari */
