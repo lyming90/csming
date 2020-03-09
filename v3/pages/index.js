@@ -1,5 +1,6 @@
 import React from "react";
 import Layout from "../components/Layout";
+import Link from "next/link";
 
 const head = (
   <React.Fragment>
@@ -229,15 +230,11 @@ export default () => {
               <h4>Reading</h4>
               <p>
                 I love reading a wide range of books. I am particularly
-                interested in novels. You can see books I've read or am reading
-                at{" "}
-                <a
-                  href="https://goodreads.com/user/show/57560338-mingyu-liu"
-                  rel="noopener noreferrer"
-                >
-                  Goodreads
-                </a>
-                .
+                interested in novels. You can check out my reading list at my{" "}
+                <Link prefetch href="/bookshelf">
+                  <a>bookshelf</a>
+                </Link>{" "}
+                page.
               </p>
               <h4>Swimming</h4>
               <p>

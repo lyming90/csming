@@ -26,11 +26,11 @@ export default () => (
             <a className="link">BLOG</a>
           </Link>
         </div>
-        {/* <div className="item">
-          <Link prefetch href="/capstone-project">
-            <a className="link">CAPSTONE</a>
+        <div className="item">
+          <Link prefetch href="/bookshelf">
+            <a className="link">BOOKSHELF</a>
           </Link>
-        </div> */}
+        </div>
       </div>
     </div>
     <style jsx>{`
