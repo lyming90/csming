@@ -11,6 +11,6 @@
     {
       "src": "/download/(.*)",
       "dest": "/static/download/$1"
-    },
+    }
   ]
 }
