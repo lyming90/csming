@@ -24,8 +24,6 @@ export default class extends React.Component {
       return <div>404 Not Found</div>;
     }
 
-    console.log({ payload });
-
     const head = (
       <React.Fragment>
         <link rel="canonical" href="https://csming.com/bookshelf" />
@@ -43,7 +41,6 @@ export default class extends React.Component {
           new Date(b.finish_time).getTime() - new Date(a.finish_time).getTime()
       )
       .map((val, index) => {
-        console.log(val);
         return (
           <p key={index}>
             <span className="noselect" style={{ marginRight: "1rem" }}>
