@@ -24,6 +24,8 @@ export default class extends React.Component {
       return <div>404 Not Found</div>;
     }
 
+    console.log({ payload });
+
     const head = (
       <React.Fragment>
         <link rel="canonical" href="https://csming.com/bookshelf" />
@@ -34,6 +36,60 @@ export default class extends React.Component {
         <meta property="og:locale" content="en_US" />
       </React.Fragment>
     );
+
+    const books = payload.data.fields.book
+      .sort(
+        (a, b) =>
+          new Date(b.finish_time).getTime() - new Date(a.finish_time).getTime()
+      )
+      .map((val, index) => {
+        console.log(val);
+        return (
+          <p key={index}>
+            <span className="noselect" style={{ marginRight: "1rem" }}>
+              -
+            </span>
+            <a
+              className={val.highlight === true ? "highlight" : ""}
+              href={val.title_url}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {val.title}
+            </a>
+            <style jsx>{`
+              .noselect {
+                -webkit-touch-callout: none; /* iOS Safari */
+                -webkit-user-select: none; /* Safari */
+                -khtml-user-select: none; /* Konqueror HTML */
+                -moz-user-select: none; /* Old versions of Firefox */
+                -ms-user-select: none; /* Internet Explorer/Edge */
+                user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Opera and Firefox */
+              }
+              p {
+                margin-top: 0;
+                word-break: break-word;
+                font-size: 1rem;
+              }
+              a {
+                color: #00a699;
+                text-decoration: none;
+              }
+              .highlight {
+                color: #456cff;
+              }
+              .highlight:hover {
+                color: #001cea;
+              }
+              a:hover {
+                color: #007970;
+                text-decoration: underline;
+              }
+            `}</style>
+          </p>
+        );
+      });
 
     return (
       <Layout head={head} title="Bookshelf">
@@ -48,31 +104,7 @@ export default class extends React.Component {
               </span>{" "}
               books that I particularly like.
             </p>
-            <div className="content">
-              {payload.data.fields.book
-                .sort((a, b) => {
-                  const timeDiff =
-                    new Date(b.finish_time).getTime() -
-                    new Date(a.finish_time).getTime();
-                  if (timeDiff) return timeDiff;
-                  return a < b;
-                })
-                .map((val, index) => (
-                  <p key={index}>
-                    <span className="noselect" style={{ marginRight: "1rem" }}>
-                      -
-                    </span>
-                    <a
-                      className={val.highlight && "highlight"}
-                      href={val.title_url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      {val.title}
-                    </a>
-                  </p>
-                ))}
-            </div>
+            <div className="content">{books}</div>
           </div>
         </div>
         <style jsx>{`
@@ -81,25 +113,6 @@ export default class extends React.Component {
           }
           p {
             margin-top: 0;
-          }
-          .content p {
-            margin-top: 0;
-            word-break: break-word;
-            font-size: 1rem;
-          }
-          .content a {
-            color: #00a699;
-            text-decoration: none;
-          }
-          .content .highlight {
-            color: #456cff;
-          }
-          .content .highlight:hover {
-            color: #001cea;
-          }
-          .content a:hover {
-            color: #007970;
-            text-decoration: underline;
           }
           h2,
           h3,
