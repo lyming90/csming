@@ -73,7 +73,7 @@ const Card = ({ company, position, date, description, image }) => (
 );
 
 export default () => {
-  const toggleCollapse = e => {
+  const toggleCollapse = (e) => {
     const thisNode = e.target;
     const parentNode = thisNode.parentNode;
     const sectionNode = parentNode.childNodes[1];
@@ -90,7 +90,7 @@ export default () => {
     <Layout title="Me" head={head}>
       <div className="container">
         <div className="container-inner">
-          <h1 className="lora">Mingyu Liu (Ming)</h1>
+          <h1 className="lora">Mingyu Liu</h1>
           <div className="intro">
             <div className="intro-text">
               <p>
@@ -115,12 +115,12 @@ export default () => {
               I believe human beings are extremely{" "}
               <span className="rainbow-text">diverse</span>. The diversity of
               humanity blossoms into the colorful world we live in.{" "}
-              <span className="lora">
+              {/* <span className="lora">
                 <i>
                   I respect all ways of living and everyone's life decisions, as
                   long as they are not harmful to others.
                 </i>
-              </span>
+              </span> */}
             </p>
             <p>
               I have a{" "}
@@ -131,7 +131,7 @@ export default () => {
               >
                 YouTube video
               </a>{" "}
-              that somehow attracted <strong>2.1 million</strong> views. No idea{" "}
+              that somehow attracted <strong>2.3 million</strong> views. No idea{" "}
               <em>why</em>, though.
             </p>
           </div>
@@ -280,7 +280,7 @@ export default () => {
                 .
               </p>
               <p>
-                For professional purpose, download my{" "}
+                {/* For professional purpose, download my{" "}
                 <a
                   href="https://drive.google.com/file/d/1XNO2MC0L7AIkGGZ6Yz1yPtnQ0FITyNGp/view?usp=sharing"
                   target="_blank"
@@ -288,7 +288,8 @@ export default () => {
                 >
                   Résumé (A4)
                 </a>
-                .
+                . */}
+                For professional purpose, request my resume via Email.
               </p>
               <p>
                 To send me a quick message, find me on{" "}
