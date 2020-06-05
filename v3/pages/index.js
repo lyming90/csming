@@ -156,10 +156,10 @@ export default () => {
               Career
             </h3>
             <section className="section-content">
-              <p>
+              {/* <p>
                 During school breaks, I worked for a few companies. Those
                 experiences are invaluable to me.
-              </p>
+              </p> */}
               <Card
                 company={
                   <span>
@@ -230,7 +230,7 @@ export default () => {
               <h4>Reading</h4>
               <p>
                 I love reading a wide range of books. I am particularly
-                interested in novels. You can check out my reading list at my{" "}
+                interested in fictions. You can check out my reading list at my{" "}
                 <Link prefetch href="/bookshelf">
                   <a>bookshelf</a>
                 </Link>{" "}

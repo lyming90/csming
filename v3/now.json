@@ -9,8 +9,12 @@
       "dest": "/article?slug=$1"
     },
     {
-      "src": "/download/(.*)",
-      "dest": "/static/download/$1"
+      "src": "/download/(.+)",
+      "dest": "/download?filename=$1"
+    },
+    {
+      "src": "/robots.txt",
+      "dest": "/static/seo/robots.txt"
     }
   ]
 }
